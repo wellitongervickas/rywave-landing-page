@@ -41,7 +41,7 @@ const Accordion: FC<Accordion> = ({ opened, className, children, heading }) => {
 			</style>
 			<section className={className}>
 				<div
-					className="flex cursor-pointer items-center justify-between"
+					className="flex cursor-pointer items-center justify-between space-x-6"
 					onClick={doToggleAccordion}
 				>
 					<div className="flex items-center space-x-9">
