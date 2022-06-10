@@ -16,12 +16,7 @@ const NavMain: FC<NavMain> = (props) => (
 				--shadow-color: 0_0.1rem_0.1rem_rgba (255, 255, 255, 0.5);
 			`}
 		</style>
-		<ul
-			className={classnames.merge([
-				props.className,
-				'grid grid-flow-col grid-cols-[3]',
-			])}
-		>
+		<ul className={classnames.merge([props.className])}>
 			{Object.values(routes.navMain).map((route, index) => (
 				<li key={index} className="px-4 font-manrope">
 					<Link

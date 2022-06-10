@@ -10,8 +10,8 @@ import Action from '@components/Homepage/CallToAction/Action'
 interface HomepageCTA {}
 
 const HomepageCTA: FC<HomepageCTA> = ({}) => (
-	<section className="grid grid-cols-2 pt-[8.6rem]">
-		<div className="col-span-2 space-y-[3.62rem] lg:col-span-1">
+	<section className="grid grid-cols-2 lg:pt-[8.6rem]">
+		<div className="order-2 col-span-2 space-y-[3.62rem] lg:order-none lg:col-span-1">
 			<h1 className="text-7xl font-black leading-[4.5rem]">
 				Where Music
 				<br />
@@ -21,12 +21,12 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 				The first trully open music sharing platform connecting the artist to
 				the listener.
 			</h2>
-			<div className="flex max-w-[36.25rem] justify-start  space-x-[0.68rem] ">
+			<div className="flex max-w-[36.25rem] flex-col justify-start space-y-4 lg:flex-row lg:space-y-0  lg:space-x-[0.68rem] ">
 				<Action />
 			</div>
 			<SocialJoin />
 		</div>
-		<div className="col-span-2 flex flex-col items-end space-y-4 lg:col-span-1">
+		<div className="col-span-2 mb-12 flex flex-col items-end space-y-4 px-6 lg:col-span-1 lg:mb-0 lg:px-0 ">
 			<div className="relative flex flex-row items-end space-x-8">
 				<CardIcon />
 				<CardStar />

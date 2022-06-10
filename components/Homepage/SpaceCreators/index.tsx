@@ -30,7 +30,7 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 	])
 
 	return (
-		<section className="py-28">
+		<section className="py-20 lg:py-28">
 			<h2 className="mb-12 text-5xl font-black">
 				A unique space
 				<br />

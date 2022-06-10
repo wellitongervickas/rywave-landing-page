@@ -39,7 +39,7 @@ const Navbar: FC = () => {
 				/>
 			</div>
 			<nav className="hidden md:block">
-				<NavMain className="flex space-x-4 " />
+				<NavMain className="grid grid-flow-col grid-cols-[3] gap-4" />
 			</nav>
 			<nav
 				className={classnames.merge([
@@ -61,13 +61,13 @@ const Navbar: FC = () => {
 				>
 					<div className="relative flex justify-end">
 						<span
-							className="absolute -top-8 right-0 cursor-pointer text-lg text-gray"
+							className="absolute top-6 right-0 cursor-pointer text-lg text-gray"
 							onClick={() => doToggleMenu()}
 						>
 							&#x2716;
 						</span>
 					</div>
-					<Logo className="text-white" />
+					<Logo className="pb-8 pl-4 text-white" />
 					<NavMain className="flex flex-col space-y-6 text-white" />
 				</div>
 			</nav>
