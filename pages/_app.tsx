@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }: App) => (
 		<style jsx global>
 			{`
 				body {
-					@apply font-montserrat overflow-x-hidden bg-black text-white;
+					@apply font-montserrat bg-gray-darkness overflow-x-hidden text-white;
 				}
 			`}
 		</style>

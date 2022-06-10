@@ -14,6 +14,6 @@ export function getStaticProps() {
 	}
 }
 
-const Homepage: NextPage<Homepage> = () => <Container className="container" />
+const Homepage: NextPage<Homepage> = () => <Container />
 
 export default Homepage

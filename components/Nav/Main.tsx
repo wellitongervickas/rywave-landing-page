@@ -23,7 +23,7 @@ const NavMain: FC<NavMain> = (props) => (
 			])}
 		>
 			{Object.values(routes.navMain).map((route, index) => (
-				<li key={index} className="px-4">
+				<li key={index} className="px-4 font-manrope">
 					<Link
 						activeLinkClassName="!font-bold drop-shadow-[var(--shadow-color)]"
 						href={route.path}

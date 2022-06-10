@@ -19,6 +19,7 @@ module.exports = {
 				DEFAULT: '#d0d0d0',
 				stroke: '#9CA3AF',
 				dark: '#919191',
+				darkness: '#1C1C1C',
 			},
 		},
 	},

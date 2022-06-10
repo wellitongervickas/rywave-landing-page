@@ -1,13 +1,11 @@
 import type { FC } from 'react'
 
-import classnames from '@modules/handlers/classnames'
-
-import ArrowIcon from '@components/Icons/Arrow'
 import SocialJoin from '@components/Social/Join'
 import CardIcon from '@components/Homepage/CallToAction/CardIcon'
 import CardThumb from '@components/Homepage/CallToAction/CardThumb'
 import CardPlayer from '@components/Homepage/CallToAction/CardPlayer'
-import CardStar from './CardStar'
+import CardStar from '@components/Homepage/CallToAction/CardStar'
+import Action from '@components/Homepage/CallToAction/Action'
 
 interface HomepageCTA {}
 
@@ -24,36 +22,7 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 				the listener.
 			</h2>
 			<div className="flex max-w-[36.25rem] justify-start  space-x-[0.68rem] ">
-				<button
-					type="button"
-					className={classnames.merge([
-						'font-manrope',
-						'group flex space-x-2 rounded-sm bg-white py-5 px-9 transition-all duration-150',
-						'text-xl font-bold text-black ring-opacity-75 hover:ring-2 hover:ring-primary',
-					])}
-				>
-					<span>Are you an Artist?</span>
-					<ArrowIcon
-						width={22}
-						height={28}
-						className="transition-transform duration-150 group-hover:translate-x-1"
-					/>
-				</button>
-				<button
-					type="button"
-					className={classnames.merge([
-						'font-manrope',
-						'group flex space-x-2 rounded-sm bg-offwhite py-5 px-9 transition-all duration-150',
-						'text-xl font-bold text-white ring-opacity-75 hover:ring-2 hover:ring-primary',
-					])}
-				>
-					<span>Become a Member</span>
-					<ArrowIcon
-						width={22}
-						height={28}
-						className="transition-transform duration-150 group-hover:translate-x-1"
-					/>
-				</button>
+				<Action />
 			</div>
 			<SocialJoin />
 		</div>
