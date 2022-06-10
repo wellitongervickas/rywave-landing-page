@@ -12,13 +12,15 @@ interface HomepageContainer {}
 
 const HomepageContainer: FC<HomepageContainer> = () => (
 	<>
-		<Image
-			src="/assets/images/main-bg.png"
-			alt=""
-			layout="fill"
-			className="absolute z-[-1] opacity-90"
-			priority
-		/>
+		<div className="absolute top-0 h-screen w-screen">
+			<Image
+				src="/assets/images/main-bg.png"
+				alt=""
+				layout="fill"
+				className="relative z-[-1]   opacity-90"
+				priority
+			/>
+		</div>
 		<div className="relative z-10">
 			<div className="space-y-8 container">
 				<CallToAction />
