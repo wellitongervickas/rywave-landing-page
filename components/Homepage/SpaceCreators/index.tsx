@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import CardWrapper from '@components/CardWrapper'
 import SpaceImage from '@components/Homepage/SpaceCreators/SpaceImage'
 import Image from '@components/Image'
+import classnames from '@modules/handlers/classnames'
 
 interface HomepageSpaceCreators {}
 
@@ -40,12 +41,18 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 				{topics.map((topic, index) => (
 					<CardWrapper
 						key={index}
-						className="group col-span-1 flex flex-col items-center gap-16 p-8 md:p-16 lg:flex-row"
+						className={classnames.merge([
+							'group col-span-1 p-8 md:p-16',
+							'grid grid-cols-7 items-center justify-center gap-16',
+						])}
 					>
 						{topic.layout === 'left' && (
-							<SpaceImage className="order-1 lg:order-none" {...topic} />
+							<SpaceImage
+								className="order-1 col-span-7 md:col-span-3 lg:order-none lg:col-span-2"
+								{...topic}
+							/>
 						)}
-						<div className="order-2 space-y-6 lg:order-none">
+						<div className="order-2 col-span-7 space-y-6 md:col-span-4 lg:order-none lg:col-span-5">
 							<h3 className="text-xl text-[1.75rem] font-black">
 								{topic.title}
 							</h3>
@@ -55,7 +62,10 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 							/>
 						</div>
 						{topic.layout === 'right' && (
-							<SpaceImage className="order-1 lg:order-none" {...topic} />
+							<SpaceImage
+								className="order-1 col-span-7 md:col-span-3 lg:order-none lg:col-span-2"
+								{...topic}
+							/>
 						)}
 					</CardWrapper>
 				))}

@@ -13,17 +13,24 @@ const SpaceImage: FC<SpaceImage> = ({ image, title, className }) => (
 	<div
 		className={classnames.merge([
 			className,
-			'h-[220px] w-[220px] transform transition-all duration-500 group-hover:scale-x-105 md:h-[290px] md:w-[290px]',
+			'flex h-full w-full items-center justify-center',
 		])}
 	>
-		<Image
-			src={image}
-			alt={title}
-			height={290}
-			width={290}
-			layout="responsive"
-			priority
-		/>
+		<div
+			className={classnames.merge([
+				'relative group-hover:scale-x-105 2xl:h-[290px] 2xl:w-[290px]',
+				'h-[200px] w-[200px] transform transition-all duration-500 md:h-[180px] md:w-[180px]',
+			])}
+		>
+			<Image
+				src={image}
+				alt={title}
+				layout="responsive"
+				width={290}
+				height={290}
+				priority
+			/>
+		</div>
 	</div>
 )
 
