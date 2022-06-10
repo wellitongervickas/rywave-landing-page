@@ -31,16 +31,16 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 
 	return (
 		<section className="py-20 lg:py-28">
-			<h2 className="font-astrospace mb-12 text-5xl font-black">
+			<h2 className="mb-12 font-astrospace text-3xl font-black md:text-5xl">
 				A unique space
-				<br />
+				<br className="hidden lg:block" />
 				for Creators
 			</h2>
 			<div className="space-y-5">
 				{topics.map((topic, index) => (
 					<CardWrapper
 						key={index}
-						className="group col-span-1 flex flex-col items-center gap-16 p-16 lg:flex-row"
+						className="group col-span-1 flex flex-col items-center gap-16 p-8 md:p-16 lg:flex-row"
 					>
 						{topic.layout === 'left' && (
 							<SpaceImage className="order-1 lg:order-none" {...topic} />
@@ -50,7 +50,7 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 								{topic.title}
 							</h3>
 							<div
-								className="text-gray-stroke space-y-6 text-xl leading-6"
+								className="space-y-6 text-xl leading-6 text-gray-stroke"
 								dangerouslySetInnerHTML={{ __html: topic.text }}
 							/>
 						</div>

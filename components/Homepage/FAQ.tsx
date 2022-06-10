@@ -26,7 +26,9 @@ const HomepageFaq: FC<HomepageFaq> = ({}) => {
 
 	return (
 		<section className="py-20 lg:py-28">
-			<h2 className="font-astrospace mb-12 text-5xl font-black">FAQ</h2>
+			<h2 className="mb-12 font-astrospace text-3xl font-black md:text-5xl">
+				FAQ
+			</h2>
 			<FAQ faqs={faqs} />
 		</section>
 	)

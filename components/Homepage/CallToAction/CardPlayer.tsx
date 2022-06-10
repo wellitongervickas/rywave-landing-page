@@ -4,7 +4,7 @@ import type { FC } from 'react'
 interface CardPlayer {}
 
 const CardPlayer: FC<CardPlayer> = () => (
-	<div className="group relative h-[120px] w-[360px] lg:h-[160px] lg:w-[434px]">
+	<div className="group relative h-[90px] w-[240px] lg:h-[160px] lg:w-[434px]">
 		<div className="absolute z-10">
 			<Image
 				src="/assets/images/homepage/card-player.png"

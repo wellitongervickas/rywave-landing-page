@@ -4,7 +4,7 @@ import type { FC } from 'react'
 interface CardThumb {}
 
 const CardThumb: FC<CardThumb> = () => (
-	<div className="group relative h-[325px] w-[210px] lg:h-[465px] lg:w-[280px]">
+	<div className="group relative h-[230px] w-[120px] lg:h-[465px] lg:w-[280px]">
 		<div className="absolute z-10">
 			<Image
 				src="/assets/images/homepage/card-thumb.png"

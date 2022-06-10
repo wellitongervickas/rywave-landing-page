@@ -4,7 +4,7 @@ import type { FC } from 'react'
 interface CardIcon {}
 
 const CardIcon: FC<CardIcon> = () => (
-	<div className="group relative h-[100px] w-[90px] lg:h-[140px] lg:w-[143px]">
+	<div className="group relative h-[80px] w-[80px] lg:h-[140px] lg:w-[143px]">
 		<div className="absolute z-10">
 			<Image
 				src="/assets/images/homepage/card-icon.png"

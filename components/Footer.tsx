@@ -20,7 +20,7 @@ const Footer: FC<Footer> = ({ className }) => (
 			<Logo width={150} height={32} />
 			<div className="grid grid-cols-2 gap-12 lg:gap-0">
 				<SocialJoin className="col-span-2 lg:col-span-1" />
-				<div className="col-span-2 flex items-start lg:col-span-1">
+				<div className="col-span-2 flex flex-col items-start space-y-12 md:flex-row md:space-y-0 lg:col-span-1">
 					<VerticalNav
 						title="Company"
 						routes={routes.navFooter.company}

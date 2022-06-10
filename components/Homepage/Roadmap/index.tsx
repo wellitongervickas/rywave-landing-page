@@ -91,8 +91,8 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 							className="child space-y-6 lg:flex lg:justify-between lg:space-y-0"
 						/>
 					</div>
-					<div className="order-1 flex items-center justify-center text-center lg:order-none lg:pt-12 lg:pb-16">
-						<h2 className="font-astrospace mb-12 text-5xl font-black lg:!mb-0">
+					<div className="order-1 flex items-center md:justify-center lg:order-none lg:pt-12 lg:pb-16">
+						<h2 className="mb-12 font-astrospace text-3xl font-black md:text-5xl lg:!mb-0">
 							Roadmap
 						</h2>
 					</div>

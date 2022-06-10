@@ -13,7 +13,7 @@ const SpaceImage: FC<SpaceImage> = ({ image, title, className }) => (
 	<div
 		className={classnames.merge([
 			className,
-			'transform transition-all duration-500 group-hover:scale-x-105',
+			'h-[220px] w-[220px] transform transition-all duration-500 group-hover:scale-x-105 md:h-[290px] md:w-[290px]',
 		])}
 	>
 		<Image
@@ -21,7 +21,7 @@ const SpaceImage: FC<SpaceImage> = ({ image, title, className }) => (
 			alt={title}
 			height={290}
 			width={290}
-			layout="fixed"
+			layout="responsive"
 			priority
 		/>
 	</div>

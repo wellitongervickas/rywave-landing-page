@@ -33,7 +33,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 		<section className="py-12 lg:py-28">
 			<h2 className="font-astrospace mb-4 text-5xl font-black">
 				How doest it
-				<br /> work?
+				<br className="hidden lg:block" /> work?
 			</h2>
 			<div className="text-gray-stroke mb-12 space-y-2 text-xl">
 				<p>
