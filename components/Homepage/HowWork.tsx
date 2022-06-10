@@ -2,18 +2,21 @@ import type { FC } from 'react'
 import { useRef } from 'react'
 
 import CardWrapper from '@components/CardWrapper'
+import Image from '@components/Image'
 
-interface HowWork {}
+interface HomepageHowWork {}
 
-const HowWork: FC<HowWork> = () => {
+const HomepageHowWork: FC<HomepageHowWork> = () => {
 	const { current: topics } = useRef([
 		{
 			title: 'Community',
-			topics: ['Artists & Listeners', 'Activities', 'Promotion'],
+			image: '/assets/images/homepage/how-work/community.svg',
+			items: ['Artists & Listeners', 'Activities', 'Promotion'],
 		},
 		{
 			title: 'Platform',
-			topics: [
+			image: '/assets/images/homepage/how-work/platform.svg',
+			items: [
 				'Listen to Earn',
 				'On chain Ownership & Royalties',
 				'NFT gated premium features',
@@ -21,7 +24,8 @@ const HowWork: FC<HowWork> = () => {
 		},
 		{
 			title: 'Tools',
-			topics: ['Exclusive Music Programs', 'Inshight Portfolio', 'Design Team'],
+			image: '/assets/images/homepage/how-work/tools.svg',
+			items: ['Exclusive Music Programs', 'Inshight Portfolio', 'Design Team'],
 		},
 	])
 
@@ -44,10 +48,19 @@ const HowWork: FC<HowWork> = () => {
 			<div className="grid grid-cols-3 space-x-5">
 				{topics.map((topic, index) => (
 					<CardWrapper key={index} className="col-span-1 space-y-6 p-4">
+						<div className="bg-gray-darkness flex h-[3.12rem] w-[3.12rem] items-center justify-center">
+							<Image
+								src={topic.image}
+								alt={topic.title}
+								layout="fixed"
+								height={22}
+								width={22}
+							/>
+						</div>
 						<h3 className="text-xl">{topic.title}</h3>
 						<ul className="text-gray-stroke list-inside list-disc">
-							{topic.topics.map((topic, topicIndex) => (
-								<li key={topicIndex}>{topic}</li>
+							{topic.items.map((item, itemIndex) => (
+								<li key={itemIndex}>{item}</li>
 							))}
 						</ul>
 					</CardWrapper>
@@ -57,4 +70,4 @@ const HowWork: FC<HowWork> = () => {
 	)
 }
 
-export default HowWork
+export default HomepageHowWork

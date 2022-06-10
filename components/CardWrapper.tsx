@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import classnames from '@modules/handlers/classnames'
 
 interface CardWrapper {
-	children: JSX.Element | JSX.Element[]
+	children: any
 	className?: string
 }
 

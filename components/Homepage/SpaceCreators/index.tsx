@@ -2,33 +2,30 @@ import type { FC } from 'react'
 import { useRef } from 'react'
 
 import CardWrapper from '@components/CardWrapper'
+import SpaceImage from '@components/Homepage/SpaceCreators/SpaceImage'
 import Image from '@components/Image'
-import classnames from '@modules/handlers/classnames'
 
-interface HowWork {}
+interface HomepageSpaceCreators {}
 
-const HowWork: FC<HowWork> = () => {
+const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 	const { current: topics } = useRef([
 		{
-			image: '/assets/images/homepage/how-work/transparency.svg',
-			imageOrder: 1,
+			image: '/assets/images/homepage/space-creators/transparency.svg',
 			title: 'Transparency',
 			text: "<p>Our artists become creators of intellectual property and the creators of their own artistic presence, putting them in the driver's seat.</p><p>The platform is open to all artists and listeners, and is transparent to all parties involved The insights platform showcases all revenue the artist produces on our network, along with their streaming data and crowd funding resources.</p>",
-			textOrder: 2,
+			layout: 'left',
 		},
 		{
-			image: '/assets/images/homepage/how-work/equality.svg',
-			imageOrder: 2,
+			image: '/assets/images/homepage/space-creators/equality.svg',
 			title: 'Equality',
 			text: '<p>Every artist, no matter the size, is given an equal chance to showcase their art through the community and our streaming platform, the Discotheque.</p><p>For the purpose of engaging every artist in equal manner, we will be hosting daily community voting contests containing various prizes.</p>',
-			textOrder: 1,
+			layout: 'right',
 		},
 		{
-			image: '/assets/images/homepage/how-work/promotion.svg',
-			imageOrder: 1,
+			image: '/assets/images/homepage/space-creators/promotion.svg',
 			title: 'Promotion',
 			text: '<p>Selected artists are connected to a design and marketing team to help you reach a wider audience.</p><p>Through the Rywave community we offer plenty of opportunities to promote your art via contests and social media.</p>',
-			textOrder: 2,
+			layout: 'left',
 		},
 	])
 
@@ -43,19 +40,10 @@ const HowWork: FC<HowWork> = () => {
 				{topics.map((topic, index) => (
 					<CardWrapper
 						key={index}
-						className="col-span-1 flex items-center gap-16 p-16"
+						className="group col-span-1 flex items-center gap-16 p-16"
 					>
-						<div className={`order-${topic.imageOrder}`}>
-							<Image
-								src={topic.image}
-								alt={topic.title}
-								height={290}
-								width={290}
-								layout="fixed"
-								loading="lazy"
-							/>
-						</div>
-						<div className={classnames.merge([`order-${topic.textOrder}`])}>
+						{topic.layout === 'left' && <SpaceImage {...topic} />}
+						<div className="space-y-6">
 							<h3 className="text-xl text-[1.75rem] font-black">
 								{topic.title}
 							</h3>
@@ -64,6 +52,7 @@ const HowWork: FC<HowWork> = () => {
 								dangerouslySetInnerHTML={{ __html: topic.text }}
 							/>
 						</div>
+						{topic.layout === 'right' && <SpaceImage {...topic} />}
 					</CardWrapper>
 				))}
 			</div>
@@ -71,4 +60,4 @@ const HowWork: FC<HowWork> = () => {
 	)
 }
 
-export default HowWork
+export default HomepageSpaceCreators

@@ -25,6 +25,10 @@ const App = ({ Component, pageProps }: App) => (
 
 		<style jsx global>
 			{`
+				html,
+				body {
+					@apply h-screen;
+				}
 				body {
 					@apply font-montserrat bg-gray-darkness overflow-x-hidden text-white;
 				}
