@@ -15,7 +15,7 @@ const CardPlayer: FC<CardPlayer> = () => (
 				priority
 			/>
 		</div>
-		<div className="absolute left-3 top-3 animate-pulse transition-transform duration-300 group-hover:translate-y-1">
+		<div className="absolute left-3 top-3 animate-pulse transition-transform delay-150 duration-300 group-hover:translate-y-1">
 			<Image
 				src="/assets/images/homepage/card-player-square.png"
 				alt="Audio Player Square"

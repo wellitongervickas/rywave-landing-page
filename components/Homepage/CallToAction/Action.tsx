@@ -8,8 +8,10 @@ interface Action {}
 
 const Action: FC<Action> = ({}) => (
 	<>
-		<button
-			type="button"
+		<a
+			href="https://k9lsalmqwk5.typeform.com/to/foD9T6je?typeform-source=rywave.io"
+			target="_blank"
+			rel="noopener noreferrer"
 			className={classnames.merge([
 				'font-manrope',
 				'group flex space-x-2  bg-white py-5 px-9 transition-all duration-150',
@@ -23,9 +25,11 @@ const Action: FC<Action> = ({}) => (
 				height={28}
 				className="transition-transform duration-150 group-hover:translate-x-1"
 			/>
-		</button>
-		<button
-			type="button"
+		</a>
+		<a
+			href="https://linktr.ee/rywave"
+			rel="noopener noreferrer"
+			target="_blank"
 			className={classnames.merge([
 				'font-manrope',
 				'group flex space-x-2 bg-offwhite py-5 px-9 transition-all duration-150',
@@ -39,7 +43,7 @@ const Action: FC<Action> = ({}) => (
 				height={28}
 				className="transition-transform duration-150 group-hover:translate-x-1"
 			/>
-		</button>
+		</a>
 	</>
 )
 

@@ -15,7 +15,7 @@ const CardThumb: FC<CardThumb> = () => (
 				priority
 			/>
 		</div>
-		<div className="absolute -right-3 -top-2 animate-pulse transition-transform duration-300 group-hover:-translate-x-1">
+		<div className="absolute -right-3 -top-2 animate-pulse transition-transform delay-150 duration-300 group-hover:-translate-x-1">
 			<Image
 				src="/assets/images/homepage/card-thumb-square.png"
 				alt="Audio Thumb Square"

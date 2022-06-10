@@ -15,7 +15,7 @@ const CardIcon: FC<CardIcon> = () => (
 				priority
 			/>
 		</div>
-		<div className="absolute -right-2 -top-2 animate-pulse transition-transform duration-300 group-hover:translate-y-1">
+		<div className="absolute -right-2 -top-2 animate-pulse transition-transform delay-150 duration-300 group-hover:translate-y-1">
 			<Image
 				src="/assets/images/homepage/card-icon-square.png"
 				alt="Audio Icon Square"
