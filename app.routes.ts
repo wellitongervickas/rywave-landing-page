@@ -15,10 +15,10 @@ const appRoutes = {
 	},
 	navFooter: {
 		company: {
-			about: {
-				label: 'About',
-				path: '#',
-			},
+			// about: {
+			// 	label: 'About',
+			// 	path: '#',
+			// },
 			white_paper: {
 				label: 'Whitepaper',
 				path: '/whitepaper/',
@@ -27,16 +27,16 @@ const appRoutes = {
 		resources: {
 			terms_of_use: {
 				label: 'Terms of Use',
-				path: '#',
+				path: '/terms-of-use',
 			},
-			contact: {
-				label: 'Contact',
-				path: '#',
-			},
-			faqs: {
-				label: 'FAQs',
-				path: '#',
-			},
+			// contact: {
+			// 	label: 'Contact',
+			// 	path: '#',
+			// },
+			// faqs: {
+			// 	label: 'FAQs',
+			// 	path: '#',
+			// },
 		},
 	},
 }
