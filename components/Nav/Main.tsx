@@ -30,7 +30,9 @@ const NavMain: FC<NavMain> = (props) => (
 						passHref
 					>
 						<a className="group text-lg transition-all duration-150 hover:font-bold hover:drop-shadow-[var(--shadow-color)]">
-							<span className="group-hover:scale-x-2 block">{route.label}</span>
+							<span className="block group-hover:translate-x-1 group-hover:scale-x-105">
+								{route.label}
+							</span>
 						</a>
 					</Link>
 				</li>

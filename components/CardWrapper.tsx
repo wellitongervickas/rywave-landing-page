@@ -8,7 +8,9 @@ interface CardWrapper {
 }
 
 const CardWrapper: FC<CardWrapper> = ({ children, className }) => (
-	<div className={classnames.merge([className, 'bg-offwhite'])}>{children}</div>
+	<div className={classnames.merge([className, 'bg-offwhite shadow-lg'])}>
+		{children}
+	</div>
 )
 
 export default CardWrapper

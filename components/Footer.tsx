@@ -15,7 +15,7 @@ interface Footer {
 const copyText = [new Date().getFullYear(), appConfig.copyright].join(' ')
 
 const Footer: FC<Footer> = ({ className }) => (
-	<footer className={classnames.merge([className, 'pb-[6.56rem]'])}>
+	<footer className={classnames.merge([className, 'bg-offwhite pb-[6.56rem]'])}>
 		<div className="space-y-[1.65rem] pt-[4.8rem] container">
 			<Logo width={150} height={32} />
 			<div className="grid grid-cols-2">

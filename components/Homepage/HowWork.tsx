@@ -45,7 +45,7 @@ const HowWork: FC<HowWork> = () => {
 				{topics.map((topic, index) => (
 					<CardWrapper key={index} className="col-span-1 space-y-6 p-4">
 						<h3 className="text-xl">{topic.title}</h3>
-						<ul>
+						<ul className="text-gray-stroke list-inside list-disc">
 							{topic.topics.map((topic, topicIndex) => (
 								<li key={topicIndex}>{topic}</li>
 							))}

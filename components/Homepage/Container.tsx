@@ -1,6 +1,9 @@
 import type { FC } from 'react'
+
 import CallToAction from '@components/Homepage/CallToAction'
 import HowWork from '@components/Homepage/HowWork'
+import SpaceCreators from '@components/Homepage/SpaceCreators'
+import FAQ from '@components/Homepage/FAQ'
 
 interface HomepageContainer {}
 
@@ -9,6 +12,10 @@ const HomepageContainer: FC<HomepageContainer> = () => (
 		<div className="space-y-8 container">
 			<CallToAction />
 			<HowWork />
+		</div>
+		<div className="container">
+			<SpaceCreators />
+			<FAQ />
 		</div>
 	</div>
 )
