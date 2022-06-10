@@ -23,7 +23,7 @@ const VerticalNav: FC<VerticalNav> = ({ className, routes, title }) => (
 			`}
 		</style>
 		<div className={classnames.merge([className, 'space-y-[1.43rem]'])}>
-			<h4 className="text-base font-normal">{title}</h4>
+			<h4 className="font-astrospace text-base font-normal">{title}</h4>
 			<ul className="grid grid-flow-row auto-rows-auto">
 				{Object.values(routes).map((route, index) => (
 					<li key={index}>

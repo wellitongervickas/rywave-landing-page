@@ -32,6 +32,12 @@ const App = ({ Component, pageProps }: App) => (
 				body {
 					@apply font-montserrat bg-gray-darkness overflow-x-hidden text-white;
 				}
+
+				@font-face {
+					font-family: 'AstroSpace';
+					src: url('/assets/fonts/astro-space.otf');
+					font-style: normal;
+				}
 			`}
 		</style>
 		<Layout>

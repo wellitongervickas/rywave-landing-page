@@ -18,7 +18,7 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 				'text-center lg:order-none lg:col-span-1 lg:items-start lg:text-left',
 			])}
 		>
-			<h1 className="text-7xl font-black leading-[4.5rem]">
+			<h1 className="font-astrospace text-7xl font-black leading-[4.5rem]">
 				Where Music {` `}
 				<br className="hidden lg:inline" />
 				Meets Crypto
@@ -27,12 +27,22 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 				The first truly open music sharing platform connecting the artist to the
 				listener.
 			</h2>
-			<div className="flex max-w-[36.25rem] flex-col justify-start space-y-4 md:flex-row md:space-y-0 md:space-x-[0.68rem]">
+			<div
+				className={classnames.merge([
+					'flex w-full flex-col justify-start space-y-4 md:flex-row',
+					'md:space-y-0 md:space-x-[0.68rem] lg:max-w-[36.25rem]',
+				])}
+			>
 				<Action />
 			</div>
 			<SocialJoin />
 		</div>
-		<div className="col-span-2 mb-12 flex flex-col items-center space-y-4 px-6 lg:col-span-1 lg:mb-0 lg:items-end lg:px-0 ">
+		<div
+			className={classnames.merge([
+				'col-span-2 mb-12 flex flex-col items-center space-y-4',
+				'px-6 lg:col-span-1 lg:mb-0 lg:items-end lg:px-0',
+			])}
+		>
 			<div className="relative flex flex-row items-end space-x-8">
 				<CardIcon />
 				<CardStar />

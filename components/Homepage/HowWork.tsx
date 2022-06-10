@@ -31,7 +31,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 
 	return (
 		<section className="py-12 lg:py-28">
-			<h2 className="mb-4 text-5xl font-black">
+			<h2 className="font-astrospace mb-4 text-5xl font-black">
 				How doest it
 				<br /> work?
 			</h2>

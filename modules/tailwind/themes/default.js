@@ -1,5 +1,6 @@
 module.exports = {
 	fontFamily: {
+		astrospace: ['AstroSpace', 'sans-serif'],
 		manrope: ['Manrope', 'sans-serif'],
 		montserrat: ['Montserrat', 'sans-serif'],
 	},

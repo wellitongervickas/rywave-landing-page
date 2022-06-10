@@ -3,7 +3,7 @@ import type { FC } from 'react'
 interface CardStar {}
 
 const CardStar: FC<CardStar> = () => (
-	<div className="absolute top-[25%] -left-12 z-[12] !mx-0 !my-0 translate-x-1/2 transform lg:top-[45%]">
+	<div className="absolute top-[25%] -left-12 z-[12] !mx-0 !my-0 translate-x-1/2 transform lg:-left-0 lg:top-[45%]">
 		<svg
 			width="157"
 			height="166"

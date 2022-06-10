@@ -16,7 +16,7 @@ const Action: FC<Action> = ({}) => (
 				'font-manrope',
 				'group flex space-x-2  bg-white py-5 px-9 transition-all duration-150',
 				'text-xl font-bold text-black shadow ring-1 ring-white hover:shadow-inner',
-				'hover:ring-opacity-80',
+				'w-full hover:ring-opacity-80',
 			])}
 		>
 			<span>Are you an Artist?</span>
@@ -34,7 +34,7 @@ const Action: FC<Action> = ({}) => (
 				'font-manrope',
 				'group flex space-x-2 bg-offwhite py-5 px-9 transition-all duration-150',
 				'text-xl font-bold text-white shadow  ring-1 ring-white hover:shadow-inner',
-				'hover:ring-opacity-80',
+				'w-full hover:ring-opacity-80',
 			])}
 		>
 			<span>Become a Member</span>
