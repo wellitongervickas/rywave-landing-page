@@ -6,12 +6,12 @@ const appConfig = {
 	social: [
 		{
 			label: 'Discord',
-			link: '#',
+			link: 'https://discord.gg/SYwtd3CZcQ',
 			image: '/assets/images/social/discord.svg',
 		},
 		{
 			label: 'Twitter',
-			link: '#',
+			link: 'https://twitter.com/rywavemusic',
 			image: '/assets/images/social/twitter.svg',
 		},
 		{
@@ -21,12 +21,12 @@ const appConfig = {
 		},
 		{
 			label: 'Linkedin',
-			link: '#',
+			link: 'https://www.linkedin.com/company/rywave/',
 			image: '/assets/images/social/linkedin.svg',
 		},
 		{
 			label: 'Instagram',
-			link: '#',
+			link: 'https://www.instagram.com/rywavemusic/',
 			image: '/assets/images/social/instagram.svg',
 		},
 	],
