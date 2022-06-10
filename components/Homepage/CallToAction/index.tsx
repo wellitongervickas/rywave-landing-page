@@ -11,14 +11,14 @@ import classnames from '@modules/handlers/classnames'
 interface HomepageCTA {}
 
 const HomepageCTA: FC<HomepageCTA> = ({}) => (
-	<section className="grid grid-cols-2 lg:pt-[8.6rem]">
+	<section className="grid grid-cols-2 pt-12 lg:pt-[8.6rem]">
 		<div
 			className={classnames.merge([
 				'order-2 col-span-2 flex flex-col items-center space-y-[3.62rem]',
 				'text-center lg:order-none lg:col-span-1 lg:items-start lg:text-left',
 			])}
 		>
-			<h1 className="font-astrospace text-7xl font-black leading-[4.5rem]">
+			<h1 className="font-astrospace text-5xl font-black leading-[4.5rem] lg:text-7xl">
 				Where Music {` `}
 				<br className="hidden lg:inline" />
 				Meets Crypto
@@ -39,8 +39,8 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 		</div>
 		<div
 			className={classnames.merge([
-				'col-span-2 mb-12 flex flex-col items-center space-y-4',
-				'px-6 lg:col-span-1 lg:mb-0 lg:items-end lg:px-0',
+				'col-span-2 flex flex-col items-center space-y-4 sm:mb-12',
+				'mb-24 px-6 lg:col-span-1 lg:mb-0 lg:items-end lg:px-0',
 			])}
 		>
 			<div className="relative flex flex-row items-end space-x-8">
