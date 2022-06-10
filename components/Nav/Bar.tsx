@@ -53,10 +53,10 @@ const Navbar: FC = () => {
 				<div className="absolute top-0 right-0 z-[998] h-screen w-screen bg-black bg-opacity-60" />
 				<div
 					className={classnames.merge([
-						open ? 'right-0' : 'right-full',
+						open ? 'right-0 blur-none' : 'right-full blur',
 						'fixed top-0 z-[999] flex transition-all duration-300',
 						'right-0 h-screen w-screen flex-col space-y-6',
-						'bg-black p-12 shadow md:hidden',
+						'bg-black bg-opacity-90 p-12 shadow md:hidden',
 					])}
 				>
 					<div className="relative flex justify-end">
