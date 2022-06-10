@@ -40,8 +40,8 @@ const Phases: FC<Phases> = ({ phases, className }) => {
 							className={classnames.merge([
 								'absolute z-0 animate-pulse delay-200',
 								phase.icon === 'pulse'
-									? '-top-16 -right-16'
-									: '-bottom-16 -right-16',
+									? '-top-16 lg:-right-16'
+									: '-bottom-16 lg:-right-16',
 							])}
 						>
 							<Image

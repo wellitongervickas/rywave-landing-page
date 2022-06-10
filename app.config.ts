@@ -1,7 +1,7 @@
 const appConfig = {
 	name: 'Rywave',
 	description:
-		'The first trully open music sharing platform connecting the artist to the listener.',
+		'The first truly open music sharing platform connecting the artist to the listener.',
 	copyright: 'Rywave | Powered by Rywave',
 	social: [
 		{

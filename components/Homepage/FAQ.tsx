@@ -14,7 +14,7 @@ const HomepageFaq: FC<HomepageFaq> = ({}) => {
 		},
 		{
 			label: '02',
-			title: 'How do you uzilize NFTs?',
+			title: 'How do you utilize NFTs?',
 			text: '<p>NFTs serve as the perfect utilizor of music tracks by providing ownership, exclusivity, tying the digital asset to the physical (tickets). On the Discotheque, NFTs can be streamed, shared or subject to licensing agreements.</p>',
 		},
 		{

@@ -4,12 +4,12 @@ import type { FC } from 'react'
 interface CardPlayer {}
 
 const CardPlayer: FC<CardPlayer> = () => (
-	<div className="group relative h-[160px] w-[434px]">
+	<div className="group relative h-[120px] w-[360px] lg:h-[160px] lg:w-[434px]">
 		<div className="absolute z-10">
 			<Image
 				src="/assets/images/homepage/card-player.png"
 				alt="Audio Player"
-				layout="fixed"
+				layout="intrinsic"
 				width={434}
 				height={160}
 				priority
@@ -19,7 +19,7 @@ const CardPlayer: FC<CardPlayer> = () => (
 			<Image
 				src="/assets/images/homepage/card-player-square.png"
 				alt="Audio Player Square"
-				layout="fixed"
+				layout="intrinsic"
 				loading="lazy"
 				width={434}
 				height={160}

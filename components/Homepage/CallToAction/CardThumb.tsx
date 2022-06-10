@@ -4,12 +4,12 @@ import type { FC } from 'react'
 interface CardThumb {}
 
 const CardThumb: FC<CardThumb> = () => (
-	<div className="group relative h-[465px] w-[280px]">
+	<div className="group relative h-[325px] w-[210px] lg:h-[465px] lg:w-[280px]">
 		<div className="absolute z-10">
 			<Image
 				src="/assets/images/homepage/card-thumb.png"
 				alt="Audio Thumb"
-				layout="fixed"
+				layout="intrinsic"
 				width={280}
 				height={465}
 				priority
@@ -19,7 +19,7 @@ const CardThumb: FC<CardThumb> = () => (
 			<Image
 				src="/assets/images/homepage/card-thumb-square.png"
 				alt="Audio Thumb Square"
-				layout="fixed"
+				layout="intrinsic"
 				width={280}
 				height={465}
 				priority

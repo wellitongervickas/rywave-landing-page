@@ -9,7 +9,7 @@ const appRoutes = {
 			path: '#',
 		},
 		white_paper: {
-			label: 'WhitePaper',
+			label: 'Whitepaper',
 			path: '#',
 		},
 	},
@@ -20,7 +20,7 @@ const appRoutes = {
 				path: '#',
 			},
 			white_paper: {
-				label: 'WhitePaper',
+				label: 'Whitepaper',
 				path: '#',
 			},
 		},

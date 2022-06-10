@@ -25,7 +25,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 		{
 			title: 'Tools',
 			image: '/assets/images/homepage/how-work/tools.svg',
-			items: ['Exclusive Music Programs', 'Inshight Portfolio', 'Design Team'],
+			items: ['Exclusive Music Programs', 'Insight Portfolio', 'Design Team'],
 		},
 	])
 

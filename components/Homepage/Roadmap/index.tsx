@@ -14,7 +14,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 			items: [
 				{
 					done: true,
-					text: 'Building the artiscic community with ongoing contests and events',
+					text: 'Building the artistic community with ongoing contests and events',
 				},
 				{
 					done: true,
@@ -32,7 +32,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 				},
 				{
 					done: false,
-					text: 'Unlocking all the utilities & Tools',
+					text: 'Unlocking all the Utilities & Tools',
 				},
 			],
 		},
@@ -47,7 +47,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 				},
 				{
 					done: false,
-					text: 'First exclusive events with NFT as ticket',
+					text: 'First exclusive events with NFT as a ticket',
 				},
 			],
 		},
