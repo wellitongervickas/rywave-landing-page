@@ -72,7 +72,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 
 	return (
 		<div className="relative">
-			<div className="absolute -bottom-1/3 left-0 h-[800px] w-[800px] opacity-60">
+			<div className="absolute -bottom-1/3 left-0 hidden h-[800px] w-[800px] opacity-60 lg:block">
 				<Image
 					src="/assets/images/rectangle.png"
 					alt=""
@@ -104,7 +104,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 					</div>
 				</div>
 			</section>
-			<div className="absolute top-0 right-0 h-[800px] w-[800px] opacity-60">
+			<div className="absolute top-0 right-0 hidden h-[800px] w-[800px] opacity-60 lg:block">
 				<Image
 					src="/assets/images/ellipse.png"
 					alt=""
