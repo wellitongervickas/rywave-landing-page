@@ -36,14 +36,16 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 				<br />
 				for Creators
 			</h2>
-			<div className="grid grid-cols-1 gap-5">
+			<div className="space-y-5">
 				{topics.map((topic, index) => (
 					<CardWrapper
 						key={index}
-						className="group col-span-1 flex items-center gap-16 p-16"
+						className="group col-span-1 flex flex-col items-center gap-16 p-16 lg:flex-row"
 					>
-						{topic.layout === 'left' && <SpaceImage {...topic} />}
-						<div className="space-y-6">
+						{topic.layout === 'left' && (
+							<SpaceImage className="order-1 lg:order-none" {...topic} />
+						)}
+						<div className="order-2 space-y-6 lg:order-none">
 							<h3 className="text-xl text-[1.75rem] font-black">
 								{topic.title}
 							</h3>
@@ -52,7 +54,9 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 								dangerouslySetInnerHTML={{ __html: topic.text }}
 							/>
 						</div>
-						{topic.layout === 'right' && <SpaceImage {...topic} />}
+						{topic.layout === 'right' && (
+							<SpaceImage className="order-1 lg:order-none" {...topic} />
+						)}
 					</CardWrapper>
 				))}
 			</div>

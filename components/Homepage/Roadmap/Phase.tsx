@@ -12,9 +12,9 @@ const Phase: FC<Phase> = ({ done, text }) => {
 			<div className="flex flex-none items-start justify-center">
 				<span
 					className={classnames.merge([
-						'inline-block w-6',
+						'inline-block',
 						done
-							? 'mt-2 h-[0.1rem] bg-green-400'
+							? 'mt-2 h-[0.1rem] w-4 bg-green-400'
 							: 'border-gray-stroke mt-1 h-4 w-4 rounded border',
 					])}
 				/>

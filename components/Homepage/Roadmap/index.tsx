@@ -70,16 +70,22 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 	const endTopics = useMemo(() => [topics[1], topics[2]], [topics])
 
 	return (
-		<section className="py-28">
-			<div className="container">
-				<div>
-					<Phases phases={startTopics} className="flex justify-between" />
+		<section className="py-12 lg:py-28">
+			<div className="flex flex-col space-y-6 container  lg:space-y-0 ">
+				<div className="order-2 lg:order-none">
+					<Phases
+						phases={startTopics}
+						className="space-y-6 lg:flex lg:justify-between lg:space-y-0"
+					/>
 				</div>
-				<div className="pt-20 pb-16 text-center">
+				<div className="order-1 pt-20 pb-16 text-center lg:order-none">
 					<h2 className="mb-12 text-5xl font-black">Roadmap</h2>
 				</div>
-				<div>
-					<Phases phases={endTopics} className="flex justify-evenly" />
+				<div className="order-3 lg:order-none">
+					<Phases
+						phases={endTopics}
+						className="space-y-6 lg:flex lg:justify-evenly lg:space-y-0"
+					/>
 				</div>
 			</div>
 		</section>

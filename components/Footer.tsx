@@ -18,9 +18,9 @@ const Footer: FC<Footer> = ({ className }) => (
 	<footer className={classnames.merge([className, 'bg-offwhite pb-[6.56rem]'])}>
 		<div className="space-y-[1.65rem] pt-[4.8rem] container">
 			<Logo width={150} height={32} />
-			<div className="grid grid-cols-2">
-				<SocialJoin className="col-span-1" />
-				<div className="col-span-1 flex items-start">
+			<div className="grid grid-cols-2 gap-12 lg:gap-0">
+				<SocialJoin className="col-span-2 lg:col-span-1" />
+				<div className="col-span-2 flex items-start lg:col-span-1">
 					<VerticalNav
 						title="Company"
 						routes={routes.navFooter.company}

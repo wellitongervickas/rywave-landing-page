@@ -11,7 +11,7 @@ interface HomepageCTA {}
 
 const HomepageCTA: FC<HomepageCTA> = ({}) => (
 	<section className="grid grid-cols-2 pt-[8.6rem]">
-		<div className="col-span-1 space-y-[3.62rem]">
+		<div className="col-span-2 space-y-[3.62rem] lg:col-span-1">
 			<h1 className="text-7xl font-black leading-[4.5rem]">
 				Where Music
 				<br />
@@ -26,7 +26,7 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 			</div>
 			<SocialJoin />
 		</div>
-		<div className="col-span-1 flex flex-col items-end space-y-4">
+		<div className="col-span-2 flex flex-col items-end space-y-4 lg:col-span-1">
 			<div className="relative flex flex-row items-end space-x-8">
 				<CardIcon />
 				<CardStar />

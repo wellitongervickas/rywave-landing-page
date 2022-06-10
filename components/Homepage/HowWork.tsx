@@ -30,7 +30,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 	])
 
 	return (
-		<section className="py-28">
+		<section className="py-12 lg:py-28">
 			<h2 className="mb-4 text-5xl font-black">
 				How doest it
 				<br /> work?
@@ -45,9 +45,12 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 					and direct interactions between the artist and the listener.
 				</p>
 			</div>
-			<div className="grid grid-cols-3 space-x-5">
+			<div className="grid grid-cols-3 space-y-5 lg:space-y-0 lg:space-x-5">
 				{topics.map((topic, index) => (
-					<CardWrapper key={index} className="col-span-1 space-y-6 p-4">
+					<CardWrapper
+						key={index}
+						className="col-span-3 space-y-6 p-4 lg:col-span-1"
+					>
 						<div className="bg-gray-darkness flex h-[3.12rem] w-[3.12rem] items-center justify-center">
 							<Image
 								src={topic.image}
