@@ -12,11 +12,13 @@ interface HomepageContainer {}
 
 const HomepageContainer: FC<HomepageContainer> = () => (
 	<>
-		<div className="absolute top-0 h-screen w-screen">
+		<div className="absolute top-0 h-full w-full">
 			<Image
 				src="/assets/images/main-bg.png"
 				alt=""
 				layout="fill"
+				objectFit="cover"
+				objectPosition="center"
 				className="relative z-[-1] opacity-90"
 				priority
 			/>

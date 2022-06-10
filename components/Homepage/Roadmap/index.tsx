@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useRef, useMemo } from 'react'
 
 import Phases, { PhaseContainer } from '@components/Homepage/Roadmap/Phases'
+import Image from '@components/Image'
 
 interface HomepageRoadmap {}
 
@@ -70,25 +71,49 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 	const endTopics = useMemo(() => [topics[1], topics[2]], [topics])
 
 	return (
-		<section className="py-12 lg:py-28">
-			<div className="flex flex-col space-y-6 container lg:space-y-0">
-				<div className="order-2 lg:order-none">
-					<Phases
-						phases={startTopics}
-						className="child space-y-6 lg:flex lg:justify-between lg:space-y-0"
-					/>
-				</div>
-				<div className="order-1 flex items-center justify-center text-center lg:order-none lg:pt-12 lg:pb-16">
-					<h2 className="mb-12 text-5xl font-black lg:!mb-0">Roadmap</h2>
-				</div>
-				<div className="order-3 lg:order-none">
-					<Phases
-						phases={endTopics}
-						className="space-y-6 lg:flex lg:justify-evenly lg:space-y-16"
-					/>
-				</div>
+		<div className="relative">
+			<div className="absolute -bottom-1/3 left-0 h-[800px] w-[800px] opacity-60">
+				<Image
+					src="/assets/images/rectangle.png"
+					alt=""
+					layout="responsive"
+					width={800}
+					height={800}
+					className="relative z-[-1] opacity-90"
+					priority
+				/>
 			</div>
-		</section>
+			<section className="py-12 lg:py-28">
+				<div className="flex flex-col space-y-6 container lg:space-y-0">
+					<div className="order-2 lg:order-none">
+						<Phases
+							phases={startTopics}
+							className="child space-y-6 lg:flex lg:justify-between lg:space-y-0"
+						/>
+					</div>
+					<div className="order-1 flex items-center justify-center text-center lg:order-none lg:pt-12 lg:pb-16">
+						<h2 className="mb-12 text-5xl font-black lg:!mb-0">Roadmap</h2>
+					</div>
+					<div className="order-3 lg:order-none">
+						<Phases
+							phases={endTopics}
+							className="space-y-6 lg:flex lg:justify-evenly lg:space-y-16"
+						/>
+					</div>
+				</div>
+			</section>
+			<div className="absolute top-0 right-0 h-[800px] w-[800px] opacity-60">
+				<Image
+					src="/assets/images/ellipse.png"
+					alt=""
+					layout="responsive"
+					width={800}
+					height={800}
+					className="relative z-[-1] opacity-90"
+					priority
+				/>
+			</div>
+		</div>
 	)
 }
 
