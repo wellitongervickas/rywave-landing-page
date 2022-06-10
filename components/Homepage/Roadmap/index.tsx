@@ -79,7 +79,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 					/>
 				</div>
 				<div className="order-1 flex items-center justify-center text-center lg:order-none lg:pt-12 lg:pb-16">
-					<h2 className="m-0 text-5xl font-black sm:mb-12 lg:!mb-0">Roadmap</h2>
+					<h2 className="mb-12 text-5xl font-black lg:!mb-0">Roadmap</h2>
 				</div>
 				<div className="order-3 lg:order-none">
 					<Phases

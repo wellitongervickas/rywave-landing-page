@@ -17,7 +17,7 @@ const HomepageContainer: FC<HomepageContainer> = () => (
 				src="/assets/images/main-bg.png"
 				alt=""
 				layout="fill"
-				className="relative z-[-1]   opacity-90"
+				className="relative z-[-1] opacity-90"
 				priority
 			/>
 		</div>
