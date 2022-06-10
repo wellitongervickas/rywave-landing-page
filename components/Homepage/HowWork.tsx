@@ -31,11 +31,11 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 
 	return (
 		<section className="py-12 lg:py-28">
-			<h2 className="font-astrospace mb-4 text-5xl font-black">
-				How doest it
+			<h2 className="mb-4 font-astrospace text-5xl font-black">
+				How does it
 				<br className="hidden lg:block" /> work?
 			</h2>
-			<div className="text-gray-stroke mb-12 space-y-2 text-xl">
+			<div className="mb-12 space-y-2 text-xl text-gray-stroke">
 				<p>
 					At Rywave, we are igniting a revolution in music sharing and
 					development.
@@ -51,7 +51,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 						key={index}
 						className="col-span-3 space-y-6 p-4 lg:col-span-1"
 					>
-						<div className="bg-gray-darkness flex h-[3.12rem] w-[3.12rem] items-center justify-center">
+						<div className="flex h-[3.12rem] w-[3.12rem] items-center justify-center bg-gray-darkness">
 							<Image
 								src={topic.image}
 								alt={topic.title}
@@ -61,7 +61,7 @@ const HomepageHowWork: FC<HomepageHowWork> = () => {
 							/>
 						</div>
 						<h3 className="text-xl">{topic.title}</h3>
-						<ul className="text-gray-stroke list-inside list-disc">
+						<ul className="list-inside list-disc text-gray-stroke">
 							{topic.items.map((item, itemIndex) => (
 								<li key={itemIndex}>{item}</li>
 							))}
