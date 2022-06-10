@@ -45,8 +45,8 @@ const Accordion: FC<Accordion> = ({ opened, className, children, heading }) => {
 					onClick={doToggleAccordion}
 				>
 					<div className="flex items-center space-x-9">
-						<span className="text-4xl">{heading.label}</span>
-						<h4 className="text-lg">{heading.title}</h4>
+						<span className="text-lg lg:text-4xl">{heading.label}</span>
+						<h4 className="text-sm lg:text-lg">{heading.title}</h4>
 					</div>
 					<div>
 						<div

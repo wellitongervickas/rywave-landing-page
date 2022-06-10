@@ -42,8 +42,8 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 					<CardWrapper
 						key={index}
 						className={classnames.merge([
-							'group col-span-1 p-8 md:p-16',
-							'grid grid-cols-7 items-center justify-center gap-16',
+							'group p-8 md:p-16',
+							'grid grid-cols-7 items-center justify-center gap-6 lg:gap-16',
 						])}
 					>
 						{topic.layout === 'left' && (

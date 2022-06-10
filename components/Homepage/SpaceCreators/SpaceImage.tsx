@@ -13,7 +13,7 @@ const SpaceImage: FC<SpaceImage> = ({ image, title, className }) => (
 	<div
 		className={classnames.merge([
 			className,
-			'flex h-full w-full items-center justify-center',
+			'flex items-center justify-center',
 		])}
 	>
 		<div
