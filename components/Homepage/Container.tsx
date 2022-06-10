@@ -19,7 +19,7 @@ const HomepageContainer: FC<HomepageContainer> = () => (
 			className="absolute z-[-1] opacity-90"
 			priority
 		/>
-		<div>
+		<div className="relative z-10">
 			<div className="space-y-8 container">
 				<CallToAction />
 				<HowWork />

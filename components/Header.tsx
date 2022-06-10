@@ -13,7 +13,7 @@ const Header: FC<Header> = ({ className }) => (
 	<header
 		className={classnames.merge([
 			className,
-			'flex  items-center justify-between text-white container',
+			'relative z-50 flex items-center justify-between text-white container',
 		])}
 	>
 		<Logo />
