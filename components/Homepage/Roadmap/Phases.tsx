@@ -1,45 +1,58 @@
 import type { FC } from 'react'
+
 import CardWrapper from '@components/CardWrapper'
+import Phase from '@components/Homepage/Roadmap/Phase'
+import Image from '@components/Image'
 import classnames from '@modules/handlers/classnames'
+
+export interface PhaseContainer {
+	title: string
+	direction?: 'bottom' | 'right' | 'top'
+	icon?: 'pulse' | 'radial'
+	items: {
+		done: boolean
+		text: string
+	}[]
+}
 
 interface Phases {
 	className?: string
-	phases: {
-		title: string
-		items: {
-			done: boolean
-			text: string
-		}[]
-	}[]
+	phases: PhaseContainer[]
 }
 
 const Phases: FC<Phases> = ({ phases, className }) => {
 	return (
 		<div className={className}>
 			{phases.map((phase, index) => (
-				<CardWrapper key={index} className="max-w-[24.68rem] p-4">
-					<h3 className="pb-3 text-lg font-normal">{phase.title}</h3>
-					<div>
-						{phase.items.map((item, itemIndex) => (
-							<div key={itemIndex} className="flex justify-start space-x-2">
-								<div className="flex flex-none items-start justify-center">
-									<span
-										className={classnames.merge([
-											'inline-block h-full w-6',
-											item.done
-												? 'mt-2 h-[0.1rem] bg-green-400'
-												: 'border-gray-stroke mt-1 h-4 w-4 rounded border',
-										])}
-									/>
-								</div>
-								<div
-									className="text-gray-stroke flex-1"
-									dangerouslySetInnerHTML={{ __html: item.text }}
-								/>
+				<div key={index} className="relative">
+					<CardWrapper className="relative z-[1] max-w-[24.68rem] p-4">
+						<div>
+							<h3 className="pb-3 text-lg font-normal">{phase.title}</h3>
+							<div>
+								{phase.items.map((item, itemIndex) => (
+									<Phase key={itemIndex} {...item} />
+								))}
 							</div>
-						))}
-					</div>
-				</CardWrapper>
+						</div>
+					</CardWrapper>
+					{phase.icon && (
+						<div
+							className={classnames.merge([
+								'absolute z-0 animate-pulse delay-200',
+								phase.icon === 'pulse'
+									? '-top-16 -right-16'
+									: '-bottom-16 -right-16',
+							])}
+						>
+							<Image
+								src={`/assets/images/homepage/roadmap/${phase.icon}.svg`}
+								alt={phase.title}
+								width={phase.icon === 'pulse' ? 175 : 115}
+								height={phase.icon === 'pulse' ? 175 : 115}
+							/>
+						</div>
+					)}
+				</div>
 			))}
 		</div>
 	)

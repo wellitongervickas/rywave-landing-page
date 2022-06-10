@@ -1,14 +1,16 @@
 import type { FC } from 'react'
 import { useRef, useMemo } from 'react'
 
-import Phases from '@components/Homepage/Roadmap/Phases'
+import Phases, { PhaseContainer } from '@components/Homepage/Roadmap/Phases'
 
 interface HomepageRoadmap {}
 
 const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
-	const { current: topics } = useRef([
+	const { current: topics } = useRef<PhaseContainer[]>([
 		{
 			title: 'Phase 1',
+			direction: 'bottom',
+			icon: 'pulse',
 			items: [
 				{
 					done: true,
@@ -22,6 +24,7 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 		},
 		{
 			title: 'Phase 2',
+			direction: 'right',
 			items: [
 				{
 					done: false,
@@ -35,6 +38,8 @@ const HomepageRoadmap: FC<HomepageRoadmap> = ({}) => {
 		},
 		{
 			title: 'Phase 3',
+			direction: 'top',
+			icon: 'radial',
 			items: [
 				{
 					done: false,
