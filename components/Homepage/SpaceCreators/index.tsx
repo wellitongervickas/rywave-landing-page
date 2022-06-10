@@ -33,7 +33,7 @@ const HomepageSpaceCreators: FC<HomepageSpaceCreators> = () => {
 	return (
 		<section className="py-20 lg:py-28">
 			<h2 className="mb-12 font-astrospace text-3xl font-black md:text-5xl">
-				A unique space
+				A unique space{` `}
 				<br className="hidden lg:block" />
 				for Creators
 			</h2>
