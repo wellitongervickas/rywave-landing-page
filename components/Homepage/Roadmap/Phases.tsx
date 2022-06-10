@@ -21,11 +21,33 @@ interface Phases {
 }
 
 const Phases: FC<Phases> = ({ phases, className }) => {
+	const iconsSizes = {
+		radial: [115, 115],
+		pulse: [175, 175],
+	}
+
+	const directionSizes = {
+		bottom: [480, 210],
+		right: [200, 10],
+		top: [5, 336],
+	}
+
+	const directionClasses = {
+		bottom: ['-left-16 top-[70%]'],
+		right: ['-right-36 top-24 z-[12]'],
+		top: ['right-12 bottom-[90%] z-[12]'],
+	}
+
 	return (
 		<div className={className}>
 			{phases.map((phase, index) => (
 				<div key={index} className="relative">
-					<CardWrapper className="relative z-[1] max-w-[24.68rem] p-4">
+					<CardWrapper
+						className={classnames.merge([
+							'relative z-[1] w-full p-4 lg:max-w-[24.68rem]',
+							!phase.direction && 'relative lg:-top-24',
+						])}
+					>
 						<div>
 							<h3 className="pb-3 text-lg font-normal">{phase.title}</h3>
 							<div>
@@ -47,8 +69,23 @@ const Phases: FC<Phases> = ({ phases, className }) => {
 							<Image
 								src={`/assets/images/homepage/roadmap/${phase.icon}.svg`}
 								alt={phase.title}
-								width={phase.icon === 'pulse' ? 175 : 115}
-								height={phase.icon === 'pulse' ? 175 : 115}
+								width={iconsSizes[phase.icon][0]}
+								height={iconsSizes[phase.icon][1]}
+							/>
+						</div>
+					)}
+					{phase.direction && (
+						<div
+							className={classnames.merge([
+								'absolute hidden lg:block',
+								directionClasses[phase.direction],
+							])}
+						>
+							<Image
+								src={`/assets/images/homepage/roadmap/${phase.direction}.png`}
+								alt={phase.title}
+								width={directionSizes[phase.direction][0]}
+								height={directionSizes[phase.direction][1]}
 							/>
 						</div>
 					)}
