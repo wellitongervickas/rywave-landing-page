@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": ["plugin:react-hooks/recommended", "next/core-web-vitals"],
+  "plugins": ["testing-library", "react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
+}
