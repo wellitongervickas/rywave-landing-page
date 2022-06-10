@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-interface Whitepaper {
+interface TermsOfUse {
 	title: string
 }
 
@@ -12,13 +12,13 @@ export function getStaticProps() {
 	}
 }
 
-const Whitepaper: NextPage<Whitepaper> = () => {
+const TermsOfUse: NextPage<TermsOfUse> = () => {
 	return (
 		<div className="py-20 container">
-			<h2 className="mb-6 text-center font-astrospace text-3xl font-black md:text-5xl">
+			<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 				Terms of Use
 			</h2>
-			<p className="mb-20 text-center text-gray-stroke">
+			<p className="mb-20 text-gray-stroke">
 				Welcome to Rywave`s terms of use document!
 			</p>
 			<div className="space-y-6">
@@ -68,15 +68,15 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 					Rywave for your own personal use subjected to restrictions set in
 					these terms and conditions.
 				</p>
-				<p className="text-gray-stroke">
-					<span>You must not: </span>
+				<div className="text-gray-stroke">
+					<p>You must not: </p>
 					<ul>
 						<li>- Republish material from Rywave </li>
 						<li>- Sell, rent, or sub-license material from Rywave </li>
 						<li>- Reproduce, duplicate or copy material from Rywave </li>
 						<li>- Redistribute content from Rywave</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					This Agreement shall begin on the date hereof. Our Terms and
 					Conditions were created with the help of the Terms And Conditions
@@ -99,8 +99,8 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 					Comments which can be considered inappropriate, offensive, or causes a
 					breach of these Terms and Conditions.
 				</p>
-				<p className="text-gray-stroke">
-					<span>You warrant and represent that:</span>
+				<div className="text-gray-stroke">
+					<p>You warrant and represent that:</p>
 					<ul>
 						<li>
 							- You are entitled to post the Comments on our website and have
@@ -121,7 +121,7 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 							custom or present commercial activities or unlawful activity.
 						</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					You hereby grant Rywave a non-exclusive license to use, reproduce,
 					edit and authorize others to use, reproduce and edit any of your
@@ -130,11 +130,11 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Hyperlinking to our Content</h3>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
-					<span>
+				<div className="text-gray-stroke">
+					<p>
 						The following organizations may link to our Website without prior
 						written approval:
-					</span>
+					</p>
 					<ul>
 						<li>- Government agencies;</li>
 						<li>- Search engines;</li>
@@ -150,7 +150,7 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 							groups which may not hyperlink to our Web site.
 						</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					These organizations may link to our home page, to publications, or to
 					other Website information so long as the link: (a) is not in any way
@@ -158,11 +158,11 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 					approval of the linking party and its products and/or services; and
 					(c) fits within the context of the linking party`s site.
 				</p>
-				<p className="text-gray-stroke">
-					<span>
+				<div className="text-gray-stroke">
+					<p>
 						We may consider and approve other link requests from the following
 						types of organizations:
-					</span>
+					</p>
 					<ul>
 						<li>
 							- commonly-known consumer and/or business information sources;
@@ -173,7 +173,7 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 						<li>- accounting, law, and consulting firms; and</li>
 						<li>- educational institutions and trade associations.</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					We will approve link requests from these organizations if we decide
 					that: (a) the link would not make us look unfavorably to ourselves or
@@ -197,10 +197,8 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 					and a list of the URLs on our site to which you would like to link.
 					Wait 2-3 weeks for a response.
 				</p>
-				<p className="text-gray-stroke">
-					<span>
-						Approved organizations may hyperlink to our Website as follows:
-					</span>
+				<div className="text-gray-stroke">
+					<p>Approved organizations may hyperlink to our Website as follows:</p>
 					<ul>
 						<li>- By use of our corporate name; or</li>
 						<li>
@@ -212,7 +210,7 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 							linking party`s site.
 						</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					No use of Rywave`Ps logo or other artwork will be allowed for linking
 					absent a trademark license agreement.
@@ -246,12 +244,12 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Disclaimer</h3>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
-					<span>
-						‍To the maximum extent permitted by applicable law, we exclude all
+				<div className="text-gray-stroke">
+					<p>
+						To the maximum extent permitted by applicable law, we exclude all
 						representations, warranties, and conditions relating to our website
 						and the use of this website. Nothing in this disclaimer will:
-					</span>
+					</p>
 					<ul>
 						<li>
 							- limit or exclude our or your liability for death or personal
@@ -270,7 +268,7 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 							under applicable law.
 						</li>
 					</ul>
-				</p>
+				</div>
 				<p className="text-gray-stroke">
 					The limitations and prohibitions of liability set in this Section and
 					elsewhere in this disclaimer: (a) are subject to the preceding
@@ -287,4 +285,4 @@ const Whitepaper: NextPage<Whitepaper> = () => {
 		</div>
 	)
 }
-export default Whitepaper
+export default TermsOfUse

@@ -29,10 +29,10 @@ const appRoutes = {
 				label: 'Terms of Use',
 				path: '/terms-of-use',
 			},
-			// contact: {
-			// 	label: 'Contact',
-			// 	path: '#',
-			// },
+			contact: {
+				label: 'Contact',
+				path: '/contact',
+			},
 			// faqs: {
 			// 	label: 'FAQs',
 			// 	path: '#',
