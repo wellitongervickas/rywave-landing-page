@@ -71,6 +71,7 @@ const Phases: FC<Phases> = ({ phases, className }) => {
 								alt={phase.title}
 								width={iconsSizes[phase.icon][0]}
 								height={iconsSizes[phase.icon][1]}
+								loading="lazy"
 							/>
 						</div>
 					)}
@@ -86,6 +87,7 @@ const Phases: FC<Phases> = ({ phases, className }) => {
 								alt={phase.title}
 								width={directionSizes[phase.direction][0]}
 								height={directionSizes[phase.direction][1]}
+								loading="lazy"
 							/>
 						</div>
 					)}
