@@ -3,6 +3,9 @@ const appConfig = {
 	description:
 		'The first truly open music sharing platform connecting the artist to the listener.',
 	copyright: 'Rywave | Powered by Rywave',
+	emails: {
+		contact: 'team@rywave.io',
+	},
 	social: [
 		{
 			label: 'Discord',

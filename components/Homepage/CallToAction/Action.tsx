@@ -27,7 +27,7 @@ const Action: FC<Action> = ({}) => (
 			/>
 		</a>
 		<a
-			href="https://linktr.ee/rywave"
+			href="https://discord.gg/SYwtd3CZcQ"
 			rel="noopener noreferrer"
 			target="_blank"
 			className={classnames.merge([

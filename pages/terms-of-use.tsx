@@ -18,11 +18,11 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 			<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 				Terms of Use
 			</h2>
-			<p className="mb-20 text-gray-stroke">
+			<p className="mb-20 text-white">
 				Welcome to Rywave`s terms of use document!
 			</p>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					These terms and conditions outline the rules and regulations for the
 					use of Rywave`s Website, located at
 					<a
@@ -34,12 +34,12 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 					</a>
 					.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					By accessing this website we assume you accept these terms and
 					conditions. Do not continue to use Rywave if you do not agree to take
 					all of the terms and conditions stated on this page.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					The following terminology applies to these Terms and Conditions,
 					Privacy Statement and Disclaimer Notice, and all Agreements:
 					&quot;Client&quot;, &quot;You&quot; and &quot;Your&quot; refers to
@@ -61,14 +61,14 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">License</h3>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					License Unless otherwise stated, Rywave and/or its licensors own the
 					intellectual property rights for all material on Rywave. All
 					intellectual property rights are reserved. You may access this from
 					Rywave for your own personal use subjected to restrictions set in
 					these terms and conditions.
 				</p>
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>You must not: </p>
 					<ul>
 						<li>- Republish material from Rywave </li>
@@ -77,12 +77,12 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						<li>- Redistribute content from Rywave</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					This Agreement shall begin on the date hereof. Our Terms and
 					Conditions were created with the help of the Terms And Conditions
 					Generator and the Privacy Policy Generator.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					Parts of this website offer an opportunity for users to post and
 					exchange opinions and information in certain areas of the website.
 					Rywave does not filter, edit, publish or review Comments prior to
@@ -94,12 +94,12 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 					caused and/or suffered as a result of any use of and/or posting of
 					and/or appearance of the Comments on this website.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					Rywave reserves the right to monitor all Comments and to remove any
 					Comments which can be considered inappropriate, offensive, or causes a
 					breach of these Terms and Conditions.
 				</p>
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>You warrant and represent that:</p>
 					<ul>
 						<li>
@@ -122,7 +122,7 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					You hereby grant Rywave a non-exclusive license to use, reproduce,
 					edit and authorize others to use, reproduce and edit any of your
 					Comments in any and all forms, formats, or media.
@@ -130,7 +130,7 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Hyperlinking to our Content</h3>
 			<div className="space-y-6">
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>
 						The following organizations may link to our Website without prior
 						written approval:
@@ -151,14 +151,14 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					These organizations may link to our home page, to publications, or to
 					other Website information so long as the link: (a) is not in any way
 					deceptive; (b) does not falsely imply sponsorship, endorsement, or
 					approval of the linking party and its products and/or services; and
 					(c) fits within the context of the linking party`s site.
 				</p>
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>
 						We may consider and approve other link requests from the following
 						types of organizations:
@@ -174,7 +174,7 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						<li>- educational institutions and trade associations.</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					We will approve link requests from these organizations if we decide
 					that: (a) the link would not make us look unfavorably to ourselves or
 					to our accredited businesses; (b) the organization does not have any
@@ -182,13 +182,13 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 					the hyperlink compensates the absence of Rywave; and (d) the link is
 					in the context of general resource information.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					These organizations may link to our home page so long as the link: (a)
 					is not in any way deceptive; (b) does not falsely imply sponsorship,
 					endorsement or approval of the linking party and its products or
 					services; and (c) fits within the context of the linking party`s site.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					If you are one of the organizations listed in paragraph 2 above and
 					are interested in linking to our website, you must inform us by
 					sending an e-mail to Rywave. Please include your name, your
@@ -197,7 +197,7 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 					and a list of the URLs on our site to which you would like to link.
 					Wait 2-3 weeks for a response.
 				</p>
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>Approved organizations may hyperlink to our Website as follows:</p>
 					<ul>
 						<li>- By use of our corporate name; or</li>
@@ -211,14 +211,14 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					No use of Rywave`Ps logo or other artwork will be allowed for linking
 					absent a trademark license agreement.
 				</p>
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Content Liability</h3>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					We shall not be held responsible for any content that appears on your
 					Website. You agree to protect and defend us against all claims that is
 					rising on your Website. No link(s) should appear on any Website that
@@ -229,13 +229,13 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Removal of links from our website</h3>
 			<div className="space-y-6">
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					If you find any link on our Website that is offensive for any reason,
 					you are free to contact and inform us at any moment. We will consider
 					requests to remove links but we are not obligated to or so or to
 					respond to you directly.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					We do not ensure that the information on this website is correct, we
 					do not warrant its completeness or accuracy; nor do we promise to
 					ensure that the website remains available or that the material on the
@@ -244,7 +244,7 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 			</div>
 			<h3 className="pt-12 pb-6 text-2xl">Disclaimer</h3>
 			<div className="space-y-6">
-				<div className="text-gray-stroke">
+				<div className="text-white">
 					<p>
 						To the maximum extent permitted by applicable law, we exclude all
 						representations, warranties, and conditions relating to our website
@@ -269,14 +269,14 @@ const TermsOfUse: NextPage<TermsOfUse> = () => {
 						</li>
 					</ul>
 				</div>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					The limitations and prohibitions of liability set in this Section and
 					elsewhere in this disclaimer: (a) are subject to the preceding
 					paragraph; and (b) govern all liabilities arising under the
 					disclaimer, including liabilities arising in contract, in tort, and
 					for breach of statutory duty.
 				</p>
-				<p className="text-gray-stroke">
+				<p className="text-white">
 					As long as the website and the information and services on the website
 					are provided free of charge, we will not be liable for any loss or
 					damage of any nature.

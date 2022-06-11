@@ -1,3 +1,4 @@
+import appConfig from '@app.config'
 import SocialJoin from '@components/Social/Join'
 import type { NextPage } from 'next'
 
@@ -30,7 +31,9 @@ const Contact: NextPage<Contact> = () => {
 					Also you can contact us via email
 				</h3>
 				<p className="pt-4">
-					<a href="mailto:contact@rywave.io">contact@rywave.io</a>
+					<a href={`mailto:${appConfig.emails.contact}`}>
+						{appConfig.emails.contact}
+					</a>
 				</p>
 			</div>
 		</div>
