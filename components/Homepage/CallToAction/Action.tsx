@@ -32,9 +32,9 @@ const Action: FC<Action> = ({}) => (
 			target="_blank"
 			className={classnames.merge([
 				'font-manrope',
-				'group flex space-x-2 bg-offwhite py-5 px-9 transition-all duration-150',
-				'text-xl font-bold text-white shadow  ring-1 ring-white hover:shadow-inner',
-				'w-full hover:ring-opacity-80',
+				'group flex space-x-2 bg-offwhite py-5 px-9 shadow-lg transition-all duration-150',
+				'text-xl font-bold text-white ring-1 ring-gray-stroke hover:shadow-inner',
+				'w-full hover:ring-opacity-70',
 			])}
 		>
 			<span>Become a Member</span>
