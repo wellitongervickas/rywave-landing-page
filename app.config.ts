@@ -19,7 +19,7 @@ const appConfig = {
 		},
 		{
 			label: 'Tiktok',
-			link: '#',
+			link: 'https://tiktok.com/@rywave',
 			image: '/assets/images/social/tiktok.svg',
 		},
 		{
