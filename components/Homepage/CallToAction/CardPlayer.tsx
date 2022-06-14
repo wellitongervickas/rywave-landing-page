@@ -40,19 +40,30 @@ const CardPlayer: FC<CardPlayer> = () => {
 			</div>
 			<div
 				className={classnames.merge([
-					'absolute right-7 bottom-9 z-[11] h-[48px] w-[48px] bg-offwhite',
+					'group absolute right-8 bottom-9 z-[11] h-[48px] w-[48px] bg-offwhite',
 					'tramsform flex skew-y-[10deg] cursor-pointer items-center justify-center',
 				])}
 			>
 				{isPlaying ? (
 					<>
-						<Loading onClick={toggleAudio(false)} />
-						<audio controls autoPlay className="hidden">
+						<Loading
+							onClick={toggleAudio(false)}
+							className="transition-opacity duration-150 group-hover:opacity-50"
+						/>
+						<audio
+							controls
+							autoPlay
+							className="hidden"
+							onEnded={toggleAudio(false)}
+						>
 							<source src="/assets/audios/intro.mp3" type="audio/mpeg" />
 						</audio>
 					</>
 				) : (
-					<Play onClick={toggleAudio(true)} />
+					<Play
+						onClick={toggleAudio(true)}
+						className="transition-opacity duration-150 group-hover:opacity-50"
+					/>
 				)}
 			</div>
 		</div>

@@ -15,7 +15,7 @@ const Play: FC<Play> = (props) => (
 			viewBox="0 0 752 752"
 			fill="currentColor"
 			{...props}
-			className={classnames.merge(props.className)}
+			className={classnames.merge([props.className])}
 		>
 			<path
 				fillRule="evenodd"
