@@ -38,7 +38,10 @@ const PerksHolders: FC<PerksHolders> = () => {
 
 			<div className="grid grid-cols-2 gap-12">
 				{topics.map((topic, index) => (
-					<CardWrapper key={index} className="col-span-1 space-y-6 p-4">
+					<CardWrapper
+						key={index}
+						className="col-span-2 space-y-6 p-4 lg:col-span-1"
+					>
 						<div className="flex h-[3.12rem] w-[3.12rem] items-center justify-center bg-gray-darkness">
 							<Image
 								src={topic.image}
@@ -49,7 +52,10 @@ const PerksHolders: FC<PerksHolders> = () => {
 							/>
 						</div>
 						<h3 className="text-xl">{topic.title}</h3>
-						<div dangerouslySetInnerHTML={{ __html: topic.text }} />
+						<div
+							className="text-gray-stroke"
+							dangerouslySetInnerHTML={{ __html: topic.text }}
+						/>
 					</CardWrapper>
 				))}
 			</div>
