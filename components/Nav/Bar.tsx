@@ -6,6 +6,7 @@ import BurguerIcon from '@components/Icons/Burguer'
 import NavMain from '@components/Nav/Main'
 import Logo from '@components/Logo'
 import classnames from '@modules/handlers/classnames'
+import SocialJoin from '@components/Social/Join'
 
 const Navbar: FC = () => {
 	const [open, setOpen] = useState<boolean>(false)
@@ -56,7 +57,7 @@ const Navbar: FC = () => {
 						open ? 'right-0 blur-none' : 'right-full blur',
 						'fixed top-0 z-[999] flex transition-all duration-300',
 						'right-0 h-screen w-screen flex-col space-y-6',
-						'bg-black bg-opacity-90 p-12 shadow md:hidden',
+						'bg-black bg-opacity-[0.98] p-12 shadow md:hidden',
 					])}
 				>
 					<div className="relative flex justify-end">
@@ -67,8 +68,9 @@ const Navbar: FC = () => {
 							&#x2716;
 						</span>
 					</div>
-					<Logo className="pb-8 pl-4 text-white" />
+					<Logo className="pb-0 pl-2 text-white" />
 					<NavMain className="flex flex-col space-y-6 text-white" />
+					<SocialJoin className="pl-2" />
 				</div>
 			</nav>
 		</div>

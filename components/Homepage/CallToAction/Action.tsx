@@ -15,7 +15,7 @@ const Action: FC<Action> = ({}) => (
 			className={classnames.merge([
 				'font-manrope',
 				'group flex space-x-2  bg-white py-5 px-9 transition-all duration-150',
-				'text-xl font-bold text-black shadow ring-1 ring-white hover:shadow-inner',
+				'font-bold text-black shadow ring-1 ring-white hover:shadow-inner',
 				'w-full hover:ring-opacity-80',
 			])}
 		>
@@ -33,7 +33,7 @@ const Action: FC<Action> = ({}) => (
 			className={classnames.merge([
 				'font-manrope',
 				'group flex space-x-2 bg-offwhite py-5 px-9 shadow-lg transition-all duration-150',
-				'text-xl font-bold text-white ring-1 ring-gray-stroke hover:shadow-inner',
+				'font-bold text-white ring-1 ring-gray-stroke hover:shadow-inner',
 				'w-full hover:ring-opacity-70',
 			])}
 		>

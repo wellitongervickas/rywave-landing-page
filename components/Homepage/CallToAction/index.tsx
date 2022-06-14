@@ -30,7 +30,7 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 			<div
 				className={classnames.merge([
 					'flex w-full flex-col justify-start space-y-4 md:flex-row',
-					'md:space-y-0 md:space-x-[0.68rem] lg:max-w-[36.25rem]',
+					'text-base md:space-y-0 md:space-x-[0.68rem] lg:max-w-[36.25rem] lg:text-xl',
 				])}
 			>
 				<Action />
@@ -39,8 +39,8 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 		</div>
 		<div
 			className={classnames.merge([
-				'col-span-2 flex flex-col items-center space-y-4 sm:mb-12',
-				'mb-24 hidden px-6 lg:col-span-1 lg:mb-0 lg:block lg:items-end lg:px-0',
+				'col-span-1 flex flex-col space-y-4',
+				'mb-0 hidden items-end px-9 lg:block',
 			])}
 		>
 			<div className="relative flex flex-row items-end justify-center space-x-8">
@@ -48,7 +48,7 @@ const HomepageCTA: FC<HomepageCTA> = ({}) => (
 				<CardStar className="absolute top-[25%] -left-12 z-[12] !mx-0 !my-0 hidden translate-x-1/2 transform lg:left-24 lg:top-[45%] lg:block" />
 				<CardThumb />
 			</div>
-			<div className=" flex flex-row items-end justify-center">
+			<div className="flex flex-row items-end justify-center">
 				<CardPlayer />
 			</div>
 		</div>
