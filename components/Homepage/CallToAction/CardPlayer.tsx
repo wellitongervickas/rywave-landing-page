@@ -60,10 +60,13 @@ const CardPlayer: FC<CardPlayer> = () => {
 						</audio>
 					</>
 				) : (
-					<Play
-						onClick={toggleAudio(true)}
-						className="transition-opacity duration-150 group-hover:opacity-50"
-					/>
+					<div className="relative">
+						<Play
+							onClick={toggleAudio(true)}
+							className="relative z-10 transition-opacity duration-150 group-hover:opacity-50"
+						/>
+						<Play className="rigt-0 absolute top-0 z-[9] animate-ping" />
+					</div>
 				)}
 			</div>
 		</div>
