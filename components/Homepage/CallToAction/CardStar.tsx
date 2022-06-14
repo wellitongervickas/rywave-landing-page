@@ -1,9 +1,11 @@
 import type { FC } from 'react'
 
-interface CardStar {}
+interface CardStar {
+	className?: string
+}
 
-const CardStar: FC<CardStar> = () => (
-	<div className="absolute top-[25%] -left-12 z-[12] !mx-0 !my-0 hidden translate-x-1/2 transform lg:-left-0 lg:top-[45%] lg:block">
+const CardStar: FC<CardStar> = ({ className }) => (
+	<div className={className}>
 		<svg
 			width="157"
 			height="166"
