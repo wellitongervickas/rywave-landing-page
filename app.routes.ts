@@ -4,10 +4,10 @@ const appRoutes = {
 			label: 'Home',
 			path: '/',
 		},
-		// genesis_collection: {
-		// 	label: 'Genesis Collection',
-		// 	path: '#',
-		// },
+		genesis_collection: {
+			label: 'Genesis Collection',
+			path: '/genesis-collection',
+		},
 		white_paper: {
 			label: 'Whitepaper',
 			path: '/whitepaper/',
