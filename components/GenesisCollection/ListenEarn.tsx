@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import Image from '@components/Image'
 import CardWrapper from '@components/CardWrapper'
 import classnames from '@modules/handlers/classnames'
+import ArrowIcon from '@components/Icons/Arrow'
 
 interface ListenToEarn {}
 
@@ -18,7 +19,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 			<h2 className="mb-12 font-astrospace text-2xl font-black md:text-3xl lg:text-5xl">
 				Listen to Earn Model
 			</h2>
-			<div className="relative my-12 mx-auto flex h-[620px] w-full items-center justify-center lg:my-28">
+			<div className="relative my-12 mx-auto flex w-full items-center justify-center lg:my-28 lg:h-[620px]">
 				<div className="hidden container lg:block">
 					<Image
 						src="/assets/images/genesis-collection/listen-to-earn-section-bg.png"
@@ -30,10 +31,10 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 						className="z-[-1]"
 					/>
 				</div>
-				<div className="absolute top-0 z-[1] h-full w-full text-xs">
+				<div className="top-0 z-[1] h-full w-full space-y-6 text-xs lg:absolute lg:space-y-0">
 					<div
 						className={classnames.merge([
-							'bg-blue-700 py-2 px-4 font-bold',
+							'bg-blue-700 py-2 px-4 text-center font-bold',
 							'lg:absolute lg:inline lg:translate-x-[23rem] ',
 						])}
 					>
@@ -41,11 +42,14 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</div>
 					<div
 						className={classnames.merge([
-							'bg-fuchsia-700 py-2 px-4 font-bold',
+							'bg-fuchsia-700 py-2 px-4 text-center font-bold',
 							'lg:absolute lg:inline lg:translate-x-[66rem] ',
 						])}
 					>
 						Artist
+					</div>
+					<div className="flex justify-center lg:hidden">
+						<ArrowIcon className="rotate-90 transform text-gray-stroke" />
 					</div>
 					<CardWrapper
 						className={classnames.merge([
@@ -95,10 +99,13 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 							<li>No listen-to-earn model</li>
 						</ul>
 					</CardWrapper>
+					<div className="flex justify-center lg:hidden">
+						<ArrowIcon className="rotate-90 transform text-gray-stroke" />
+					</div>
 					<CardWrapper
 						className={classnames.merge([
 							'lg:absolute lg:inline lg:translate-x-[57rem] lg:translate-y-[12rem]',
-							'p-4',
+							'p-4 text-center',
 						])}
 					>
 						<p>Premium Content</p>
@@ -106,15 +113,18 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					<CardWrapper
 						className={classnames.merge([
 							'lg:absolute lg:inline lg:translate-x-[71rem] lg:translate-y-[12rem]',
-							'p-4',
+							'p-4 text-center',
 						])}
 					>
 						<p>Premium Content</p>
 					</CardWrapper>
+					<div className="flex justify-center lg:hidden">
+						<ArrowIcon className="rotate-90 transform text-gray-stroke" />
+					</div>
 					<div
 						className={classnames.merge([
 							'lg:absolute lg:inline lg:translate-x-[20rem] lg:translate-y-[33rem]',
-							'revenue-box border border-emerald-600',
+							'revenue-box !mt-12 border border-emerald-600 text-center lg:!mt-0',
 						])}
 					>
 						<CardWrapper className="py-8 px-16">
