@@ -1,8 +1,8 @@
 import type { FC } from 'react'
 
-import Image from '@components/Image'
 import Hero from '@components/GenesisCollection/Hero'
 import PerksHolders from '@components/GenesisCollection/PerksHolders'
+import ListenToEarn from '@components/GenesisCollection/ListenEarn'
 
 interface GenesisCollectionContainer {}
 
@@ -21,6 +21,7 @@ const GenesisCollectionContainer: FC<GenesisCollectionContainer> = () => (
 			<div className="container">
 				<Hero className="pt-12 lg:pt-36" />
 				<PerksHolders />
+				<ListenToEarn />
 			</div>
 		</div>
 	</>

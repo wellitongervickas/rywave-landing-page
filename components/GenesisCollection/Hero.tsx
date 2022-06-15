@@ -1,7 +1,8 @@
+import type { FC } from 'react'
+
 import Image from '@components/Image'
 import SocialJoin from '@components/Social/Join'
 import classnames from '@modules/handlers/classnames'
-import type { FC } from 'react'
 
 interface Hero {
 	className?: string
@@ -20,10 +21,7 @@ const Hero: FC<Hero> = ({ className }) => (
 			`}
 		</style>
 		<div
-			className={classnames.merge([
-				className,
-				'group grid grid-cols-5 gap-6 container',
-			])}
+			className={classnames.merge([className, 'group grid grid-cols-5 gap-6'])}
 		>
 			<div className="col-start-1 col-end-6 md:col-end-3">
 				<div className="h-full w-full">
@@ -33,7 +31,7 @@ const Hero: FC<Hero> = ({ className }) => (
 						height={701}
 						width={473}
 						layout="intrinsic"
-						className="animate-pulse "
+						className="transition-all duration-1000 group-hover:-translate-y-4"
 					/>
 				</div>
 			</div>
