@@ -35,7 +35,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					<div
 						className={classnames.merge([
 							'bg-blue-700 py-2 px-4 text-center font-bold',
-							'lg:absolute lg:inline lg:translate-x-[23rem] ',
+							'lg:absolute lg:inline lg:translate-x-[23.5rem] ',
 						])}
 					>
 						Member
