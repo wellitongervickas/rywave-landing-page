@@ -1,3 +1,4 @@
+import ErrorBoundary from '@components/ErrorBound'
 import Document, {
 	Html,
 	Head,
@@ -37,7 +38,9 @@ class _Document extends Document<DocumentInitialProps> {
 					/>
 				</Head>
 				<body>
-					<Main />
+					<ErrorBoundary>
+						<Main />
+					</ErrorBoundary>
 					<NextScript />
 				</body>
 			</Html>
