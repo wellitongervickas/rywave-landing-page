@@ -52,7 +52,7 @@ export type SearchParams = {
 }
 
 class WordpressAdapter {
-	static API_BASE_URL = process.env.WORDPRESS_API_BASE_URL
+	static API_BASE_URL = 'https://hi.rywave.io/hi/wp-json/wp/v2/'
 
 	static ENDPOINTS = {
 		POSTS: 'posts',
