@@ -1,15 +1,17 @@
 declare namespace Blog {
-	interface Article {
+	interface Post {
 		id: number
 		date: string
+		slug: string
 		title: string
 		description?: string
-		author: Author
-		category: Category
-		image: Image
+		authors: Authors
+		categories: Categories
+		image?: Image
+		content: string
 	}
 
-	type Articles = Article[]
+	type Posts = Post[]
 
 	type Author = {
 		id: number
@@ -18,6 +20,8 @@ declare namespace Blog {
 		slug: string
 		avatar: string
 	}
+
+	type Authors = Author[]
 
 	type Category = {
 		slug: string
@@ -32,18 +36,13 @@ declare namespace Blog {
 		id: number
 		title: string
 		sizes: {
-			medium: ImageSize
-			large: ImageSize
-			thumbnail: ImageSize
-			medium_large: ImageSize
-			full: ImageSize
+			[key: string]: ImageSize
 		}
 	}
 
 	type ImageSize = {
-		file: string
-		width: string
-		height: string
+		width: number
+		height: number
 		url: string
 	}
 }

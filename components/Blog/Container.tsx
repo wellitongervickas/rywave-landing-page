@@ -1,30 +1,14 @@
 import type { FC } from 'react'
+
 import BlogCategories from '@components/Blog/Categories'
+import BlogPosts from '@components/Blog/Posts'
 
-interface BlogContainer {}
+interface BlogContainer {
+	categories: Blog.Categories
+	posts: Blog.Posts
+}
 
-const categories = [
-	{
-		id: 1,
-		name: 'Popular',
-		slug: 'popular',
-		taxonomy: 'category',
-	},
-	{
-		id: 2,
-		name: 'NFT',
-		slug: 'nft',
-		taxonomy: 'category',
-	},
-	{
-		id: 3,
-		name: 'Engineering',
-		slug: 'engineering',
-		taxonomy: 'category',
-	},
-]
-
-const BlogContainer: FC<BlogContainer> = () => (
+const BlogContainer: FC<BlogContainer> = ({ categories, posts }) => (
 	<>
 		<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 			Blog
@@ -36,7 +20,8 @@ const BlogContainer: FC<BlogContainer> = () => (
 			</h2>
 		</div>
 		<div className="space-y-12">
-			<BlogCategories categories={categories} />
+			{categories.length > 0 && <BlogCategories categories={categories} />}
+			<BlogPosts posts={posts} />
 		</div>
 	</>
 )
