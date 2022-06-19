@@ -16,7 +16,7 @@ interface BlogPost {
 }
 
 const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
-	const route = `${appRoutes.navMain.blog.path}${post.slug}/`
+	const route = `/blog/post/${post.slug}/`
 
 	return (
 		<Link href={route} passHref className={className}>
@@ -24,7 +24,7 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 				<CardWrapper className="group">
 					<div
 						className={classnames.merge([
-							'relative',
+							'relative w-full overflow-hidden',
 							featured ? 'min-h-[20.5rem]' : 'min-h-[14.5rem]',
 						])}
 					>

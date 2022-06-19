@@ -4,25 +4,36 @@ import BlogContainer from '@components/Blog/Container'
 import services from '@modules/services'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-	const { page = 1, categories: queryCategories } = context.query
+	try {
+		const { page = 1, categories: queryCategories = undefined } = context.query
 
-	const { posts, totalPages } = await services.blog.posts({
-		page,
-		categories: queryCategories,
-	})
+		const [postsResult, categoriesResult] = await Promise.all([
+			services.blog.posts({
+				page,
+				categories: queryCategories,
+			}),
+			services.blog.categories(),
+		])
 
-	const { categories } = await services.blog.categories()
+		const { posts, totalPages } = postsResult
 
-	return {
-		props: {
-			title: 'Blog',
-			description:
-				'Learn about cryptocurrency, NFTs, and blockchain, discover our latest product updates, partnership announcements, user stories, and more',
-			posts,
-			categories,
-			page,
-			totalPages,
-		},
+		const { categories } = categoriesResult
+
+		return {
+			props: {
+				title: 'Blog',
+				description:
+					'Learn about cryptocurrency, NFTs, and blockchain, discover our latest product updates, partnership announcements, user stories, and more',
+				posts,
+				categories,
+				page,
+				totalPages,
+			},
+		}
+	} catch (error) {
+		return {
+			notFound: true,
+		}
 	}
 }
 

@@ -73,10 +73,7 @@ class WordpressAdapter {
 		return `?${searchParams}`
 	}
 
-	async posts(params: SearchParams = {}): Promise<{
-		posts: Post[]
-		totalPages: number
-	}> {
+	async posts(params: SearchParams = {}) {
 		try {
 			const result = await fetch(
 				[
@@ -87,13 +84,18 @@ class WordpressAdapter {
 						...WordpressAdapter.DEFAULT_PARAMS,
 					}),
 				].join('')
-			).then(async (res) => ({
-				posts: await res.json(),
-				totalPages: +(res.headers.get('X-WP-TotalPages') || '1'),
-			}))
+			).then(async (res) => {
+				const posts = await res.json()
+
+				return {
+					posts: WordpressAdapter.buildPosts(posts),
+					totalPages: +(res.headers.get('X-WP-TotalPages') || '1'),
+				}
+			})
 
 			return result
-		} catch (_) {
+		} catch (error) {
+			console.error('WP Adapter Error:', error)
 			return {
 				posts: [],
 				totalPages: 0,
@@ -101,17 +103,73 @@ class WordpressAdapter {
 		}
 	}
 
-	async categories(): Promise<{ categories: Category[] }> {
+	static buildPosts(posts: Post[]) {
+		if (!posts || !posts.length) return []
+
+		return posts.map((post) => {
+			const featuredMedia =
+				post._embedded['wp:featuredmedia']?.filter(Boolean) || []
+			const featuredMediaMain = featuredMedia?.filter(Boolean)?.[0]
+			const categories = post._embedded['wp:term']?.filter(Boolean)?.[0] || []
+			const authors = post._embedded?.author?.filter(Boolean) || []
+
+			return {
+				id: post.id,
+				slug: post.slug,
+				date: post.date,
+				title: post.title.rendered,
+				description: post.excerpt?.rendered || '',
+				authors: authors.map(
+					({ id, name, description, slug, avatar_urls }) => ({
+						id,
+						name,
+						description,
+						slug,
+						avatar: avatar_urls?.[48],
+					})
+				),
+				categories: categories.map(({ slug, taxonomy, name, id }) => ({
+					slug,
+					taxonomy,
+					name,
+					id,
+				})),
+				image: featuredMediaMain
+					? {
+							id: featuredMediaMain.id,
+							title: featuredMediaMain.title.rendered,
+							sizes: {
+								full: {
+									...featuredMediaMain.media_details?.sizes.full,
+									url: featuredMediaMain.media_details?.sizes.full.source_url,
+								},
+							},
+					  }
+					: null,
+				content: post.content.rendered,
+			} as any
+		})
+	}
+
+	async categories() {
 		try {
-			const categories = await fetch(
+			const categories = (await fetch(
 				[
 					WordpressAdapter.API_BASE_URL,
 					WordpressAdapter.ENDPOINTS.CATEGORIES,
+					WordpressAdapter.getSearchParams(WordpressAdapter.DEFAULT_PARAMS),
 				].join('')
-			).then((res) => res.json())
+			).then((res) => res.json())) as Category[]
 
-			return { categories }
-		} catch (_) {
+			return {
+				categories: categories.filter(Boolean).map((category) => ({
+					id: category.id,
+					name: category.name,
+					slug: category.slug,
+				})),
+			}
+		} catch (error) {
+			console.error('WP Adapter Error:', error)
 			return { categories: [] }
 		}
 	}

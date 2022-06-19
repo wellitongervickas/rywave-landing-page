@@ -7,20 +7,15 @@ interface BlogPosts {
 }
 
 const BlogPosts: FC<BlogPosts> = ({ posts }) => {
-	if (!posts.length)
-		return (
-			<div className="py-24 text-center text-gray-stroke">No posts found!</div>
-		)
-
-	const featured = posts.at(0)
-	const lastestPosts = posts.slice(1, 3)
-	const reminderPost = posts.at(3)
-	const oldestPosts = posts.slice(4, 7)
-	const deadzone = posts.at(7)
-	const pastPosts = posts.slice(8)
+	const featured = posts?.at(0)
+	const lastestPosts = posts?.slice(1, 3)
+	const reminderPost = posts?.at(3)
+	const oldestPosts = posts?.slice(4, 7)
+	const deadzone = posts?.at(7)
+	const pastPosts = posts?.slice(8)
 
 	return (
-		<div className="grid grid-cols-12  gap-6">
+		<div className="grid grid-cols-12 gap-6  lg:gap-12">
 			{featured && (
 				<BlogPost post={featured} className="col-span-12" featured />
 			)}
