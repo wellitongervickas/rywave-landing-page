@@ -20,7 +20,7 @@ const BlogPosts: FC<BlogPosts> = ({ posts }) => {
 	const pastPosts = posts.slice(8)
 
 	return (
-		<div className="grid grid-cols-12  gap-6">
+		<div className="grid grid-cols-12  gap-12">
 			{featured && (
 				<BlogPost post={featured} className="col-span-12" featured />
 			)}
