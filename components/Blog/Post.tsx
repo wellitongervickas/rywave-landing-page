@@ -3,8 +3,9 @@ import type { FC } from 'react'
 import CardWrapper from '@components/CardWrapper'
 import Image from '@components/Image'
 import { LogoIcon } from '@components/Logo'
-import classnames from '@modules/handlers/classnames'
 import Link from '@components/Link'
+
+import classnames from '@modules/handlers/classnames'
 import appRoutes from '@app.routes'
 
 interface BlogPost {
