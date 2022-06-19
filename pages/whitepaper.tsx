@@ -21,9 +21,9 @@ const PDFViewer = dynamic(() => import('@components/Whitepaper/Container'), {
 const Whitepaper: NextPage<Whitepaper> = () => {
 	return (
 		<div className="py-20 container">
-			<h1 className="mb-12 text-center font-astrospace text-3xl font-black md:text-5xl">
+			<h2 className="mb-12 text-center font-astrospace text-3xl font-black md:text-5xl">
 				Whitepaper
-			</h1>
+			</h2>
 			<CardWrapper className="p-4">
 				<PDFViewer />
 			</CardWrapper>
