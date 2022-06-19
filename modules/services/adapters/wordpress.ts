@@ -157,6 +157,7 @@ class WordpressAdapter {
 				[
 					WordpressAdapter.API_BASE_URL,
 					WordpressAdapter.ENDPOINTS.CATEGORIES,
+					WordpressAdapter.getSearchParams(WordpressAdapter.DEFAULT_PARAMS),
 				].join('')
 			).then((res) => res.json())) as Category[]
 
