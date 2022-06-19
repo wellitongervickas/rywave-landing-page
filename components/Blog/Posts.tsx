@@ -6,7 +6,7 @@ interface BlogPosts {
 	posts: Blog.Posts
 }
 
-const BlogPosts: FC<BlogPosts> = ({ posts }) => {
+const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
 	const featured = posts?.at(0)
 	const lastestPosts = posts?.slice(1, 3)
 	const reminderPost = posts?.at(3)
@@ -19,7 +19,7 @@ const BlogPosts: FC<BlogPosts> = ({ posts }) => {
 			{featured && (
 				<BlogPost post={featured} className="col-span-12" featured />
 			)}
-			{lastestPosts.length > 0 &&
+			{lastestPosts?.length > 0 &&
 				lastestPosts.map((post) => (
 					<BlogPost
 						className="col-span-12 md:col-span-6"
@@ -30,7 +30,7 @@ const BlogPosts: FC<BlogPosts> = ({ posts }) => {
 			{reminderPost && (
 				<BlogPost post={reminderPost} className="col-span-12" featured />
 			)}
-			{oldestPosts.length > 0 &&
+			{oldestPosts?.length > 0 &&
 				oldestPosts.map((post) => (
 					<BlogPost
 						className="col-span-12 md:col-span-6 lg:col-span-4"
@@ -41,7 +41,7 @@ const BlogPosts: FC<BlogPosts> = ({ posts }) => {
 			{deadzone && (
 				<BlogPost post={deadzone} className="col-span-12" featured />
 			)}
-			{pastPosts.length > 0 &&
+			{pastPosts?.length > 0 &&
 				pastPosts.map((post) => (
 					<BlogPost
 						className="col-span-12 md:col-span-6"
