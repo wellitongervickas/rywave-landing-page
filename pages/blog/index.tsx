@@ -4,10 +4,19 @@ import BlogContainer from '@components/Blog/Container'
 import services from '@modules/services'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-	const { page = 1 } = context.query
+	const { page = 1, categories: queryCategories } = context.query
 
-	const { posts, totalPages } = await services.blog.posts({ page })
+	const { posts, totalPages } = await services.blog.posts({
+		page,
+		categories: queryCategories,
+	})
 	const { categories } = await services.blog.categories()
+
+	if (!posts.length) {
+		return {
+			notFound: true,
+		}
+	}
 
 	return {
 		props: {
