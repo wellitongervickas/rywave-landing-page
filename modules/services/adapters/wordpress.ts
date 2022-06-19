@@ -39,7 +39,7 @@ export interface Post {
 			taxonomy: string
 			name: string
 			id: number
-		}[]
+		}[][]
 	}
 }
 

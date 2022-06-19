@@ -22,7 +22,8 @@ class ServiceBlog {
 		return posts.map((post) => {
 			const featuredMedia = post._embedded['wp:featuredmedia'] || []
 			const featuredMediaMain = featuredMedia?.[0]
-			// const categories = post._embedded['wp:term'] || []
+
+			const categories = post._embedded['wp:term']?.[0] || []
 			const authors = post._embedded.author || []
 
 			return {
@@ -40,12 +41,12 @@ class ServiceBlog {
 						avatar: avatar_urls?.[48],
 					})
 				),
-				// categories: categories.map(({ slug, taxonomy, name, id }) => ({
-				// 	slug,
-				// 	taxonomy,
-				// 	name,
-				// 	id,
-				// })),
+				categories: categories.map(({ slug, taxonomy, name, id }) => ({
+					slug,
+					taxonomy,
+					name,
+					id,
+				})),
 				image: featuredMediaMain
 					? {
 							id: featuredMediaMain.id,
