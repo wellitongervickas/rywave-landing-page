@@ -39,15 +39,22 @@ interface Blog {
 	totalPages: number
 }
 
-const Blog: NextPage<Blog> = ({ posts, categories, page, totalPages }) => (
-	<div className="space-y-12 py-20 container">
-		<BlogContainer
-			posts={posts}
-			categories={categories}
-			totalPages={totalPages}
-			currentPage={page}
-		/>
-	</div>
-)
+const Blog: NextPage<Blog> = ({ posts, categories, page, totalPages }) => {
+	try {
+		return (
+			<div className="space-y-12 py-20 container">
+				<BlogContainer
+					posts={posts}
+					categories={categories}
+					totalPages={totalPages}
+					currentPage={page}
+				/>
+			</div>
+		)
+	} catch (error) {
+		console.log(error)
+		return <div />
+	}
+}
 
 export default Blog

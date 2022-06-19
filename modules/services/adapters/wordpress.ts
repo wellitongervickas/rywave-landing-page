@@ -107,18 +107,18 @@ class WordpressAdapter {
 		if (!posts || !posts.length) return []
 
 		return posts.map((post) => {
-			const featuredMedia = post._embedded['wp:featuredmedia'] || []
-			const featuredMediaMain = featuredMedia?.[0]
-
-			const categories = post._embedded['wp:term']?.[0] || []
-			const authors = post._embedded.author || []
+			const featuredMedia =
+				post._embedded['wp:featuredmedia'].filter(Boolean) || []
+			const featuredMediaMain = featuredMedia.filter(Boolean)?.[0]
+			const categories = post._embedded['wp:term'].filter(Boolean)?.[0] || []
+			const authors = post._embedded?.author.filter(Boolean) || []
 
 			return {
 				id: post.id,
 				slug: post.slug,
 				date: post.date,
 				title: post.title.rendered,
-				description: post.excerpt.rendered,
+				description: post.excerpt?.rendered || '',
 				authors: authors.map(
 					({ id, name, description, slug, avatar_urls }) => ({
 						id,
