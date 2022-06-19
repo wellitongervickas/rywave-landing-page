@@ -7,6 +7,7 @@ export interface Category {}
 export interface Post {
 	id: number
 	date: string
+	slug: string
 	title: Rendered
 	excerpt: Rendered
 	content: Rendered
