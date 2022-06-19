@@ -7,11 +7,11 @@ interface BlogPosts {
 }
 
 const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
-	const featured = posts?.at(0)
+	const featured = posts?.slice(0)?.[0]
 	const lastestPosts = posts?.slice(1, 3)
-	const reminderPost = posts?.at(3)
+	const reminderPost = posts?.slice(3, 4)?.[0]
 	const oldestPosts = posts?.slice(4, 7)
-	const deadzone = posts?.at(7)
+	const deadzone = posts?.slice(7, 8)?.[0]
 	const pastPosts = posts?.slice(8)
 
 	return (
