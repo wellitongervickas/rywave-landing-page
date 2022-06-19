@@ -4,6 +4,8 @@ import Image from '@components/Image'
 
 import services from '@modules/services'
 import CardWrapper from '@components/CardWrapper'
+import Article from '@components/Blog/Article'
+import PostDetails from '@components/Blog/Post/Details'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const { slug } = context.query
@@ -101,10 +103,8 @@ const BlogArticle: NextPage<BlogArticle> = ({ post }) => (
 			<h1 className="text-2xl font-black lg:text-4xl 2xl:text-5xl">
 				{post.title}
 			</h1>
-			<div
-				className="richtext space-y-6"
-				dangerouslySetInnerHTML={{ __html: post.content }}
-			/>
+			<PostDetails post={post} />
+			<Article content={post.content} />
 		</div>
 	</>
 )
