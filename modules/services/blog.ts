@@ -20,11 +20,10 @@ class ServiceBlog {
 
 	static buildPosts(posts: Post[]): Blog.Posts {
 		return posts.map((post) => {
-			// const featuredMedia = post._embedded['wp:featuredmedia'] || []
-			// const featuredMediaMain = featuredMedia?.[0]
-
+			const featuredMedia = post._embedded['wp:featuredmedia'] || []
+			const featuredMediaMain = featuredMedia?.[0]
 			// const categories = post._embedded['wp:term'] || []
-			// const authors = post._embedded.author || []
+			const authors = post._embedded.author || []
 
 			return {
 				id: post.id,
@@ -32,45 +31,33 @@ class ServiceBlog {
 				date: post.date,
 				title: post.title.rendered,
 				description: post.excerpt.rendered,
-				// authors: authors.map(
-				// 	({ id, name, description, slug, avatar_urls }) => ({
-				// 		id,
-				// 		name,
-				// 		description,
-				// 		slug,
-				// 		avatar: avatar_urls[48],
-				// 	})
-				// ),
+				authors: authors.map(
+					({ id, name, description, slug, avatar_urls }) => ({
+						id,
+						name,
+						description,
+						slug,
+						avatar: avatar_urls?.[48],
+					})
+				),
 				// categories: categories.map(({ slug, taxonomy, name, id }) => ({
 				// 	slug,
 				// 	taxonomy,
 				// 	name,
 				// 	id,
 				// })),
-				// image: featuredMediaMain
-				// 	? {
-				// 			id: featuredMediaMain.id,
-				// 			title: featuredMediaMain.title.rendered,
-				// 			sizes: {
-				// 				medium: {
-				// 					...featuredMediaMain.media_details.sizes.medium,
-				// 					url: featuredMediaMain.media_details.sizes.medium.source_url,
-				// 				},
-				// 				large: {
-				// 					...featuredMediaMain.media_details.sizes.large,
-				// 					url: featuredMediaMain.media_details.sizes.large.source_url,
-				// 				},
-				// 				medium_large: {
-				// 					...featuredMediaMain.media_details.sizes.medium,
-				// 					url: featuredMediaMain.media_details.sizes.medium.source_url,
-				// 				},
-				// 				full: {
-				// 					...featuredMediaMain.media_details.sizes.medium,
-				// 					url: featuredMediaMain.media_details.sizes.medium.source_url,
-				// 				},
-				// 			},
-				// 	  }
-				// 	: undefined,
+				image: featuredMediaMain
+					? {
+							id: featuredMediaMain.id,
+							title: featuredMediaMain.title.rendered,
+							sizes: {
+								full: {
+									...featuredMediaMain.media_details?.sizes.full,
+									url: featuredMediaMain.media_details?.sizes.full.source_url,
+								},
+							},
+					  }
+					: null,
 				// content: post.content.rendered,
 			} as any
 		})

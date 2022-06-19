@@ -1,7 +1,7 @@
 declare namespace Blog {
 	interface Post {
 		id: number
-		date: string
+		date: Date
 		slug: string
 		title: string
 		description?: string
@@ -18,7 +18,7 @@ declare namespace Blog {
 		name: string
 		description?: string
 		slug: string
-		avatar: string
+		avatar?: string
 	}
 
 	type Authors = Author[]
@@ -35,7 +35,7 @@ declare namespace Blog {
 	type Image = {
 		id: number
 		title: string
-		sizes: {
+		sizes?: {
 			[key: string]: ImageSize
 		}
 	}

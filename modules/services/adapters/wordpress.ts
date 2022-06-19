@@ -6,7 +6,7 @@ export interface Category {}
 
 export interface Post {
 	id: number
-	date: string
+	date: Date
 	slug: string
 	title: Rendered
 	excerpt: Rendered
@@ -17,7 +17,7 @@ export interface Post {
 			name: string
 			description: string
 			slug: string
-			avatar_urls: {
+			avatar_urls?: {
 				[key: string]: string
 			}
 		}[]
@@ -61,9 +61,7 @@ class WordpressAdapter {
 
 	static getSearchParams(params: SearchParams = {}) {
 		const sanitizedSearchParams = Object.fromEntries(
-			Object.entries({ ...params, ...WordpressAdapter.DEFAULT_PARAMS }).filter(
-				([, value]) => value
-			)
+			Object.entries(params).filter(([, value]) => value)
 		)
 
 		const searchParams = new URLSearchParams(sanitizedSearchParams)
@@ -76,7 +74,10 @@ class WordpressAdapter {
 			[
 				WordpressAdapter.API_BASE_URL,
 				WordpressAdapter.ENDPOINTS.POSTS,
-				WordpressAdapter.getSearchParams(params),
+				WordpressAdapter.getSearchParams({
+					...params,
+					...WordpressAdapter.DEFAULT_PARAMS,
+				}),
 			].join('')
 		).then((res) => res.json())
 

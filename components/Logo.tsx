@@ -7,13 +7,14 @@ interface Logo {
 	className?: string
 	width?: number
 	height?: number
+	url?: string
 }
 
 const title = `${appConfig.name} ${appConfig.description}`
 
-const Logo: FC<Logo> = ({ className, height = 28, width = 134 }) => (
+const Logo: FC<Logo> = ({ className, height = 28, width = 134, url }) => (
 	<div className={classnames.merge([className, 'select-none'])}>
-		<Link href="/">
+		<Link href={url || '/'}>
 			<a title={title} aria-labelledby="logo">
 				<div className="cursor-pointer md:w-auto">
 					<svg
