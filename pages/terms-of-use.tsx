@@ -15,9 +15,9 @@ export function getStaticProps() {
 const TermsOfUse: NextPage<TermsOfUse> = () => {
 	return (
 		<div className="py-20 container">
-			<h1 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
+			<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 				Terms of Use
-			</h1>
+			</h2>
 			<p className="mb-20 text-white">
 				Welcome to Rywave`s terms of use document!
 			</p>

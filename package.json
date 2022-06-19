@@ -15,7 +15,6 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.0",
     "autoprefixer": "10.4.5",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
