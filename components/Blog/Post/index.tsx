@@ -7,19 +7,12 @@ import Link from '@components/Link'
 
 import classnames from '@modules/handlers/classnames'
 import appRoutes from '@app.routes'
+import date from '@modules/handlers/date'
 
 interface BlogPost {
 	post: Blog.Post
 	className?: string
 	featured?: boolean
-}
-
-const formatDate = (date: Date) => {
-	return new Intl.DateTimeFormat('en', {
-		month: 'short',
-		day: 'numeric',
-		year: 'numeric',
-	}).format(new Date(date))
 }
 
 const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
@@ -73,7 +66,7 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 
 							<address className="flex space-x-2 text-xs not-italic text-gray-500">
 								<time dateTime={post.date.toString()}>
-									{formatDate(post.date)}
+									{date.format(post.date)}
 								</time>
 								<span>by</span>
 								<ul className="flex space-x-2">
