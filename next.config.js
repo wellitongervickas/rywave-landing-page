@@ -6,15 +6,6 @@ const nextConfig = {
 		outputStandalone: true,
 	},
 
-	env: {
-		// wordpress adapter
-		WORDPRESS_API_BASE_URL: process.env.WORDPRESS_API_BASE_URL,
-	},
-
-	images: {
-		domains: ['hi.rywave.io'],
-	},
-
 	trailingSlash: true,
 }
 
