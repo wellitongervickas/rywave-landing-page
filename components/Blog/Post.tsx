@@ -22,7 +22,7 @@ const formatDate = (date: Date) => {
 }
 
 const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
-	const route = `/${appRoutes.navMain.blog.path}/${post.slug}/`
+	const route = `${appRoutes.navMain.blog.path}${post.slug}/`
 
 	return (
 		<Link href={route} passHref className={className}>
@@ -41,6 +41,7 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 								objectFit="cover"
 								objectPosition="center"
 								layout="fill"
+								priority
 								className="transition-opacity duration-200 group-hover:opacity-70"
 							/>
 						) : (
