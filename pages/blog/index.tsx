@@ -13,12 +13,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 	const { categories } = await services.blog.categories()
 
-	if (!posts.length) {
-		return {
-			notFound: true,
-		}
-	}
-
 	return {
 		props: {
 			title: 'Blog',
