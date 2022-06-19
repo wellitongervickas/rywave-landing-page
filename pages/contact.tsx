@@ -17,19 +17,19 @@ export function getStaticProps() {
 const Contact: NextPage<Contact> = () => {
 	return (
 		<div className="space-y-12 py-20 container">
-			<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
+			<h1 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 				Contact
-			</h2>
+			</h1>
 			<div>
-				<h3 className="text-2xl uppercase text-gray-stroke">
+				<h2 className="text-2xl uppercase text-gray-stroke">
 					You can find us on social media
-				</h3>
+				</h2>
 				<SocialJoin className="pt-4" />
 			</div>
 			<div>
-				<h3 className="text-2xl uppercase text-gray-stroke">
+				<h2 className="text-2xl uppercase text-gray-stroke">
 					Also you can contact us via email
-				</h3>
+				</h2>
 				<p className="pt-4">
 					<a href={`mailto:${appConfig.emails.contact}`}>
 						{appConfig.emails.contact}

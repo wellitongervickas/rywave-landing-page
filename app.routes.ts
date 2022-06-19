@@ -12,6 +12,10 @@ const appRoutes = {
 			label: 'Whitepaper',
 			path: '/whitepaper/',
 		},
+		blog: {
+			label: 'Blog',
+			path: '/blog/',
+		},
 	},
 	navFooter: {
 		company: {
