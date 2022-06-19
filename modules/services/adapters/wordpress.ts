@@ -52,7 +52,7 @@ export type SearchParams = {
 }
 
 class WordpressAdapter {
-	static API_BASE_URL = 'https://hi.rywave.io/hi/wp-json/wp/v2/'
+	static API_BASE_URL = process.env.WORDPRESS_API_BASE_URL
 
 	static ENDPOINTS = {
 		POSTS: 'posts',
@@ -108,10 +108,10 @@ class WordpressAdapter {
 
 		return posts.map((post) => {
 			const featuredMedia =
-				post._embedded['wp:featuredmedia'].filter(Boolean) || []
-			const featuredMediaMain = featuredMedia.filter(Boolean)?.[0]
-			const categories = post._embedded['wp:term'].filter(Boolean)?.[0] || []
-			const authors = post._embedded?.author.filter(Boolean) || []
+				post._embedded['wp:featuredmedia']?.filter(Boolean) || []
+			const featuredMediaMain = featuredMedia?.filter(Boolean)?.[0]
+			const categories = post._embedded['wp:term']?.filter(Boolean)?.[0] || []
+			const authors = post._embedded?.author?.filter(Boolean) || []
 
 			return {
 				id: post.id,
