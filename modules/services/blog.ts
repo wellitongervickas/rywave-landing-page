@@ -72,7 +72,7 @@ class ServiceBlog {
 				// 	  }
 				// 	: undefined,
 				// content: post.content.rendered,
-			}
+			} as any
 		})
 	}
 
