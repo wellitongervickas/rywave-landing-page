@@ -5,7 +5,13 @@ interface Blog {
 	title: string
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+	const posts = await fetch(
+		'https://hi.rywave.io/hi/wp-json/wp/v2/posts?_embed'
+	).then((res) => res.json())
+
+	console.log(posts)
+
 	return {
 		props: {
 			title: 'Blog',

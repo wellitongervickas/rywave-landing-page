@@ -1,6 +1,28 @@
 import type { FC } from 'react'
+import BlogCategories from '@components/Blog/Categories'
 
 interface BlogContainer {}
+
+const categories = [
+	{
+		id: 1,
+		name: 'Popular',
+		slug: 'popular',
+		taxonomy: 'category',
+	},
+	{
+		id: 2,
+		name: 'NFT',
+		slug: 'nft',
+		taxonomy: 'category',
+	},
+	{
+		id: 3,
+		name: 'Engineering',
+		slug: 'engineering',
+		taxonomy: 'category',
+	},
+]
 
 const BlogContainer: FC<BlogContainer> = () => (
 	<>
@@ -13,7 +35,9 @@ const BlogContainer: FC<BlogContainer> = () => (
 				product updates, partnership announcements, user stories, and more
 			</h2>
 		</div>
-		<div>...posts...</div>
+		<div className="space-y-12">
+			<BlogCategories categories={categories} />
+		</div>
 	</>
 )
 
