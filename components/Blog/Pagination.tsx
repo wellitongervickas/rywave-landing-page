@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useMemo, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import ArrowIcon from '@components/Icons/Arrow'
+import Link from '@components/Link'
 
 interface Pagination {
 	currentPage: number
@@ -16,37 +17,36 @@ const Pagination: FC<Pagination> = ({ totalPages, currentPage }) => {
 	const currentPath = useMemo(() => router.pathname, [router.pathname])
 
 	const selectedSearchQueries = useMemo(() => {
-		const queries = new URLSearchParams(router.asPath)
+		const queries = new URLSearchParams(router.query as any)
 
-		if (queries.has('categories')) {
-			return 'categories=' + queries.get('categories')
+		if (queries.has('page')) {
+			queries.delete('page')
 		}
-	}, [router.asPath])
 
-	const doNextPage = useCallback(() => {
-		router.push(
-			`${currentPath}?page=${+currentPage + 1}${selectedSearchQueries}`
-		)
-	}, [currentPage, currentPath, router, selectedSearchQueries])
+		return queries.toString()
+	}, [router.query])
 
-	const doPreviousPage = useCallback(() => {
-		router.push(
-			`${currentPath}?page=${+currentPage - 1}${selectedSearchQueries}`
-		)
-	}, [currentPage, currentPath, router, selectedSearchQueries])
+	const nextPage = useMemo(
+		() => `${currentPath}?page=${+currentPage + 1}${selectedSearchQueries}`,
+		[currentPage, currentPath, selectedSearchQueries]
+	)
+
+	const previousPage = useMemo(
+		() => `${currentPath}?page=${+currentPage - 1}${selectedSearchQueries}`,
+		[currentPage, currentPath, selectedSearchQueries]
+	)
 
 	return (
 		<div className="flex w-full items-center justify-center space-x-2">
 			{currentPage > 1 && (
 				<>
 					<span>
-						<button
-							type="button"
-							onClick={doPreviousPage}
+						<Link
+							href={previousPage}
 							className="transition-opacity duration-200 hover:opacity-70"
 						>
-							Latest posts
-						</button>
+							<a>Latest posts</a>
+						</Link>
 					</span>
 					<span>
 						<ArrowIcon
@@ -68,13 +68,12 @@ const Pagination: FC<Pagination> = ({ totalPages, currentPage }) => {
 						<ArrowIcon height={20} width={10} />
 					</span>
 					<span>
-						<button
-							type="button"
-							onClick={doNextPage}
+						<Link
+							href={nextPage}
 							className="transition-opacity duration-200 hover:opacity-70"
 						>
-							Older posts
-						</button>
+							<a>Older posts</a>
+						</Link>
 					</span>
 				</>
 			)}

@@ -10,6 +10,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 		page,
 		categories: queryCategories,
 	})
+
 	const { categories } = await services.blog.categories()
 
 	if (!posts.length) {

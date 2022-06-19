@@ -5,7 +5,7 @@ type Rendered = {
 export interface Category {
 	id: number
 	slug: string
-	name: Rendered
+	name: string
 }
 
 export interface Post {
@@ -101,18 +101,18 @@ class WordpressAdapter {
 		}
 	}
 
-	async categories(): Promise<Category[]> {
+	async categories(): Promise<{ categories: Category[] }> {
 		try {
 			const categories = await fetch(
 				[
 					WordpressAdapter.API_BASE_URL,
 					WordpressAdapter.ENDPOINTS.CATEGORIES,
-				].join()
+				].join('')
 			).then((res) => res.json())
 
-			return categories
+			return { categories }
 		} catch (_) {
-			return []
+			return { categories: [] }
 		}
 	}
 }

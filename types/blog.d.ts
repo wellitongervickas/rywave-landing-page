@@ -25,7 +25,6 @@ declare namespace Blog {
 
 	type Category = {
 		slug: string
-		taxonomy: string
 		name: string
 		id: number
 	}

@@ -9,7 +9,9 @@ interface Adapter {
 		posts: Post[]
 		totalPages: number
 	}>
-	categories(): Promise<Category[]>
+	categories(): Promise<{
+		categories: Category[]
+	}>
 }
 
 class ServiceBlog {
@@ -76,7 +78,15 @@ class ServiceBlog {
 	}
 
 	async categories(): Promise<{ categories: Blog.Categories }> {
-		return Promise.resolve({ categories: [] })
+		const { categories } = await this.#adater.categories()
+
+		return {
+			categories: categories.filter(Boolean).map((category) => ({
+				id: category.id,
+				name: category.name,
+				slug: category.slug,
+			})),
+		}
 	}
 }
 
