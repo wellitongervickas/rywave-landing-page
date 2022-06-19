@@ -1,14 +1,9 @@
 import type { NextPage } from 'next'
 
-
-interface Property {
+interface BlogArticle {
 	title: string
 }
 
-const Property: NextPage<Property> = () => (
-	<div>
-		Blog single post
-	</div>
-)
+const BlogArticle: NextPage<BlogArticle> = () => <div>Blog single article</div>
 
-export default Property
+export default BlogArticle

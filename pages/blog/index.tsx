@@ -1,10 +1,24 @@
 import BlogContainer from '@components/Blog/Container'
 import type { NextPage } from 'next'
 
-interface Property {
+interface Blog {
 	title: string
 }
 
-const Property: NextPage<Property> = () => <BlogContainer />
+export function getServerSideProps() {
+	return {
+		props: {
+			title: 'Blog',
+			description:
+				'Learn about cryptocurrency, NFTs, and blockchain, discover our latest product updates, partnership announcements, user stories, and more',
+		},
+	}
+}
 
-export default Property
+const Blog: NextPage<Blog> = () => (
+	<div className="space-y-12 py-20 container">
+		<BlogContainer />
+	</div>
+)
+
+export default Blog

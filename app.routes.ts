@@ -4,10 +4,6 @@ const appRoutes = {
 			label: 'Home',
 			path: '/',
 		},
-		// genesis_collection: {
-		// 	label: 'Genesis Collection',
-		// 	path: '#',
-		// },
 		white_paper: {
 			label: 'Whitepaper',
 			path: '/whitepaper/',
@@ -19,10 +15,6 @@ const appRoutes = {
 	},
 	navFooter: {
 		company: {
-			// about: {
-			// 	label: 'About',
-			// 	path: '#',
-			// },
 			white_paper: {
 				label: 'Whitepaper',
 				path: '/whitepaper/',
@@ -37,10 +29,6 @@ const appRoutes = {
 				label: 'Contact',
 				path: '/contact',
 			},
-			// faqs: {
-			// 	label: 'FAQs',
-			// 	path: '#',
-			// },
 		},
 	},
 }

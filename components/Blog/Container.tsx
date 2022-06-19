@@ -3,7 +3,7 @@ import type { FC } from 'react'
 interface BlogContainer {}
 
 const BlogContainer: FC<BlogContainer> = () => (
-	<div className="space-y-12 py-20 container">
+	<>
 		<h2 className="mb-6 font-astrospace text-3xl font-black md:text-5xl">
 			Blog
 		</h2>
@@ -14,7 +14,7 @@ const BlogContainer: FC<BlogContainer> = () => (
 			</h2>
 		</div>
 		<div>...posts...</div>
-	</div>
+	</>
 )
 
 export default BlogContainer
