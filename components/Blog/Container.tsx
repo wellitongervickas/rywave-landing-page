@@ -28,7 +28,13 @@ const BlogContainer: FC<BlogContainer> = ({
 		</div>
 		<div className="flex flex-col space-y-12">
 			{categories.length > 0 && <BlogCategories categories={categories} />}
-			<BlogPosts posts={posts} />
+			{posts && posts.length > 0 ? (
+				<BlogPosts posts={posts} />
+			) : (
+				<div className="flex h-14 w-full items-center justify-center text-gray-500">
+					<div>No posts found</div>
+				</div>
+			)}
 			<Pagination currentPage={currentPage} totalPages={totalPages} />
 		</div>
 	</>
