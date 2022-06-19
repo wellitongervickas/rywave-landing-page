@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { useMemo, useCallback } from 'react'
+import { useMemo } from 'react'
 import { useRouter } from 'next/router'
 import ArrowIcon from '@components/Icons/Arrow'
 import Link from '@components/Link'
