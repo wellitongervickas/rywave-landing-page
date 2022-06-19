@@ -94,7 +94,8 @@ class WordpressAdapter {
 			})
 
 			return result
-		} catch (_) {
+		} catch (error) {
+			console.error('WP Adapter Error:', error)
 			return {
 				posts: [],
 				totalPages: 0,
@@ -166,7 +167,8 @@ class WordpressAdapter {
 					slug: category.slug,
 				})),
 			}
-		} catch (_) {
+		} catch (error) {
+			console.error('WP Adapter Error:', error)
 			return { categories: [] }
 		}
 	}
