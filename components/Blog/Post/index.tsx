@@ -16,7 +16,7 @@ interface BlogPost {
 }
 
 const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
-	const route = `${appRoutes.navMain.blog.path}${post.slug}/`
+	const route = `${appRoutes.navMain.blog.path}posts/${post.slug}/`
 
 	return (
 		<Link href={route} passHref className={className}>
