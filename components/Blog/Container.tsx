@@ -26,7 +26,7 @@ const BlogContainer: FC<BlogContainer> = ({
 				product updates, partnership announcements, user stories, and more
 			</h2>
 		</div>
-		<div className="space-y-12">
+		<div className="flex flex-col space-y-12">
 			{categories.length > 0 && <BlogCategories categories={categories} />}
 			<BlogPosts posts={posts} />
 			<Pagination currentPage={currentPage} totalPages={totalPages} />

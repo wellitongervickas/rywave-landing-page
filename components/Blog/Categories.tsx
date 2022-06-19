@@ -8,11 +8,11 @@ interface BlogCategories {
 }
 
 const BlogCategories: FC<BlogCategories> = ({ categories }) => (
-	<div className="flex space-x-2">
+	<div className="flex flex-wrap">
 		{categories.map((category) => (
-			<CardWrapper key={category.id} className="group">
+			<CardWrapper key={category.id} className="group mx-2 my-2">
 				<Link href={`/blog/?categories=${category.id}`}>
-					<a className="inline-block py-2 px-3 text-xs transition-opacity duration-200 group-hover:opacity-70">
+					<a className="block py-2 px-3 text-xs transition-opacity duration-200 group-hover:opacity-70">
 						{category.name}
 					</a>
 				</Link>
