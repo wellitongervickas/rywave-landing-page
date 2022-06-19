@@ -1,7 +1,14 @@
-import type { Category, Post } from '@modules/services/adapters/wordpress'
+import type {
+	Category,
+	Post,
+	SearchParams,
+} from '@modules/services/adapters/wordpress'
 
 interface Adapter {
-	posts(): Promise<Post[]>
+	posts(params: SearchParams): Promise<{
+		posts: Post[]
+		totalPages: number
+	}>
 	categories(): Promise<Category[]>
 }
 
@@ -12,13 +19,17 @@ class ServiceBlog {
 		this.#adater = adapter
 	}
 
-	async posts(): Promise<{ posts: Blog.Posts }> {
-		const posts = await this.#adater.posts()
+	async posts(
+		params: SearchParams
+	): Promise<{ posts: Blog.Posts; totalPages: number }> {
+		const { posts, totalPages } = await this.#adater.posts(params)
 
-		return Promise.resolve({ posts: ServiceBlog.buildPosts(posts) })
+		return { posts: ServiceBlog.buildPosts(posts), totalPages }
 	}
 
 	static buildPosts(posts: Post[]): Blog.Posts {
+		if (!posts || !posts.length) return []
+
 		return posts.map((post) => {
 			const featuredMedia = post._embedded['wp:featuredmedia'] || []
 			const featuredMediaMain = featuredMedia?.[0]
@@ -59,7 +70,7 @@ class ServiceBlog {
 							},
 					  }
 					: null,
-				// content: post.content.rendered,
+				content: post.content.rendered,
 			} as any
 		})
 	}

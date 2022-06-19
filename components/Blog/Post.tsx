@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 import CardWrapper from '@components/CardWrapper'
 import Image from '@components/Image'
-import Logo from '@components/Logo'
+import { LogoIcon } from '@components/Logo'
 import classnames from '@modules/handlers/classnames'
 import Link from '@components/Link'
 import appRoutes from '@app.routes'
@@ -46,7 +46,11 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 							/>
 						) : (
 							<div className="absolute flex h-full w-full items-center justify-center bg-stone-900">
-								<Logo className="opacity-10" url={route} />
+								<LogoIcon
+									className="text-gray-200 opacity-10"
+									height={28}
+									width={134}
+								/>
 							</div>
 						)}
 					</div>

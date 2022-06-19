@@ -2,7 +2,11 @@ type Rendered = {
 	rendered: string
 }
 
-export interface Category {}
+export interface Category {
+	id: number
+	slug: string
+	name: Rendered
+}
 
 export interface Post {
 	id: number
@@ -43,7 +47,7 @@ export interface Post {
 	}
 }
 
-type SearchParams = {
+export type SearchParams = {
 	[key: string]: any
 }
 
@@ -69,30 +73,47 @@ class WordpressAdapter {
 		return `?${searchParams}`
 	}
 
-	async posts(params: SearchParams = {}): Promise<Post[]> {
-		const posts = await fetch(
-			[
-				WordpressAdapter.API_BASE_URL,
-				WordpressAdapter.ENDPOINTS.POSTS,
-				WordpressAdapter.getSearchParams({
-					...params,
-					...WordpressAdapter.DEFAULT_PARAMS,
-				}),
-			].join('')
-		).then((res) => res.json())
+	async posts(params: SearchParams = {}): Promise<{
+		posts: Post[]
+		totalPages: number
+	}> {
+		try {
+			const result = await fetch(
+				[
+					WordpressAdapter.API_BASE_URL,
+					WordpressAdapter.ENDPOINTS.POSTS,
+					WordpressAdapter.getSearchParams({
+						...params,
+						...WordpressAdapter.DEFAULT_PARAMS,
+					}),
+				].join('')
+			).then(async (res) => ({
+				posts: await res.json(),
+				totalPages: +(res.headers.get('X-WP-TotalPages') || '1'),
+			}))
 
-		return posts
+			return result
+		} catch (_) {
+			return {
+				posts: [],
+				totalPages: 0,
+			}
+		}
 	}
 
 	async categories(): Promise<Category[]> {
-		const categories = await fetch(
-			[
-				WordpressAdapter.API_BASE_URL,
-				WordpressAdapter.ENDPOINTS.CATEGORIES,
-			].join()
-		).then((res) => res.json())
+		try {
+			const categories = await fetch(
+				[
+					WordpressAdapter.API_BASE_URL,
+					WordpressAdapter.ENDPOINTS.CATEGORIES,
+				].join()
+			).then((res) => res.json())
 
-		return categories
+			return categories
+		} catch (_) {
+			return []
+		}
 	}
 }
 
