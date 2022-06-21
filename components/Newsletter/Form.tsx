@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import type { FC, FormEvent } from 'react'
 
 import { useState, useMemo, useCallback } from 'react'
 
@@ -20,22 +20,27 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 		[isLoading, email, error]
 	)
 
-	const doSubscription = useCallback(async () => {
-		if (email.length < 5) return setError('Please enter an email address')
+	const doSubscription = useCallback(
+		async (e: FormEvent) => {
+			e.preventDefault()
 
-		setError('')
-		setSuccess(false)
-		setIsLoading(true)
+			if (email.length < 5) return setError('Please enter an email address')
 
-		try {
-			await services.newsletter.subscribe(email)
-			setSuccess(true)
-		} catch (error: any) {
-			setError(error.message)
-		}
+			setError('')
+			setSuccess(false)
+			setIsLoading(true)
 
-		setIsLoading(false)
-	}, [email])
+			try {
+				await services.newsletter.subscribe(email)
+				setSuccess(true)
+			} catch (error: any) {
+				setError(error.message)
+			}
+
+			setIsLoading(false)
+		},
+		[email]
+	)
 
 	const doChangeInputValue = (value: string) => {
 		setError('')
@@ -44,7 +49,11 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 
 	return (
 		<div>
-			<div className="group flex items-center justify-center">
+			<form
+				onSubmit={doSubscription}
+				className="group flex items-center justify-center"
+				noValidate
+			>
 				<input
 					placeholder="Subscribe our Newsletter"
 					type="text"
@@ -56,8 +65,7 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 				/>
 				<button
 					aria-label="Subscribe"
-					type="button"
-					onClick={doSubscription}
+					type="submit"
 					className="items-center bg-purple-800 disabled:bg-stone-600"
 					disabled={isButtonDisabled}
 				>
@@ -77,7 +85,7 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 						</div>
 					)}
 				</button>
-			</div>
+			</form>
 			{error && <div className="text-red-400 opacity-75">{error}</div>}
 			{success && (
 				<div className="text-green-400 opacity-75">
