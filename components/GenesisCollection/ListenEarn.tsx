@@ -14,6 +14,9 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 				box-shadow: 0px 2.77056px 2.77056px rgba(0, 0, 0, 0.25),
 					0px 0px 23.5498px rgba(61, 188, 142, 0.7) !important;
 			}
+
+			.box-shadow-purple {
+			}
 		`}</style>
 		<section className="py-12 lg:py-28">
 			<h2 className="mb-12 font-astrospace text-2xl font-black md:text-3xl lg:text-5xl">
@@ -58,7 +61,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 						])}
 					>
 						<p className="mb-3">5555 items</p>
-						<h3 className="mb-6 bg-teal-500 py-2 px-4 shadow-lg drop-shadow-lg">
+						<h3 className="mb-6 bg-violet-500 py-2 px-4 text-base shadow-lg drop-shadow-lg">
 							Genesis Premium NFT
 						</h3>
 						<ul className="list-inside list-disc">
@@ -74,7 +77,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 						])}
 					>
 						<p className="mb-3">Floating Supply </p>
-						<h3 className="mb-6 bg-violet-500 py-2 px-4 shadow-lg drop-shadow-lg">
+						<h3 className="mb-6 bg-purple-700 py-2 px-4 text-base shadow-lg drop-shadow-lg">
 							Subscription NFT
 						</h3>
 						<ul className="list-inside list-disc">
@@ -90,7 +93,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 						])}
 					>
 						<p className="mb-3">Unlimited Supply</p>
-						<h3 className="mb-6 bg-slate-500 py-2 px-4 shadow-lg drop-shadow-lg">
+						<h3 className="mb-6 bg-slate-400 py-2 px-4 text-base shadow-lg drop-shadow-lg">
 							Free Tier
 						</h3>
 						<ul className="list-inside list-disc">
