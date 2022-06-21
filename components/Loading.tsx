@@ -2,15 +2,19 @@ import type { FC } from 'react'
 import classnames from '@modules/handlers/classnames'
 
 interface Loading {
+	isTiny?: boolean
 	className?: string
 	onClick?: () => void
 }
 
-const Loading: FC<Loading> = ({ className, onClick = () => {} }) => (
+const Loading: FC<Loading> = ({ className, isTiny, onClick = () => {} }) => (
 	<>
 		<style jsx>{`
+			--loading-width: ${isTiny ? '0.15rem' : '0.25rem'};
+			--loading-height: ${isTiny ? '0.65rem' : '1rem'};
+
 			.wave {
-				@apply relative h-4  w-1 transform rounded-full bg-white bg-blend-darken;
+				@apply relative h-[var(--loading-height)] w-[var(--loading-width)] transform rounded-full bg-white bg-blend-darken;
 			}
 
 			.wave-1 {
@@ -55,23 +59,23 @@ const Loading: FC<Loading> = ({ className, onClick = () => {} }) => (
 
 			@keyframes wave-animation-3 {
 				0% {
-					@apply -top-4;
+					@apply -top-3;
 				}
 				50% {
 					@apply top-2;
 				}
 				100% {
-					@apply -top-4;
+					@apply -top-3;
 				}
 			}
 		`}</style>
 		<div className={classnames.merge([className])} onClick={onClick}>
 			<div className="relative flex flex-row space-x-1">
-				<div className="wave wave-1" />
+				{!isTiny && <div className="wave wave-1" />}
 				<div className="wave wave-2" />
 				<div className="wave wave-3" />
 				<div className="wave wave-4" />
-				<div className="wave wave-5" />
+				{!isTiny && <div className="wave wave-5" />}
 			</div>
 		</div>
 	</>
