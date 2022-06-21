@@ -7,9 +7,13 @@ import Loading from '@components/Loading'
 import classnames from '@modules/handlers/classnames'
 import services from '@modules/services'
 
-interface NewsletterForm {}
+interface NewsletterForm {
+	placeholder?: string
+}
 
-const NewsletterForm: FC<NewsletterForm> = () => {
+const NewsletterForm: FC<NewsletterForm> = ({
+	placeholder = 'Subscribe our Newsletter',
+}) => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [email, setEmail] = useState('')
 	const [error, setError] = useState('')
@@ -55,7 +59,7 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 				noValidate
 			>
 				<input
-					placeholder="Subscribe our Newsletter"
+					placeholder={placeholder}
 					type="text"
 					className={classnames.merge([
 						'w-full border-0 bg-stone-800 py-3 px-4 focus-visible:outline-none',

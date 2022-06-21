@@ -11,7 +11,7 @@ const NewsletterCTA: FC<NewsletterCTA> = () => (
 			<h3 className="text-2xl font-bold lg:text-3xl">
 				Subscribe our Newsletter
 			</h3>
-			<NewsletterForm />
+			<NewsletterForm placeholder="Type your e-mail" />
 		</div>
 	</CardWrapper>
 )
