@@ -6,6 +6,7 @@ import services from '@modules/services'
 import CardWrapper from '@components/CardWrapper'
 import Article from '@components/Blog/Article'
 import PostDetails from '@components/Blog/Post/Details'
+import NewsletterCTA from '@components/Newsletter/CallToAction'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const { slug } = context.query
@@ -86,6 +87,11 @@ const BlogArticle: NextPage<BlogArticle> = ({ post }) => (
 			}
 		`}</style>
 		<div className="space-y-12 py-20 pb-60 container">
+			<h1 className="text-2xl font-black lg:text-4xl 2xl:text-5xl">
+				{post.title}
+			</h1>
+			<PostDetails post={post} />
+
 			{post.image?.sizes?.full?.url && (
 				<CardWrapper className="bg-offwhite p-4">
 					<div className="relative h-[26rem] rounded-sm">
@@ -100,11 +106,9 @@ const BlogArticle: NextPage<BlogArticle> = ({ post }) => (
 					</div>
 				</CardWrapper>
 			)}
-			<h1 className="text-2xl font-black lg:text-4xl 2xl:text-5xl">
-				{post.title}
-			</h1>
-			<PostDetails post={post} />
+
 			<Article content={post.content} />
+			<NewsletterCTA />
 		</div>
 	</>
 )
