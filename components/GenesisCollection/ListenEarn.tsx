@@ -35,7 +35,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					<div
 						className={classnames.merge([
 							'bg-blue-700 py-2 px-4 text-center font-bold',
-							'lg:absolute lg:inline lg:translate-x-[23.5rem] ',
+							'lg:absolute lg:left-[23.5rem] lg:inline ',
 						])}
 					>
 						Member
@@ -43,7 +43,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					<div
 						className={classnames.merge([
 							'bg-fuchsia-700 py-2 px-4 text-center font-bold',
-							'lg:absolute lg:inline lg:translate-x-[66rem] ',
+							'lg:absolute lg:left-[66rem] lg:inline ',
 						])}
 					>
 						Artist
@@ -53,7 +53,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</div>
 					<CardWrapper
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[0rem] lg:translate-y-[12rem]',
+							'lg:absolute lg:left-[0rem] lg:top-[12rem] lg:inline',
 							'p-4 ',
 						])}
 					>
@@ -69,7 +69,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</CardWrapper>
 					<CardWrapper
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[18rem] lg:translate-y-[12rem]',
+							'lg:absolute lg:left-[18rem] lg:top-[12rem] lg:inline',
 							'p-4',
 						])}
 					>
@@ -85,7 +85,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</CardWrapper>
 					<CardWrapper
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[37.6rem] lg:translate-y-[12rem]',
+							'lg:absolute lg:left-[37.6rem] lg:top-[12rem] lg:inline',
 							'p-4',
 						])}
 					>
@@ -104,7 +104,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</div>
 					<CardWrapper
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[57rem] lg:translate-y-[12rem]',
+							'lg:absolute lg:left-[57rem] lg:top-[12rem] lg:inline',
 							'p-4 text-center',
 						])}
 					>
@@ -112,7 +112,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</CardWrapper>
 					<CardWrapper
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[71rem] lg:translate-y-[12rem]',
+							'lg:absolute lg:left-[71rem] lg:top-[12rem] lg:inline',
 							'p-4 text-center',
 						])}
 					>
@@ -123,7 +123,7 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					</div>
 					<div
 						className={classnames.merge([
-							'lg:absolute lg:inline lg:translate-x-[20rem] lg:translate-y-[33rem]',
+							'lg:absolute lg:left-[20rem] lg:top-[33rem] lg:inline',
 							'revenue-box !mt-12 border border-emerald-600 text-center lg:!mt-0',
 						])}
 					>
