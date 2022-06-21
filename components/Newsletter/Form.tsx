@@ -72,7 +72,7 @@ const NewsletterForm: FC<NewsletterForm> = ({
 				<button
 					aria-label="Subscribe"
 					type="submit"
-					className="items-center bg-purple-800 disabled:bg-stone-600"
+					className="items-center bg-white disabled:bg-stone-900"
 					disabled={isButtonDisabled}
 				>
 					{isLoading ? (
@@ -84,9 +84,7 @@ const NewsletterForm: FC<NewsletterForm> = ({
 							<ArrowIcon
 								height={24}
 								width={24}
-								className={
-									isButtonDisabled ? 'text-gray-500' : 'text-purple-400'
-								}
+								className={isButtonDisabled ? 'text-gray-400' : 'text-gray-800'}
 							/>
 						</div>
 					)}
