@@ -28,6 +28,8 @@ const NewsletterForm: FC<NewsletterForm> = ({
 		async (e: FormEvent) => {
 			e.preventDefault()
 
+			if (isLoading) return
+
 			if (email.length < 5) return setError('Please enter an email address')
 
 			setError('')
@@ -43,7 +45,7 @@ const NewsletterForm: FC<NewsletterForm> = ({
 
 			setIsLoading(false)
 		},
-		[email]
+		[email, isLoading]
 	)
 
 	const doChangeInputValue = (value: string) => {
@@ -60,7 +62,7 @@ const NewsletterForm: FC<NewsletterForm> = ({
 			>
 				<input
 					placeholder={placeholder}
-					type="text"
+					type="email"
 					className={classnames.merge([
 						'w-full border-0 bg-stone-800 py-3 px-4 focus-visible:outline-none',
 						'focus:border-none focus:shadow-none',
