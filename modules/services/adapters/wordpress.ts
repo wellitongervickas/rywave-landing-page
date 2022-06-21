@@ -55,8 +55,9 @@ class WordpressAdapter {
 	static API_BASE_URL = process.env.WORDPRESS_API_BASE_URL
 
 	static ENDPOINTS = {
-		POSTS: 'posts',
-		CATEGORIES: 'categories',
+		POSTS: 'wp/v2/posts',
+		CATEGORIES: 'wp/v2/categories',
+		NEWSLETTER: 'newsletter/v2/subscriptions',
 	}
 
 	static DEFAULT_PARAMS = {
@@ -95,7 +96,6 @@ class WordpressAdapter {
 
 			return result
 		} catch (error) {
-			console.error('WP Adapter Error:', error)
 			return {
 				posts: [],
 				totalPages: 0,
@@ -169,9 +169,40 @@ class WordpressAdapter {
 				})),
 			}
 		} catch (error) {
-			console.error('WP Adapter Error:', error)
 			return { categories: [] }
 		}
+	}
+	/**
+	 * @docs https://www.thenewsletterplugin.com/documentation/api-reference/#/subscriptions/post_subscriptions
+	 */
+	async subscribe(email: string) {
+		const result = await fetch(
+			[
+				WordpressAdapter.API_BASE_URL,
+				WordpressAdapter.ENDPOINTS.NEWSLETTER,
+			].join(''),
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email,
+				}),
+			}
+		).then((res) => {
+			if (res.status >= 200 && res.status <= 299) {
+				return true
+			}
+
+			return res.json()
+		})
+
+		if (result?.message) {
+			return Promise.reject(new Error(result.message))
+		}
+
+		return Promise.resolve(true)
 	}
 }
 

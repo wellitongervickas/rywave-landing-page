@@ -1,6 +1,5 @@
 const theme = require('./modules/tailwind/themes/default')
 const container = require('./modules/tailwind/plugins/container')
-const forms = require('@tailwindcss/forms')
 const lineClamp = require('@tailwindcss/line-clamp')
 
 const config = {
@@ -13,7 +12,7 @@ const config = {
 	theme: {
 		...theme,
 	},
-	plugins: [container, forms, lineClamp],
+	plugins: [container, lineClamp],
 }
 
 module.exports = config
