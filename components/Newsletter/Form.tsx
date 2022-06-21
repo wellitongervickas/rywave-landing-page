@@ -89,7 +89,7 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 			{error && <div className="text-red-400 opacity-75">{error}</div>}
 			{success && (
 				<div className="text-green-400 opacity-75">
-					Subsription successfully!
+					You are successfully subscribed.
 				</div>
 			)}
 		</div>
