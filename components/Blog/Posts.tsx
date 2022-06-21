@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 
 import BlogPost from '@components/Blog/Post'
+import NewsletterCTA from '@components/Newsletter/CallToAction'
 
 interface BlogPosts {
 	posts: Blog.Posts
@@ -30,6 +31,9 @@ const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
 			{reminderPost && (
 				<BlogPost post={reminderPost} className="col-span-12" featured />
 			)}
+			<div className="col-span-12">
+				<NewsletterCTA />
+			</div>
 			{oldestPosts?.length > 0 &&
 				oldestPosts.map((post) => (
 					<BlogPost
@@ -49,6 +53,9 @@ const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
 						post={post}
 					/>
 				))}
+			<div className="col-span-12">
+				<NewsletterCTA />
+			</div>
 		</div>
 	)
 }

@@ -48,7 +48,7 @@ const NewsletterForm: FC<NewsletterForm> = () => {
 	}
 
 	return (
-		<div>
+		<div className="space-y-6">
 			<form
 				onSubmit={doSubscription}
 				className="group flex items-center justify-center"
