@@ -50,8 +50,8 @@ const NFTCreating: FC<NFTCreating> = () => {
 							<div
 								className={classnames.merge([
 									'transition-all duration-500 lg:group-hover:-left-px',
-									'absolute left-[1rem] top-[12rem] z-[3]',
-									'group-hover:blur-none lg:blur',
+									'absolute left-0 top-[12rem] z-[3]',
+									'lg:blur lg:group-hover:blur-none',
 								])}
 							>
 								<Image
@@ -65,8 +65,8 @@ const NFTCreating: FC<NFTCreating> = () => {
 							</div>
 							<div
 								className={classnames.merge([
-									'absolute left-[4rem] top-[5rem] z-[2] scale-100 md:top-[8rem] md:left-[12rem] lg:scale-95',
-									'transform transition-all duration-500 md:blur-[0.15rem] lg:blur-none lg:group-hover:scale-100',
+									'absolute left-0 top-[5rem] z-[2] scale-100 md:top-[8rem] md:left-[12rem] lg:scale-95',
+									'transform blur-[0.15rem] transition-all duration-500 lg:blur-none lg:group-hover:scale-100',
 								])}
 							>
 								<Image
@@ -81,8 +81,8 @@ const NFTCreating: FC<NFTCreating> = () => {
 							<div
 								className={classnames.merge([
 									'z-[1] transition-all duration-500 lg:group-hover:left-[24rem]',
-									'group-hover: absolute left-[8rem] top-0 md:left-[22rem] md:top-[4rem] ',
-									'group-hover:blur-none md:blur',
+									'group-hover: absolute left-0 top-0 md:left-[22rem] md:top-[4rem] ',
+									'blur lg:group-hover:blur-none',
 								])}
 							>
 								<Image
