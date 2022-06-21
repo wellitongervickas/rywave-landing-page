@@ -1,17 +1,17 @@
 const appRoutes = {
 	navMain: {
-		home: {
-			label: 'Home',
-			path: '/',
+		genesis_collection: {
+			label: 'Genesis Collection',
+			path: '/genesis-collection',
 		},
 		white_paper: {
 			label: 'Whitepaper',
 			path: '/whitepaper/',
 		},
-		// blog: {
-		// 	label: 'Blog',
-		// 	path: '/blog/',
-		// },
+		blog: {
+			label: 'Blog',
+			path: '/blog/',
+		},
 	},
 	navFooter: {
 		company: {

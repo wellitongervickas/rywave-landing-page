@@ -28,7 +28,7 @@ const SpaceImage: FC<SpaceImage> = ({ image, title, className }) => (
 				layout="responsive"
 				width={290}
 				height={290}
-				priority
+				loading="lazy"
 			/>
 		</div>
 	</div>

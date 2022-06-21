@@ -31,9 +31,11 @@ const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
 			{reminderPost && (
 				<BlogPost post={reminderPost} className="col-span-12" featured />
 			)}
-			<div className="col-span-12">
-				<NewsletterCTA />
-			</div>
+			{(lastestPosts || reminderPost) && (
+				<div className="col-span-12">
+					<NewsletterCTA />
+				</div>
+			)}
 			{oldestPosts?.length > 0 &&
 				oldestPosts.map((post) => (
 					<BlogPost
@@ -45,17 +47,21 @@ const BlogPosts: FC<BlogPosts> = ({ posts = [] }) => {
 			{deadzone && (
 				<BlogPost post={deadzone} className="col-span-12" featured />
 			)}
-			{pastPosts?.length > 0 &&
-				pastPosts.map((post) => (
-					<BlogPost
-						className="col-span-12 md:col-span-6"
-						key={post.id}
-						post={post}
-					/>
-				))}
-			<div className="col-span-12">
-				<NewsletterCTA />
-			</div>
+			{pastPosts?.length > 0 && (
+				<>
+					{pastPosts.map((post) => (
+						<BlogPost
+							className="col-span-12 md:col-span-6"
+							key={post.id}
+							post={post}
+						/>
+					))}
+
+					<div className="col-span-12">
+						<NewsletterCTA />
+					</div>
+				</>
+			)}
 		</div>
 	)
 }
