@@ -12,7 +12,7 @@ interface NewsletterForm {
 }
 
 const NewsletterForm: FC<NewsletterForm> = ({
-	placeholder = 'Subscribe our Newsletter',
+	placeholder = 'Subscribe to our Newsletter',
 }) => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [email, setEmail] = useState('')
