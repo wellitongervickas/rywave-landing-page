@@ -12,13 +12,13 @@ const appRoutes = {
 			label: 'Whitepaper',
 			path: '/whitepaper/',
 		},
+		// blog: {
+		// 	label: 'Blog',
+		// 	path: '/blog/',
+		// },
 	},
 	navFooter: {
 		company: {
-			// about: {
-			// 	label: 'About',
-			// 	path: '#',
-			// },
 			white_paper: {
 				label: 'Whitepaper',
 				path: '/whitepaper/',
@@ -33,10 +33,6 @@ const appRoutes = {
 				label: 'Contact',
 				path: '/contact',
 			},
-			// faqs: {
-			// 	label: 'FAQs',
-			// 	path: '#',
-			// },
 		},
 	},
 }
