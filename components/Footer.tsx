@@ -19,12 +19,12 @@ const Footer: FC<Footer> = ({ className }) => (
 	<footer className={classnames.merge([className, 'bg-offwhite pb-[6.56rem]'])}>
 		<div className="space-y-[1.65rem] pt-[4.8rem] container">
 			<Logo width={150} height={32} />
-			<div className="grid grid-cols-12 gap-12">
-				<SocialJoin className="col-span-3" />
-				<div className="col-span-4">
+			<div className="grid grid-cols-12 space-y-12 lg:gap-12 lg:space-y-0">
+				<SocialJoin className="col-span-12 lg:col-span-3" />
+				<div className="col-span-12 lg:col-span-4">
 					<NewsletterForm />
 				</div>
-				<div className="col-span-5">
+				<div className="col-span-12 lg:col-span-5">
 					<div className="grid grid-cols-2 gap-6">
 						<VerticalNav
 							title="Company"
