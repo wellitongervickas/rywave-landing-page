@@ -1,16 +1,17 @@
 import type { FC } from 'react'
 
-import Image from '@components/Image'
-
 import CallToAction from '@components/Homepage/CallToAction'
 import HowWork from '@components/Homepage/HowWork'
 import SpaceCreators from '@components/Homepage/SpaceCreators'
 import FAQ from '@components/Homepage/FAQ'
 import Roadmap from '@components/Homepage/Roadmap'
+import Team from '@components/Homepage/Team'
 
-interface HomepageContainer {}
+interface HomepageContainer {
+	team: Team.Member[]
+}
 
-const HomepageContainer: FC<HomepageContainer> = () => (
+const HomepageContainer: FC<HomepageContainer> = ({ team }) => (
 	<>
 		<style jsx>{`
 			:global(body) {
@@ -21,13 +22,16 @@ const HomepageContainer: FC<HomepageContainer> = () => (
 		`}</style>
 
 		<div>
-			<div className="space-y-8 container">
+			<div className="container">
 				<CallToAction />
 				<HowWork />
 			</div>
 			<Roadmap />
 			<div className="container">
 				<SpaceCreators />
+			</div>
+			<Team team={team} />
+			<div className="container">
 				<FAQ />
 			</div>
 		</div>
