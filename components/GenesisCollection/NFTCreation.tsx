@@ -20,7 +20,7 @@ const NFTCreating: FC<NFTCreating> = () => {
 			text: '<p>We add modifications, including overlaying bass, filters and 8D Audio</p>',
 		},
 		{
-			title: 'Image & Animationt',
+			title: 'Image & Animation',
 			number: 3,
 			text: '<p>We apply one of 6 different animations on our 3D model</p>',
 		},
