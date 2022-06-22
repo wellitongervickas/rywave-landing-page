@@ -20,7 +20,7 @@ const NFTCreating: FC<NFTCreating> = () => {
 			text: '<p>We add modifications, including overlaying bass, filters and 8D Audio</p>',
 		},
 		{
-			title: 'NFT as Ticket',
+			title: 'Image & Animationt',
 			number: 3,
 			text: '<p>We apply one of 6 different animations on our 3D model</p>',
 		},
@@ -65,7 +65,7 @@ const NFTCreating: FC<NFTCreating> = () => {
 							</div>
 							<div
 								className={classnames.merge([
-									'absolute left-0 top-[5rem] z-[2] scale-100 sm:left-[12rem] md:top-[8rem] lg:scale-95',
+									'absolute left-[0.15rem] top-[5rem] z-[2] scale-100 sm:left-[12rem] md:top-[8rem] lg:scale-95',
 									'transform blur-[0.15rem] transition-all duration-500 lg:blur-none lg:group-hover:scale-100',
 								])}
 							>
@@ -81,7 +81,7 @@ const NFTCreating: FC<NFTCreating> = () => {
 							<div
 								className={classnames.merge([
 									'z-[1] transition-all duration-500 lg:group-hover:left-[24rem]',
-									'group-hover: absolute left-0 top-0 sm:left-[22rem] md:top-[4rem] ',
+									'group-hover: absolute left-[0.25rem] top-0 sm:left-[22rem] md:top-[4rem] ',
 									'blur lg:group-hover:blur-none',
 								])}
 							>
