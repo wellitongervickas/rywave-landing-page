@@ -16,7 +16,7 @@ const TeamAction: FC<TeamAction> = ({ className }) => (
 			'flex items-center justify-center',
 		])}
 	>
-		<div className="flex flex-row space-y-4 space-x-0 lg:space-y-0 lg:space-x-4">
+		<div className="flex flex-col space-y-4 space-x-0 lg:flex-row lg:space-y-0 lg:space-x-4">
 			<a
 				href="https://indigo-operation-662.notion.site/The-Rywave-Team-2fce5e1af3f5465f8729b6d9ce47d445"
 				target="_blank"
