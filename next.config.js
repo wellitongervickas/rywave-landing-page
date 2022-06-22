@@ -12,7 +12,7 @@ const nextConfig = {
 	},
 
 	images: {
-		domains: ['hi.rywave.io'],
+		domains: ['hi.rywave.io', 'i0.wp.com'],
 	},
 
 	trailingSlash: true,

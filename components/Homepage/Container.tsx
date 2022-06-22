@@ -1,7 +1,5 @@
 import type { FC } from 'react'
 
-import Image from '@components/Image'
-
 import CallToAction from '@components/Homepage/CallToAction'
 import HowWork from '@components/Homepage/HowWork'
 import SpaceCreators from '@components/Homepage/SpaceCreators'

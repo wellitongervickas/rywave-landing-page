@@ -17,20 +17,12 @@ class ServiceBlog {
 		this.#adater = adapter
 	}
 
-	async posts(
-		params: SearchParams
-	): Promise<{ posts: Blog.Posts; totalPages: number }> {
-		const { posts, totalPages } = await this.#adater.posts(params)
-
-		return { posts, totalPages }
+	async posts(params: SearchParams) {
+		return await this.#adater.posts(params)
 	}
 
-	async categories(): Promise<{ categories: Blog.Categories }> {
-		const { categories } = await this.#adater.categories()
-
-		return {
-			categories,
-		}
+	async categories() {
+		return await this.#adater.categories()
 	}
 }
 
