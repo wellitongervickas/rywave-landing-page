@@ -20,7 +20,7 @@ const TeamMember: FC<TeamMember> = ({ member, className }) => {
 		>
 			<div className="relative top-0 min-h-[252px] transition-all duration-300 group-hover:-top-1">
 				{imageSrc ? (
-					<div className="border-b-transparent transition-all duration-150 group-hover:border-b-[4px] group-hover:border-b-indigo-900">
+					<div className="border-b-transparent transition-all duration-150 group-hover:border-b-[4px] group-hover:border-b-white">
 						<Image
 							src={imageSrc}
 							alt={member.name}
@@ -29,6 +29,7 @@ const TeamMember: FC<TeamMember> = ({ member, className }) => {
 							height={252}
 							objectFit="cover"
 							objectPosition="center"
+							loading="lazy"
 						/>
 					</div>
 				) : (

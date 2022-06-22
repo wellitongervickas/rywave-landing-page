@@ -22,14 +22,16 @@ const HomepageContainer: FC<HomepageContainer> = ({ team }) => (
 		`}</style>
 
 		<div>
-			<div className="space-y-8 container">
+			<div className="container">
 				<CallToAction />
 				<HowWork />
 			</div>
 			<Roadmap />
 			<div className="container">
 				<SpaceCreators />
-				<Team team={team} />
+			</div>
+			<Team team={team} />
+			<div className="container">
 				<FAQ />
 			</div>
 		</div>

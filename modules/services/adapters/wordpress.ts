@@ -94,7 +94,6 @@ class WordpressAdapter {
 				team: wordpressUtils.buildTeam(team),
 			}
 		} catch (error) {
-			console.log(error)
 			return { team: [] }
 		}
 	}
