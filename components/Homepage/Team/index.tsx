@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import TeamMember from '@components/Homepage/Team/Member'
 import Image from '@components/Image'
+import TeamAction from './Action'
 
 interface HomepageTeam {
 	team: Team.Member[]
@@ -31,6 +32,7 @@ const HomepageTeam: FC<HomepageTeam> = ({ team }) => (
 							className="col-span-12 md:col-span-6 lg:col-span-3"
 						/>
 					))}
+					<TeamAction className="col-span-12 lg:col-span-6" />
 				</div>
 			</section>
 		</div>
