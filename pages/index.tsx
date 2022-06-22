@@ -11,8 +11,6 @@ interface Homepage {
 export async function getStaticProps() {
 	const { team } = await services.posts.team()
 
-	console.log('TEAM', team)
-
 	return {
 		props: {
 			title: appConfig.description,
