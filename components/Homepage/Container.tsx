@@ -5,10 +5,13 @@ import HowWork from '@components/Homepage/HowWork'
 import SpaceCreators from '@components/Homepage/SpaceCreators'
 import FAQ from '@components/Homepage/FAQ'
 import Roadmap from '@components/Homepage/Roadmap'
+import Team from '@components/Homepage/Team'
 
-interface HomepageContainer {}
+interface HomepageContainer {
+	team: Team.Member[]
+}
 
-const HomepageContainer: FC<HomepageContainer> = () => (
+const HomepageContainer: FC<HomepageContainer> = ({ team }) => (
 	<>
 		<style jsx>{`
 			:global(body) {
@@ -26,6 +29,7 @@ const HomepageContainer: FC<HomepageContainer> = () => (
 			<Roadmap />
 			<div className="container">
 				<SpaceCreators />
+				<Team team={team} />
 				<FAQ />
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 import appConfig from '@app.config'
-import Container from '@components/Homepage/Container'
+import HomepageContainer from '@components/Homepage/Container'
 import services from '@modules/services'
 import type { NextPage } from 'next'
 
@@ -11,6 +11,8 @@ interface Homepage {
 export async function getStaticProps() {
 	const { team } = await services.posts.team()
 
+	console.log('TEAM', team)
+
 	return {
 		props: {
 			title: appConfig.description,
@@ -20,6 +22,8 @@ export async function getStaticProps() {
 	}
 }
 
-const Homepage: NextPage<Homepage> = () => <Container />
+const Homepage: NextPage<Homepage> = ({ team }) => (
+	<HomepageContainer team={team} />
+)
 
 export default Homepage

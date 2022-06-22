@@ -128,20 +128,29 @@ const buildCategories = (categories: Category[]): Blog.Categories => {
 const buildTeam = (teams: Member[]): Team.Member[] => {
 	if (!teams?.length) return []
 
-	console.log(teams[2].acf?.image)
+	return teams.map((member) => {
+		const imagesSizes = member.acf.image?.sizes || {}
 
-	return teams.map((member) => ({
-		id: member.id,
-		name: member.title.rendered,
-		position: member.acf.position,
-		social: member.acf.social || [],
-		image: {
-			sizes: {
-				medium: member.acf.image?.sizes.medium as string,
-				large: member.acf.image?.sizes.large as string,
+		const sizes = imagesSizes
+			? Object.keys(imagesSizes)
+					.filter((key) => typeof imagesSizes[key] === 'string')
+					.reduce((mapSizes, key) => {
+						mapSizes[key] = imagesSizes[key]
+
+						return mapSizes
+					}, {} as any)
+			: {}
+
+		return {
+			id: member.id,
+			name: member.title.rendered,
+			position: member.acf.position,
+			social: member.acf.social || [],
+			image: {
+				sizes,
 			},
-		},
-	}))
+		}
+	})
 }
 
 const wordpress = {

@@ -9,8 +9,7 @@ declare namespace Team {
 
 	type Image = {
 		sizes: {
-			medium: string
-			large: string
+			[key: string]: string
 		}
 	}
 
