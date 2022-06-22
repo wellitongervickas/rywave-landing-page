@@ -6,7 +6,7 @@ interface HomepageTeam {
 }
 
 const HomepageTeam: FC<HomepageTeam> = ({ team }) => (
-	<section className="pt-12 lg:pt-28">
+	<section className="py-12 lg:py-28">
 		<h2 className="mb-4 font-astrospace text-5xl font-black">Meet the team</h2>
 		<div className="grid grid-cols-12 gap-5">
 			{team.map((member, key) => (
