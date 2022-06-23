@@ -85,9 +85,13 @@ class WordpressAdapter {
 	}> {
 		try {
 			const team = await fetch(
-				[WordpressAdapter.API_BASE_URL, WordpressAdapter.ENDPOINTS.TEAM].join(
-					''
-				)
+				[
+					WordpressAdapter.API_BASE_URL,
+					WordpressAdapter.ENDPOINTS.TEAM,
+					WordpressAdapter.getSearchParams({
+						per_page: 1000,
+					}),
+				].join('')
 			).then((res) => res.json())
 
 			return {
