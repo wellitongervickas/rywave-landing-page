@@ -89,7 +89,7 @@ class WordpressAdapter {
 					WordpressAdapter.API_BASE_URL,
 					WordpressAdapter.ENDPOINTS.TEAM,
 					WordpressAdapter.getSearchParams({
-						per_page: 1000,
+						per_page: 100,
 					}),
 				].join('')
 			).then((res) => res.json())
