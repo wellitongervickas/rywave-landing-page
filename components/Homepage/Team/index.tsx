@@ -32,7 +32,7 @@ const HomepageTeam: FC<HomepageTeam> = ({ team }) => (
 							className="col-span-12 md:col-span-6 lg:col-span-3"
 						/>
 					))}
-					<TeamAction className="col-span-12 lg:col-span-6" />
+					<TeamAction className="col-span-12" />
 				</div>
 			</section>
 		</div>

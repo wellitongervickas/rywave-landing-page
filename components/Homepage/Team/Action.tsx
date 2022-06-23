@@ -13,7 +13,7 @@ const TeamAction: FC<TeamAction> = ({ className }) => (
 	<div
 		className={classnames.merge([
 			className,
-			'flex items-center justify-center',
+			'flex items-center justify-center	',
 		])}
 	>
 		<div className="flex flex-col space-y-4 space-x-0 lg:flex-row lg:space-y-0 lg:space-x-4">
