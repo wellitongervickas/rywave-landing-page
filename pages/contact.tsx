@@ -6,7 +6,7 @@ import services from '@modules/services'
 
 interface Contact {
 	title: string
-	form: Form.Content | undefined
+	form?: Form.Content
 }
 
 export async function getServerSideProps() {
