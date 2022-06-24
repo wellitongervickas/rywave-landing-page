@@ -1,9 +1,10 @@
 import WordpressAdapter from '@modules/services/adapters/wordpress'
 
+/**
+ * @docs https://www.thenewsletterplugin.com/documentation/api-reference/#/subscriptions/post_subscriptions
+ */
+
 class NewsletterAdapter {
-	/**
-	 * @docs https://www.thenewsletterplugin.com/documentation/api-reference/#/subscriptions/post_subscriptions
-	 */
 	async subscribe(email: string) {
 		const result = await fetch(
 			[

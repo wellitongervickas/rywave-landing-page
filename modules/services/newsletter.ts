@@ -1,5 +1,9 @@
+interface NewsletterAdapter {
+	subscribe(email: string): Promise<Error | boolean>
+}
+
 interface Adapter {
-	newsletterSubscribe(email: string): Promise<Error | boolean>
+	newsletter: NewsletterAdapter
 }
 
 class ServiceNewsletter {
@@ -10,7 +14,7 @@ class ServiceNewsletter {
 	}
 
 	async subscribe(email: string) {
-		return await this.#adater.newsletterSubscribe(email)
+		return await this.#adater.newsletter.subscribe(email)
 	}
 }
 

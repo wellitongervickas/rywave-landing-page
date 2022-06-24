@@ -9,7 +9,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const { slug } = context.query
 
 	const { posts } = await services.blog.posts({
-		slug,
+		slug: slug as string,
 	})
 
 	if (!posts.length) {

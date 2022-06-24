@@ -1,5 +1,9 @@
+interface FormAdapter {
+	byId(id: string): Promise<Form.Content | boolean>
+}
+
 interface Adapter {
-	formById(id: string): Promise<Form.Content>
+	forms: FormAdapter
 }
 
 class FormsAdapter {
@@ -10,7 +14,7 @@ class FormsAdapter {
 	}
 
 	async formById(formId: string) {
-		return await this.#adater.formById(formId)
+		return await this.#adater.forms.byId(formId)
 	}
 }
 

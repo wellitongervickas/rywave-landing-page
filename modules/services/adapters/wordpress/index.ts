@@ -1,9 +1,7 @@
 import BlogAdapter from '@modules/services/adapters/wordpress/blog'
 import NewsletterAdapter from '@modules/services/adapters/wordpress/newsletter'
-
 import PostsAdapter from '@modules/services/adapters/wordpress/posts'
-
-import type { SearchParams } from '@modules/services/utils/wordpress'
+import FormsAdapter from '@modules/services/adapters/wordpress/forms'
 
 import wordpressUtils from '@modules/services/utils/wordpress'
 
@@ -11,11 +9,13 @@ class WordpressAdapter {
 	blog: BlogAdapter
 	newsletter: NewsletterAdapter
 	posts: PostsAdapter
+	forms: FormsAdapter
 
 	constructor() {
 		this.blog = new BlogAdapter()
 		this.newsletter = new NewsletterAdapter()
 		this.posts = new PostsAdapter()
+		this.forms = new FormsAdapter()
 	}
 
 	static API_BASE_URL = process.env.WORDPRESS_API_BASE_URL
@@ -33,22 +33,6 @@ class WordpressAdapter {
 
 	static get Utils() {
 		return wordpressUtils
-	}
-
-	async blogPosts(params: SearchParams = {}) {
-		return await this.blog.posts(params)
-	}
-
-	async blogCategories() {
-		return await this.blog.categories()
-	}
-
-	async postsTeam() {
-		return await this.posts.team()
-	}
-
-	async newsletterSubscribe(email: string) {
-		return await this.newsletter.subscribe(email)
 	}
 }
 
