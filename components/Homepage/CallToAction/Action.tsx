@@ -3,6 +3,7 @@ import type { FC } from 'react'
 import classnames from '@modules/handlers/classnames'
 
 import ArrowIcon from '@components/Icons/Arrow'
+import appConfig from '@app.config'
 
 interface Action {}
 
@@ -27,7 +28,7 @@ const Action: FC<Action> = ({}) => (
 			/>
 		</a>
 		<a
-			href="https://discord.gg/SYwtd3CZcQ"
+			href={appConfig.social.discord.link}
 			rel="noopener noreferrer"
 			target="_blank"
 			className={classnames.merge([
