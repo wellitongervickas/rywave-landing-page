@@ -1,6 +1,6 @@
 class FormsAdapter {
-	async byId(id: string) {
-		return false
+	async byId(id: string): Promise<undefined | Form.Content> {
+		return undefined
 	}
 }
 

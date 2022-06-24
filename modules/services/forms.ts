@@ -1,5 +1,5 @@
 interface FormAdapter {
-	byId(id: string): Promise<Form.Content | boolean>
+	byId(id: string): Promise<Form.Content | undefined>
 }
 
 interface Adapter {
