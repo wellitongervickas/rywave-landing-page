@@ -1,5 +1,5 @@
 interface Adapter {
-	team(): Promise<{
+	postsTeam(): Promise<{
 		team: Team.Member[]
 	}>
 }
@@ -12,7 +12,7 @@ class PostAdapter {
 	}
 
 	async team() {
-		return await this.#adater.team()
+		return await this.#adater.postsTeam()
 	}
 }
 

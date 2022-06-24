@@ -1,3 +1,7 @@
+export type SearchParams = {
+	[key: string]: any
+}
+
 export type Rendered = {
 	rendered: string
 }
@@ -67,6 +71,16 @@ export interface Member {
 		image?: ACFImage
 		social?: ACFSocial[]
 	}
+}
+
+const getSearchParams = (params: SearchParams = {}) => {
+	const sanitizedSearchParams = Object.fromEntries(
+		Object.entries(params).filter(([, value]) => value)
+	)
+
+	const searchParams = new URLSearchParams(sanitizedSearchParams)
+
+	return `?${searchParams}`
 }
 
 const buildPosts = (posts: Post[]): Blog.Posts => {
@@ -154,6 +168,7 @@ const buildTeam = (teams: Member[]): Team.Member[] => {
 }
 
 const wordpress = {
+	getSearchParams,
 	buildTeam,
 	buildPosts,
 	buildCategories,

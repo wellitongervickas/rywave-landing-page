@@ -1,5 +1,5 @@
 interface Adapter {
-	subscribe(email: string): Promise<Error | boolean>
+	newsletterSubscribe(email: string): Promise<Error | boolean>
 }
 
 class ServiceNewsletter {
@@ -10,7 +10,7 @@ class ServiceNewsletter {
 	}
 
 	async subscribe(email: string) {
-		return await this.#adater.subscribe(email)
+		return await this.#adater.newsletterSubscribe(email)
 	}
 }
 
