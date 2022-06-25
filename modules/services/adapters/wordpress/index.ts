@@ -25,6 +25,7 @@ class WordpressAdapter {
 		CATEGORIES: 'wp/v2/categories',
 		TEAM: 'wp/v2/team',
 		NEWSLETTER: 'newsletter/v2/subscriptions',
+		FORMS: 'gf/v2/forms',
 	}
 
 	static DEFAULT_PARAMS = {
