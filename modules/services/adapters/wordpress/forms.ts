@@ -1,5 +1,6 @@
 /**
- * @docs https://docs.gravityforms.com/rest-api-v2/#post-forms
+ * @docs https://docs.gravityforms.com/rest-api-v2
+ * @docs https://docs.gravityforms.com/rest-api-v2-authentication
  */
 
 class FormsAdapter {
