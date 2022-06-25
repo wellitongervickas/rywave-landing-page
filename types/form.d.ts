@@ -18,7 +18,6 @@ declare namespace Form {
 		placeholder?: string
 		isRequired: boolean
 		choices?: Form.Choice[]
-		error?: string
 	}
 
 	type Choice = {

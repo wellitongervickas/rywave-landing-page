@@ -1,10 +1,13 @@
-import type { FC, FormEvent } from 'react'
+import type { FC } from 'react'
 
-import { useMemo, useCallback, useState } from 'react'
+import React, { useMemo } from 'react'
 import FormInput, { types as inputTypes } from '@components/Form/Input'
 import FormTextarea, { types as textareaTypes } from '@components/Form/Textarea'
 import FormSelect, { types as selectTypes } from '@components/Form/Select'
-import useForm from '@modules/hooks/useForm'
+import classnames from '@modules/handlers/classnames'
+import ArrowIcon from '@components/Icons/Arrow'
+
+import { useForm } from 'react-hook-form'
 
 interface Form {
 	form: Form.Content
@@ -12,8 +15,10 @@ interface Form {
 }
 
 const Form: FC<Form> = ({ form, onSubmit }) => {
-	const { state, validateFields } = useForm()
-	const [error, setError] = useState('')
+	const {
+		handleSubmit,
+		formState: { errors },
+	} = useForm()
 
 	const button = useMemo(
 		() => ({
@@ -23,27 +28,20 @@ const Form: FC<Form> = ({ form, onSubmit }) => {
 		[form.button]
 	)
 
-	const doSubmit = useCallback(
-		(event: FormEvent) => {
-			event.preventDefault()
+	const doSubmit = (data: Object) => {
+		console.log(data, errors)
 
-			const fields = Object.fromEntries(
-				Object.keys(state).map((key) => [key, state[key].value])
-			)
+		// if (Object.keys(errors).length) return
 
-			const isFieldsValid = validateFields(form.fields)
+		// const fields = Object.fromEntries(
+		// 	Object.keys(data).map((key) => [key, state[key]])
+		// )
 
-			if (isFieldsValid) {
-				onSubmit(fields)
-			} else {
-				setError('Please, check the fields and try again.')
-			}
-		},
-		[form.fields, state, onSubmit, validateFields]
-	)
+		// onSubmit(fields)
+	}
 
 	return (
-		<form onSubmit={doSubmit} noValidate>
+		<form onSubmit={handleSubmit(doSubmit)} noValidate className="space-y-6">
 			<div className="flex flex-col space-y-6">
 				{form.fields.map((field) => (
 					<div key={field.id}>
@@ -53,9 +51,23 @@ const Form: FC<Form> = ({ form, onSubmit }) => {
 					</div>
 				))}
 			</div>
-			{error && <div>{error}</div>}
 			<div>
-				<button type={button.type}>{button.text}</button>
+				<button
+					type={button.type}
+					className={classnames.merge([
+						'font-manrope',
+						'group flex space-x-2  bg-white py-5 px-9 transition-all duration-150',
+						'font-bold text-black shadow ring-1 ring-white hover:shadow-inner',
+						'w-full hover:ring-opacity-80 md:w-auto',
+					])}
+				>
+					<span>{button.text}</span>
+					<ArrowIcon
+						width={22}
+						height={28}
+						className="transition-transform duration-150 group-hover:translate-x-1"
+					/>
+				</button>
 			</div>
 		</form>
 	)

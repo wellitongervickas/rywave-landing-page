@@ -1,30 +1,27 @@
-import type { FC, ChangeEvent } from 'react'
-import useForm from '@modules/hooks/useForm'
+import type { FC } from 'react'
+import classnames from '@modules/handlers/classnames'
+import { useForm } from 'react-hook-form'
 
 export const types = ['text', 'email'] as string[]
 
-interface FormInput extends Form.Field {
-	className?: string
-	error?: string
-}
+interface FormInput extends Form.Field {}
 
 const FormInput: FC<FormInput> = ({
-	className,
 	type,
 	id,
 	label,
 	placeholder,
 	isRequired,
-	error,
 }) => {
-	const { onchange } = useForm()
+	const {
+		register,
+		formState: { errors },
+	} = useForm()
 
-	const doOnChange = (ev: ChangeEvent<HTMLInputElement>) => {
-		onchange(id, ev.target.value)
-	}
+	console.log(errors[id])
 
 	return (
-		<div className={className}>
+		<div className="flex flex-col space-y-1">
 			<label htmlFor={id}>
 				<span id={id}>{label}</span>
 				{isRequired && <span className="text-red-400">*</span>}
@@ -34,9 +31,14 @@ const FormInput: FC<FormInput> = ({
 				title={label}
 				type={type}
 				placeholder={placeholder}
-				onChange={doOnChange}
+				className={classnames.merge([
+					'w-full bg-offwhite py-4 px-6 shadow-inner outline-none',
+				])}
+				{...register(`field_${id}`, { required: isRequired })}
 			/>
-			{error}
+			{errors[id] && (
+				<span className="text-red-400">{errors[id]?.message?.toString()}</span>
+			)}
 		</div>
 	)
 }

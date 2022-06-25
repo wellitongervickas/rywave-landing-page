@@ -1,4 +1,5 @@
 import { createState, useState } from '@hookstate/core'
+import { useForm as useReactHookForm } from 'react-hook-form'
 
 export type DefaultState = {
 	[key: string]: string | number
@@ -11,31 +12,19 @@ const store = createState(DEFAULT_STATE)
 function useForm() {
 	const state = useState<DefaultState>(store)
 
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useReactHookForm()
+
 	const onchange = (fieldId: string, value: any) => {
 		state[fieldId].set(value)
 	}
 
-	const validateFields = (formFields: Form.Field[]) => {
-		const requiredFields = formFields.filter((field) => field.isRequired)
-
-		const requiredFieldsChecked = requiredFields.map((field) => {
-			if (!state[field.id].value) {
-				field.error = 'Field is required.'
-			} else {
-				field.error = ''
-			}
-
-			return field
-		})
-
-		const isValid = !requiredFieldsChecked.some((field) => field.error)
-
-		return isValid
-	}
-
 	return {
 		onchange,
-		validateFields,
 		state,
 	}
 }

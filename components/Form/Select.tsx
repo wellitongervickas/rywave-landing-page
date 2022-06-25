@@ -1,6 +1,6 @@
 import type { FC, ChangeEvent } from 'react'
 import useForm from '@modules/hooks/useForm'
-
+import classnames from '@modules/handlers/classnames'
 export const types = ['select'] as string[]
 
 interface FormSelect extends Form.Field {
@@ -14,6 +14,7 @@ const FormSelect: FC<FormSelect> = ({
 	label,
 	placeholder,
 	isRequired,
+	error,
 }) => {
 	const { onchange } = useForm()
 
@@ -22,7 +23,7 @@ const FormSelect: FC<FormSelect> = ({
 	}
 
 	return (
-		<div className={className}>
+		<div className="flex flex-col space-y-1">
 			<label htmlFor={id}>
 				<span id={id}>{label}</span>
 				{isRequired && <span className="text-red-400">*</span>}
@@ -33,6 +34,9 @@ const FormSelect: FC<FormSelect> = ({
 				title={label}
 				placeholder={placeholder}
 				onChange={doOnChange}
+				className={classnames.merge([
+					'w-full bg-offwhite py-4 px-6 shadow-inner outline-none',
+				])}
 			>
 				<option value="">Select</option>
 				{choices?.map((choice, index) => (
@@ -41,6 +45,7 @@ const FormSelect: FC<FormSelect> = ({
 					</option>
 				))}
 			</select>
+			{error && <span className="text-red-400">{error}</span>}
 		</div>
 	)
 }
