@@ -13,7 +13,7 @@ class FormsAdapter {
 		this.#adater = adapter
 	}
 
-	async formById(formId: string) {
+	async byId(formId: string) {
 		return await this.#adater.forms.byId(formId)
 	}
 }

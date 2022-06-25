@@ -40,7 +40,7 @@ class FormsAdapter {
 			}
 		).then((res) => res.json())
 
-		if (!result?.data) {
+		if (result?.code) {
 			return null
 		}
 
@@ -49,15 +49,20 @@ class FormsAdapter {
 		return {
 			title,
 			description,
-			button,
-			fields: fields.map((field) => ({
-				id: field.id,
-				type: field.type,
-				label: field.label,
-				isRequired: field.isRequired,
-				placeholder: field.placeholder,
-				choices: field.choices,
-			})),
+			button: {
+				text: button.text,
+				type: button.type,
+			},
+			fields: !fields.length
+				? []
+				: fields.map((field) => ({
+						id: field.id,
+						type: field.type,
+						label: field.label,
+						isRequired: field.isRequired,
+						placeholder: field.placeholder,
+						choices: field.choices || [],
+				  })),
 		}
 	}
 }

@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import appConfig from '@app.config'
 import SocialJoin from '@components/Social/Join'
 import services from '@modules/services'
+import ContactForm from '@components/Contact/Form'
 
 interface Contact {
 	title: string
@@ -12,7 +13,9 @@ interface Contact {
 export async function getServerSideProps() {
 	try {
 		const CONTACT_FORM_ID = '1'
-		const form = await services.forms.formById(CONTACT_FORM_ID)
+		const form = await services.forms.byId(CONTACT_FORM_ID)
+
+		console.log(form)
 
 		return {
 			props: {
@@ -41,17 +44,19 @@ const Contact: NextPage<Contact> = ({ title, form }) => {
 				<SocialJoin className="pt-4" />
 			</div>
 			<div>
-				<h2 className="text-2xl uppercase text-gray-stroke">
-					Also you can contact us via email
-				</h2>
 				{form ? (
-					<div>Render form...</div>
+					<ContactForm form={form} />
 				) : (
-					<p className="pt-4">
-						<a href={`mailto:${appConfig.emails.contact}`}>
-							{appConfig.emails.contact}
-						</a>
-					</p>
+					<>
+						<h2 className="text-2xl uppercase text-gray-stroke">
+							Also you can contact us via email
+						</h2>
+						<p className="pt-4">
+							<a href={`mailto:${appConfig.emails.contact}`}>
+								{appConfig.emails.contact}
+							</a>
+						</p>
+					</>
 				)}
 			</div>
 		</div>
