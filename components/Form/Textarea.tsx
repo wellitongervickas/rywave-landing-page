@@ -1,4 +1,5 @@
-import type { FC } from 'react'
+import type { FC, ChangeEvent } from 'react'
+import useForm from '@modules/hooks/useForm'
 
 export const types = ['textarea'] as string[]
 
@@ -13,18 +14,24 @@ const FormTextarea: FC<FormTextarea> = ({
 	placeholder,
 	isRequired,
 }) => {
-	const fieldId = `field-${id}`
+	const { onchange } = useForm()
+
+	const doOnChange = (ev: ChangeEvent<HTMLTextAreaElement>) => {
+		onchange(id, ev.target.value)
+	}
+
 	return (
 		<div className={className}>
-			<label htmlFor={fieldId}>
-				<span id={fieldId}>{label}</span>
+			<label htmlFor={id}>
+				<span id={id}>{label}</span>
 				{isRequired && <span className="text-red-400">*</span>}
 			</label>
 
 			<textarea
-				aria-labelledby={fieldId}
+				aria-labelledby={id}
 				title={label}
 				placeholder={placeholder}
+				onChange={doOnChange}
 			/>
 		</div>
 	)

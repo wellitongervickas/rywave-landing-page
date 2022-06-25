@@ -1,4 +1,5 @@
-import type { FC } from 'react'
+import type { FC, ChangeEvent } from 'react'
+import useForm from '@modules/hooks/useForm'
 
 export const types = ['select'] as string[]
 
@@ -14,16 +15,25 @@ const FormSelect: FC<FormSelect> = ({
 	placeholder,
 	isRequired,
 }) => {
-	const fieldId = `field-${id}`
+	const { onchange } = useForm()
+
+	const doOnChange = (ev: ChangeEvent<HTMLSelectElement>) => {
+		onchange(id, ev.target.value)
+	}
 
 	return (
 		<div className={className}>
-			<label htmlFor={fieldId}>
-				<span id={fieldId}>{label}</span>
+			<label htmlFor={id}>
+				<span id={id}>{label}</span>
 				{isRequired && <span className="text-red-400">*</span>}
 			</label>
 
-			<select aria-labelledby={fieldId} title={label} placeholder={placeholder}>
+			<select
+				aria-labelledby={id}
+				title={label}
+				placeholder={placeholder}
+				onChange={doOnChange}
+			>
 				<option value="">Select</option>
 				{choices?.map((choice, index) => (
 					<option key={index} value={choice.value}>

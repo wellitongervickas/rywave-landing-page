@@ -12,7 +12,7 @@ const ContactForm: FC<ContactForm> = ({ className, form }) => (
 		<h2 className="text-2xl uppercase text-gray-stroke">
 			Also you can contact us
 		</h2>
-		<Form form={form} onSubmit={() => {}} />
+		<Form form={form} onSubmit={(e) => console.log(e)} />
 	</div>
 )
 

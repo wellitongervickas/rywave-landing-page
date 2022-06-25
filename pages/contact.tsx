@@ -15,8 +15,6 @@ export async function getServerSideProps() {
 		const CONTACT_FORM_ID = '1'
 		const form = await services.forms.byId(CONTACT_FORM_ID)
 
-		console.log(form)
-
 		return {
 			props: {
 				title: 'Contact',
