@@ -30,14 +30,6 @@ const Form: FC<Form> = ({ form, onSubmit }) => {
 
 	const doSubmit = (data: Object) => {
 		console.log(data, errors)
-
-		// if (Object.keys(errors).length) return
-
-		// const fields = Object.fromEntries(
-		// 	Object.keys(data).map((key) => [key, state[key]])
-		// )
-
-		// onSubmit(fields)
 	}
 
 	return (

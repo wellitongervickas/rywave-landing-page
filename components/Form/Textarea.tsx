@@ -14,7 +14,6 @@ const FormTextarea: FC<FormTextarea> = ({
 	label,
 	placeholder,
 	isRequired,
-	error,
 }) => {
 	const { onchange } = useForm()
 
@@ -39,7 +38,6 @@ const FormTextarea: FC<FormTextarea> = ({
 					'w-full bg-offwhite py-4 px-6 shadow-inner outline-none',
 				])}
 			/>
-			{error && <span className="text-red-400">{error}</span>}
 		</div>
 	)
 }

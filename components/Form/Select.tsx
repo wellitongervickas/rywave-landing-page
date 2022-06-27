@@ -14,7 +14,6 @@ const FormSelect: FC<FormSelect> = ({
 	label,
 	placeholder,
 	isRequired,
-	error,
 }) => {
 	const { onchange } = useForm()
 
@@ -45,7 +44,6 @@ const FormSelect: FC<FormSelect> = ({
 					</option>
 				))}
 			</select>
-			{error && <span className="text-red-400">{error}</span>}
 		</div>
 	)
 }

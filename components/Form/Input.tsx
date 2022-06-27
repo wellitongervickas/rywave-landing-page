@@ -18,8 +18,6 @@ const FormInput: FC<FormInput> = ({
 		formState: { errors },
 	} = useForm()
 
-	console.log(errors[id])
-
 	return (
 		<div className="flex flex-col space-y-1">
 			<label htmlFor={id}>
