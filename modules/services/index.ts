@@ -1,16 +1,18 @@
 import WordpressAdapter from '@modules/services/adapters/wordpress'
-import ServiceBlog from '@modules/services/blog'
-import ServiceNewsletter from '@modules/services/newsletter'
-import ServicePosts from '@modules/services/posts'
-import ServiceForms from '@modules/services/forms'
+import BlogService from '@modules/services/blog'
+import NewsletterService from '@modules/services/newsletter'
+import PostsService from '@modules/services/posts'
+import FormService from '@modules/services/forms'
+import PagesService from '@modules/services/pages'
 
 const wordpressAdapter = new WordpressAdapter()
 
 export const services = {
-	blog: new ServiceBlog(wordpressAdapter),
-	newsletter: new ServiceNewsletter(wordpressAdapter),
-	posts: new ServicePosts(wordpressAdapter),
-	forms: new ServiceForms(wordpressAdapter),
+	blog: new BlogService(wordpressAdapter),
+	newsletter: new NewsletterService(wordpressAdapter),
+	posts: new PostsService(wordpressAdapter),
+	forms: new FormService(wordpressAdapter),
+	pages: new PagesService(wordpressAdapter),
 }
 
 export default services

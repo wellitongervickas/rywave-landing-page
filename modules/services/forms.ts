@@ -1,12 +1,10 @@
-interface FormAdapter {
-	byId(id: string): Promise<Form.Content | null>
-}
-
 interface Adapter {
-	forms: FormAdapter
+	forms: {
+		byId(id: string): Promise<Form.Content | null>
+	}
 }
 
-class FormsAdapter {
+class FormsService {
 	#adater: Adapter
 
 	constructor(adapter: Adapter) {
@@ -18,4 +16,4 @@ class FormsAdapter {
 	}
 }
 
-export default FormsAdapter
+export default FormsService

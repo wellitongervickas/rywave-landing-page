@@ -2,9 +2,11 @@ import type { FC } from 'react'
 // @ts-ignore
 import { PDFReader } from 'reactjs-pdf-reader'
 
-interface WhitepaperContainer {}
+interface WhitepaperContainer {
+	fileURL: string
+}
 
-const WhitepaperContainer: FC<WhitepaperContainer> = () => {
+const WhitepaperContainer: FC<WhitepaperContainer> = ({ fileURL }) => {
 	return (
 		<>
 			<style jsx global>{`
@@ -13,7 +15,7 @@ const WhitepaperContainer: FC<WhitepaperContainer> = () => {
 				}
 			`}</style>
 			<div className="pdf-reader">
-				<PDFReader showAllPage url={'/assets/pdfs/rywave-whitepaper.pdf'} />
+				<PDFReader showAllPage url={fileURL} />
 			</div>
 		</>
 	)

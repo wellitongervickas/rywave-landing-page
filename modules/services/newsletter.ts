@@ -1,12 +1,10 @@
-interface NewsletterAdapter {
-	subscribe(email: string): Promise<Error | boolean>
-}
-
 interface Adapter {
-	newsletter: NewsletterAdapter
+	newsletter: {
+		subscribe(email: string): Promise<Error | boolean>
+	}
 }
 
-class ServiceNewsletter {
+class NewsletterService {
 	#adater: Adapter
 
 	constructor(adapter: Adapter) {
@@ -18,4 +16,4 @@ class ServiceNewsletter {
 	}
 }
 
-export default ServiceNewsletter
+export default NewsletterService
