@@ -8,7 +8,7 @@ interface BlogCategories {
 }
 
 const BlogCategories: FC<BlogCategories> = ({ categories }) => (
-	<div className="flex flex-wrap">
+	<div className="flex w-full flex-wrap items-center justify-center">
 		{categories.map((category) => (
 			<CardWrapper key={category.id} className="group mx-2 my-2">
 				<Link
