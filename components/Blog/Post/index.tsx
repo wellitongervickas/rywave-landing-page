@@ -7,25 +7,23 @@ import Link from '@components/Link'
 
 import classnames from '@modules/handlers/classnames'
 import appRoutes from '@app.routes'
-import date from '@modules/handlers/date'
+import PostDetails from '@components/Blog/Post/Details'
 
 interface BlogPost {
 	post: Blog.Post
 	className?: string
-	featured?: boolean
 }
 
-const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
-	const route = `/blog/post/${post.slug}/`
+const BlogPost: FC<BlogPost> = ({ post, className }) => {
+	const route = `${appRoutes.navMain.blog.path}post/${post.slug}/`
 
 	return (
 		<Link href={route} passHref className={className}>
-			<a>
-				<CardWrapper className="group">
+			<a className="block">
+				<CardWrapper className="group flex h-full flex-col justify-between">
 					<div
 						className={classnames.merge([
-							'relative w-full overflow-hidden',
-							featured ? 'min-h-[20.5rem]' : 'min-h-[14.5rem]',
+							'relative min-h-[14.5rem] w-full overflow-hidden',
 						])}
 					>
 						{post.image?.sizes?.full.url ? (
@@ -36,7 +34,7 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 								objectPosition="center"
 								layout="fill"
 								priority
-								className="transition-opacity duration-200 group-hover:opacity-70"
+								className="transition-all duration-200 group-hover:scale-105 group-hover:opacity-70"
 							/>
 						) : (
 							<div className="absolute flex h-full w-full items-center justify-center bg-stone-900">
@@ -48,47 +46,22 @@ const BlogPost: FC<BlogPost> = ({ post, className, featured }) => {
 							</div>
 						)}
 					</div>
-					<section>
+					<section className="flex flex-1 flex-col justify-between space-y-4 p-4">
 						<h2
 							className={classnames.merge([
-								'block overflow-hidden px-4 pt-4 pb-2 font-bold leading-8',
-								featured ? 'text-2xl line-clamp-3' : 'line-clamp-2',
+								'block overflow-hidden font-bold leading-8 line-clamp-4',
+								'text-base lg:text-lg 2xl:text-2xl',
 							])}
 							dangerouslySetInnerHTML={{ __html: post.title }}
 						/>
-						<div className="space-y-4 px-4 pb-4">
-							{post.description && (
-								<div
-									className="text-sm text-slate-400 line-clamp-3"
-									dangerouslySetInnerHTML={{ __html: post.description }}
-								/>
-							)}
 
-							<address className="flex space-x-2 text-xs not-italic text-gray-500">
-								<time dateTime={post.date.toString()}>
-									{date.format(post.date)}
-								</time>
-								<span>by</span>
-								<ul className="flex space-x-2">
-									{post.authors.map((author) => (
-										<li key={author.id}>
-											<span>{author.name}</span>
-										</li>
-									))}
-								</ul>
-								<span>on</span>
-								<ul className="flex space-x-2">
-									{post.categories.map((category, index) => (
-										<li key={category.id}>
-											<span>{category.name}</span>
-											{post.categories.length >= 0 &&
-												index !== post.categories.length - 1 &&
-												','}
-										</li>
-									))}
-								</ul>
-							</address>
-						</div>
+						<PostDetails post={post} />
+						{post.description && (
+							<div
+								className="hidden"
+								dangerouslySetInnerHTML={{ __html: post.description }}
+							/>
+						)}
 					</section>
 				</CardWrapper>
 			</a>
