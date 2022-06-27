@@ -35,8 +35,10 @@ interface BlogArticle {
 }
 
 const BlogArticle: NextPage<BlogArticle> = ({ post }) => (
-	<div className="space-y-12 py-20 pb-60 container">
-		<BlogSinglePost post={post} />
+	<div className="space-y-12 py-20 pb-40 container">
+		<div className="mb-40 flex items-center justify-center p-6">
+			<BlogSinglePost post={post} className="w-full lg:w-3/4" />
+		</div>
 		<NewsletterCTA />
 	</div>
 )

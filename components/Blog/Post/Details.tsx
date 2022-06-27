@@ -11,8 +11,8 @@ interface PostDetails {
 const PostDetails: FC<PostDetails> = ({ post }) => (
 	<address className="flex space-x-2 text-xs not-italic text-gray-500">
 		<time dateTime={post.date.toString()}>{date.format(post.date)}</time>
-		<span>by</span>
-		<ul className="flex space-x-2">
+		<span className="hidden">by</span>
+		<ul className="hidden">
 			{post.authors.map((author) => (
 				<li key={author.id}>
 					<span>{author.name}</span>

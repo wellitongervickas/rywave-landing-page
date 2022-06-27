@@ -1,10 +1,12 @@
+import classnames from '@modules/handlers/classnames'
 import type { FC } from 'react'
 
 interface BlogArticle {
 	content: string
+	className?: string
 }
 
-const BlogArticle: FC<BlogArticle> = ({ content }) => (
+const BlogArticle: FC<BlogArticle> = ({ content, className }) => (
 	<>
 		<style jsx>{`
 			.richtext :global(h2) {
@@ -55,7 +57,7 @@ const BlogArticle: FC<BlogArticle> = ({ content }) => (
 		`}</style>
 
 		<div
-			className="richtext space-y-6"
+			className={classnames.merge([className, 'richtext space-y-6'])}
 			dangerouslySetInnerHTML={{ __html: content }}
 		/>
 	</>

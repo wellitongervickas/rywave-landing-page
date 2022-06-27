@@ -7,7 +7,7 @@ import Link from '@components/Link'
 
 import classnames from '@modules/handlers/classnames'
 import appRoutes from '@app.routes'
-import date from '@modules/handlers/date'
+import PostDetails from '@components/Blog/Post/Details'
 
 interface BlogPost {
 	post: Blog.Post
@@ -55,27 +55,7 @@ const BlogPost: FC<BlogPost> = ({ post, className }) => {
 							dangerouslySetInnerHTML={{ __html: post.title }}
 						/>
 
-						<address className="flex space-x-2 text-xs not-italic  text-gray-500">
-							<time className="hidden" dateTime={post.date.toString()}>
-								{date.format(post.date)}
-							</time>
-
-							<ul className="hidden">
-								{post.authors.map((author) => (
-									<li key={author.id}>{author.name}</li>
-								))}
-							</ul>
-							<ul className="!ml-0 flex space-x-2">
-								{post.categories.map((category, index) => (
-									<li key={category.id}>
-										<span>{category.name}</span>
-										{post.categories.length >= 0 &&
-											index !== post.categories.length - 1 &&
-											','}
-									</li>
-								))}
-							</ul>
-						</address>
+						<PostDetails post={post} />
 						{post.description && (
 							<div
 								className="hidden"
