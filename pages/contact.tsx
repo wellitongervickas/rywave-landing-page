@@ -19,7 +19,6 @@ export async function getServerSideProps() {
 			props: {
 				title: 'Contact',
 				description: 'Contact Us',
-				form,
 			} as Contact,
 		}
 	} catch (error) {
