@@ -26,7 +26,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 		props: {
 			title: page.title,
 			description: page.description,
-			fileURL: page?.acf?.whitepaper,
+			fileURL: page?.acf?.whitepaper?.url,
 		},
 	}
 }
