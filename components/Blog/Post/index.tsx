@@ -34,7 +34,7 @@ const BlogPost: FC<BlogPost> = ({ post, className }) => {
 								objectPosition="center"
 								layout="fill"
 								priority
-								className="transition-opacity duration-200 group-hover:opacity-70"
+								className="transition-all duration-200 group-hover:scale-105 group-hover:opacity-70"
 							/>
 						) : (
 							<div className="absolute flex h-full w-full items-center justify-center bg-stone-900">
@@ -62,9 +62,7 @@ const BlogPost: FC<BlogPost> = ({ post, className }) => {
 
 							<ul className="hidden">
 								{post.authors.map((author) => (
-									<li key={author.id}>
-										<span>{author.name}</span>
-									</li>
+									<li key={author.id}>{author.name}</li>
 								))}
 							</ul>
 							<ul className="!ml-0 flex space-x-2">
