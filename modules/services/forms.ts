@@ -1,0 +1,21 @@
+interface FormAdapter {
+	byId(id: string): Promise<Form.Content | null>
+}
+
+interface Adapter {
+	forms: FormAdapter
+}
+
+class FormsAdapter {
+	#adater: Adapter
+
+	constructor(adapter: Adapter) {
+		this.#adater = adapter
+	}
+
+	async byId(formId: string) {
+		return await this.#adater.forms.byId(formId)
+	}
+}
+
+export default FormsAdapter

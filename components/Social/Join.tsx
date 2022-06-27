@@ -13,7 +13,7 @@ interface SocialJoin {
 const SocialJoin: FC<SocialJoin> = ({ className }) => (
 	<div className={classnames.merge([className, 'space-y-3 text-center'])}>
 		<ul className="flex space-x-[1.62rem]">
-			{social.map((item, index) => (
+			{Object.values(social).map((item, index) => (
 				<li key={index}>
 					<SocialJoinIcon {...item} />
 				</li>

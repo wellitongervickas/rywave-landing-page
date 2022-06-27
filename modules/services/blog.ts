@@ -1,13 +1,20 @@
-import type { SearchParams } from '@modules/services/adapters/wordpress'
-
-interface Adapter {
-	posts(params: SearchParams): Promise<{
+interface PostsSearchParams {
+	page?: undefined | string | string[] | 1
+	categories?: undefined | string | string[]
+	slug?: string
+}
+interface BlogAdapter {
+	posts(params: PostsSearchParams): Promise<{
 		posts: Blog.Post[]
 		totalPages: number
 	}>
 	categories(): Promise<{
 		categories: Blog.Category[]
 	}>
+}
+
+interface Adapter {
+	blog: BlogAdapter
 }
 
 class ServiceBlog {
@@ -17,12 +24,12 @@ class ServiceBlog {
 		this.#adater = adapter
 	}
 
-	async posts(params: SearchParams) {
-		return await this.#adater.posts(params)
+	async posts(params: PostsSearchParams) {
+		return await this.#adater.blog.posts(params)
 	}
 
 	async categories() {
-		return await this.#adater.categories()
+		return await this.#adater.blog.categories()
 	}
 }
 

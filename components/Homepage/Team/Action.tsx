@@ -4,6 +4,7 @@ import classnames from '@modules/handlers/classnames'
 
 import ArrowIcon from '@components/Icons/Arrow'
 import TinyArrow from '@components/Icons/TinyArrow'
+import appConfig from '@app.config'
 
 interface TeamAction {
 	className?: string
@@ -36,7 +37,7 @@ const TeamAction: FC<TeamAction> = ({ className }) => (
 				/>
 			</a>
 			<a
-				href={'https://discord.gg/SYwtd3CZcQ'}
+				href={appConfig.social.discord.link}
 				rel="noopener noreferrer"
 				target="_blank"
 				className={classnames.merge([
