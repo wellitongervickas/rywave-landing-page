@@ -1,5 +1,4 @@
 import type { FC, ChangeEvent } from 'react'
-import useForm from '@modules/hooks/useForm'
 import classnames from '@modules/handlers/classnames'
 export const types = ['select'] as string[]
 
@@ -15,11 +14,7 @@ const FormSelect: FC<FormSelect> = ({
 	placeholder,
 	isRequired,
 }) => {
-	const { onchange } = useForm()
-
-	const doOnChange = (ev: ChangeEvent<HTMLSelectElement>) => {
-		onchange(id, ev.target.value)
-	}
+	const doOnChange = (ev: ChangeEvent<HTMLSelectElement>) => {}
 
 	return (
 		<div className="flex flex-col space-y-1">
