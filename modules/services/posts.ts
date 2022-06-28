@@ -1,14 +1,12 @@
-interface PostsAdapter {
-	team(): Promise<{
-		team: Team.Member[]
-	}>
-}
-
 interface Adapter {
-	posts: PostsAdapter
+	posts: {
+		team(): Promise<{
+			team: Team.Member[]
+		}>
+	}
 }
 
-class PostAdapter {
+class PostsService {
 	#adater: Adapter
 
 	constructor(adapter: Adapter) {
@@ -20,4 +18,4 @@ class PostAdapter {
 	}
 }
 
-export default PostAdapter
+export default PostsService

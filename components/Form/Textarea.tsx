@@ -1,5 +1,4 @@
 import type { FC, ChangeEvent } from 'react'
-import useForm from '@modules/hooks/useForm'
 import classnames from '@modules/handlers/classnames'
 
 export const types = ['textarea'] as string[]
@@ -15,11 +14,7 @@ const FormTextarea: FC<FormTextarea> = ({
 	placeholder,
 	isRequired,
 }) => {
-	const { onchange } = useForm()
-
-	const doOnChange = (ev: ChangeEvent<HTMLTextAreaElement>) => {
-		onchange(id, ev.target.value)
-	}
+	const doOnChange = (ev: ChangeEvent<HTMLTextAreaElement>) => {}
 
 	return (
 		<div className="flex flex-col space-y-1">

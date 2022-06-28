@@ -3,21 +3,19 @@ interface PostsSearchParams {
 	categories?: undefined | string | string[]
 	slug?: string
 }
-interface BlogAdapter {
-	posts(params: PostsSearchParams): Promise<{
-		posts: Blog.Post[]
-		totalPages: number
-	}>
-	categories(): Promise<{
-		categories: Blog.Category[]
-	}>
-}
-
 interface Adapter {
-	blog: BlogAdapter
+	blog: {
+		posts(params: PostsSearchParams): Promise<{
+			posts: Blog.Post[]
+			totalPages: number
+		}>
+		categories(): Promise<{
+			categories: Blog.Category[]
+		}>
+	}
 }
 
-class ServiceBlog {
+class BlogServices {
 	#adater: Adapter
 
 	constructor(adapter: Adapter) {
@@ -33,4 +31,4 @@ class ServiceBlog {
 	}
 }
 
-export default ServiceBlog
+export default BlogServices
