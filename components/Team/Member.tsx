@@ -12,7 +12,10 @@ interface TeamMember {
 }
 
 const TeamMember: FC<TeamMember> = ({ member, className }) => {
-	const imageSrc = member.image.sizes.large || member.image.sizes.medium
+	const imageSrc =
+		member.image.sizes?.medium_large ||
+		member.image.sizes?.large ||
+		member.image.sizes?.medium
 
 	return (
 		<CardWrapper
