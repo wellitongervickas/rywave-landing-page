@@ -27,6 +27,7 @@ const TeamMember: FC<TeamMember> = ({ member, className }) => {
 							layout="responsive"
 							width={252}
 							height={252}
+							priority={false}
 							objectFit="cover"
 							objectPosition="center"
 							loading="lazy"
