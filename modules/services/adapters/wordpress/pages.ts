@@ -6,6 +6,7 @@ interface IPage {
 	title: Rendered
 	excerpt: Rendered
 	acf: any
+	content: Rendered
 }
 
 class PagesAdapter {
@@ -28,6 +29,7 @@ class PagesAdapter {
 			title: data.title.rendered,
 			description: data.excerpt.rendered,
 			acf: data.acf,
+			content: data.content,
 		}
 	}
 }

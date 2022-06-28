@@ -1,20 +1,17 @@
-import type { NextPage, GetServerSidePropsContext } from 'next'
+import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import CardWrapper from '@components/CardWrapper'
-
 import services from '@modules/services'
 
 interface Whitepaper {
 	title: string
-	fileURL?: string
+	content: {
+		fileURL?: string
+	}
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-	const { slug } = context.query
-
-	const page = await services.pages.bySlug(slug as string)
-
-	console.log(page)
+export async function getServerSideProps() {
+	const page = await services.pages.bySlug('whitepaper')
 
 	if (!page) {
 		return {
@@ -26,24 +23,25 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 		props: {
 			title: page.title,
 			description: page.description,
-			fileURL: page?.acf?.whitepaper?.url,
-		},
+			content: {
+				fileURL: page?.acf?.whitepaper?.url,
+			},
+		} as Whitepaper,
 	}
 }
 const PDFViewer = dynamic(() => import('@components/Whitepaper/Container'), {
 	ssr: false,
 })
 
-const Whitepaper: NextPage<Whitepaper> = ({ title, fileURL }) => {
-	console.log(fileURL)
+const Whitepaper: NextPage<Whitepaper> = ({ title, content }) => {
 	return (
 		<div className="py-20 container">
 			<h1 className="mb-12 text-center font-astrospace text-3xl font-black md:text-5xl">
 				{title}
 			</h1>
-			{fileURL && (
+			{content?.fileURL && (
 				<CardWrapper className="p-4">
-					<PDFViewer fileURL={fileURL} />
+					<PDFViewer fileURL={content.fileURL} />
 				</CardWrapper>
 			)}
 		</div>

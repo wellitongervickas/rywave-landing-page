@@ -19,6 +19,10 @@ const appRoutes = {
 				label: 'Whitepaper',
 				path: '/whitepaper/',
 			},
+			team: {
+				label: 'Team',
+				path: '/team/',
+			},
 		},
 		resources: {
 			terms_of_use: {

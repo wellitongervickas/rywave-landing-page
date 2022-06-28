@@ -12,7 +12,7 @@ interface TeamMember {
 }
 
 const TeamMember: FC<TeamMember> = ({ member, className }) => {
-	const imageSrc = member.image.sizes.large || member.image.sizes.medium
+	const imageSrc = member.image.sizes?.medium_large || member.image.sizes?.large
 
 	return (
 		<CardWrapper
@@ -27,6 +27,7 @@ const TeamMember: FC<TeamMember> = ({ member, className }) => {
 							layout="responsive"
 							width={252}
 							height={252}
+							priority={false}
 							objectFit="cover"
 							objectPosition="center"
 							loading="lazy"
