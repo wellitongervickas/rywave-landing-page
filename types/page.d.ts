@@ -3,5 +3,8 @@ declare namespace Page {
 		title: string
 		description: string
 		acf: any
+		content: {
+			rendered: string
+		}
 	}
 }
