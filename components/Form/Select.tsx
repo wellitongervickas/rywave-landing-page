@@ -1,5 +1,7 @@
-import type { FC, ChangeEvent } from 'react'
+import type { FC } from 'react'
 import classnames from '@modules/handlers/classnames'
+import { useFormContext } from 'react-hook-form'
+
 export const types = ['select'] as string[]
 
 interface FormSelect extends Form.Field {
@@ -7,15 +9,22 @@ interface FormSelect extends Form.Field {
 }
 
 const FormSelect: FC<FormSelect> = ({
-	className,
 	choices,
 	id,
 	label,
 	placeholder,
 	isRequired,
 }) => {
-	const doOnChange = (ev: ChangeEvent<HTMLSelectElement>) => {}
+	const ID = `${id}`
 
+	const {
+		register,
+		formState: { errors },
+	} = useFormContext()
+
+	const options = {
+		required: isRequired && 'Field is required!',
+	}
 	return (
 		<div className="flex flex-col space-y-1">
 			<label htmlFor={id}>
@@ -24,10 +33,8 @@ const FormSelect: FC<FormSelect> = ({
 			</label>
 
 			<select
-				aria-labelledby={id}
-				title={label}
 				placeholder={placeholder}
-				onChange={doOnChange}
+				{...register(ID, options)}
 				className={classnames.merge([
 					'w-full bg-offwhite py-4 px-6 shadow-inner outline-none',
 				])}
@@ -39,6 +46,9 @@ const FormSelect: FC<FormSelect> = ({
 					</option>
 				))}
 			</select>
+			{errors[ID] && (
+				<span className="text-red-400">{errors[ID]?.message?.toString()}</span>
+			)}
 		</div>
 	)
 }

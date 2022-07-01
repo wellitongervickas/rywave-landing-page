@@ -13,12 +13,13 @@ interface Contact {
 export async function getServerSideProps() {
 	try {
 		const CONTACT_FORM_ID = '1'
-		// const form = await services.forms.byId(CONTACT_FORM_ID)
+		const form = await services.forms.byId(CONTACT_FORM_ID)
 
 		return {
 			props: {
 				title: 'Contact',
 				description: 'Contact Us',
+				form,
 			} as Contact,
 		}
 	} catch (error) {

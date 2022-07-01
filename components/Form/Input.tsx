@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import classnames from '@modules/handlers/classnames'
-import { useForm } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 
 export const types = ['text', 'email'] as string[]
 
@@ -13,29 +13,42 @@ const FormInput: FC<FormInput> = ({
 	placeholder,
 	isRequired,
 }) => {
+	const ID = `${id}`
+
 	const {
 		register,
 		formState: { errors },
-	} = useForm()
+	} = useFormContext()
+
+	const options = {
+		required: isRequired && 'Field is required!',
+		pattern:
+			type === 'email'
+				? {
+						value:
+							/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+						message: 'Invalid e-mail',
+				  }
+				: undefined,
+	}
 
 	return (
 		<div className="flex flex-col space-y-1">
-			<label htmlFor={id}>
-				<span id={id}>{label}</span>
+			<label htmlFor={ID}>
+				<span>{label}</span>
 				{isRequired && <span className="text-red-400">*</span>}
 			</label>
 			<input
-				aria-labelledby={id}
 				title={label}
 				type={type}
 				placeholder={placeholder}
 				className={classnames.merge([
 					'w-full bg-offwhite py-4 px-6 shadow-inner outline-none',
 				])}
-				{...register(`field_${id}`, { required: isRequired })}
+				{...register(ID, options)}
 			/>
-			{errors[id] && (
-				<span className="text-red-400">{errors[id]?.message?.toString()}</span>
+			{errors[ID] && (
+				<span className="text-red-400">{errors[ID]?.message?.toString()}</span>
 			)}
 		</div>
 	)
