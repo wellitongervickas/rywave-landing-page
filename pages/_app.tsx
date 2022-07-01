@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import Script from 'next/script'
 
 import Head from 'next/head'
 
@@ -30,7 +31,7 @@ const App = ({ Component, pageProps }: App) => (
 					@apply h-screen;
 				}
 				body {
-					@apply font-montserrat bg-gray-darkness overflow-x-hidden text-white;
+					@apply overflow-x-hidden bg-gray-darkness font-montserrat text-white;
 				}
 
 				@font-face {
@@ -38,11 +39,18 @@ const App = ({ Component, pageProps }: App) => (
 					src: url('/assets/fonts/astro-space.otf');
 					font-style: normal;
 				}
+
+				:global(.grecaptcha-badge) {
+					@apply invisible;
+				}
 			`}
 		</style>
 		<Layout>
 			<Component {...pageProps} />
 		</Layout>
+		<Script
+			src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`}
+		/>
 	</>
 )
 

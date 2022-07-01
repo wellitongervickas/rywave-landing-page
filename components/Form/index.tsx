@@ -13,10 +13,11 @@ import Loading from '@components/Loading'
 interface Form {
 	form: Form.Content
 	submiting?: boolean
+	error?: string
 	onSubmit(value: any): void
 }
 
-const Form: FC<Form> = ({ form, onSubmit, submiting }) => {
+const Form: FC<Form> = ({ form, onSubmit, submiting, error }) => {
 	const methods = useForm({
 		mode: 'onChange',
 	})
@@ -48,6 +49,7 @@ const Form: FC<Form> = ({ form, onSubmit, submiting }) => {
 						</div>
 					))}
 				</div>
+				<div>{error && <span className="text-red-400">{error}</span>}</div>
 				<div>
 					<button
 						type="submit"

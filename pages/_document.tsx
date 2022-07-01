@@ -41,6 +41,7 @@ class _Document extends Document<DocumentInitialProps> {
 					<ErrorBoundary>
 						<Main />
 					</ErrorBoundary>
+
 					<NextScript />
 				</body>
 			</Html>

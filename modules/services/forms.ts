@@ -21,8 +21,7 @@ class FormsService {
 	}
 
 	async submit(id: string, data: FormData) {
-		console.log(id, data)
-		// return await this.#adater.forms.submit(id, data)
+		return await this.#adater.forms.submit(id, data)
 	}
 }
 
