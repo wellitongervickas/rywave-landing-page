@@ -8,7 +8,9 @@ const form = async (req: NextApiRequest, res: NextApiResponse) => {
 	 */
 
 	if (req.method !== 'POST')
-		return res.status(405).json({ code: 405, message: 'Method not allowed' })
+		return res
+			.status(405)
+			.json({ code: 405, message: `${req.method} Method not allowed!` })
 
 	const { headers } = req
 
@@ -16,8 +18,6 @@ const form = async (req: NextApiRequest, res: NextApiResponse) => {
 	const body = req.body
 
 	try {
-		console.log('BODY', body)
-
 		const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${headers['x-recaptcha']}`
 
 		const recaptchaToken = await fetch(verifyUrl, { method: 'POST' }).then(
@@ -35,14 +35,14 @@ const form = async (req: NextApiRequest, res: NextApiResponse) => {
 		const result = await adapter.forms.submit(id as string, body)
 
 		if (!result) {
-			return res
-				.status(422)
-				.json({ code: 422, message: 'Query or body is missing data.' })
+			return res.status(422).json({ code: 422, message: 'Invalid params!' })
 		}
+
 		return res.status(200).json({ success: true })
 	} catch (error) {
-		console.log('ERRORRRR', error)
-		return res.status(500).json({ code: 500, message: 'Server error' })
+		return res
+			.status(500)
+			.json({ code: 500, message: 'Internal server error!' })
 	}
 }
 
