@@ -32,13 +32,9 @@ const Form: FC<Form> = ({ form, onSubmit }) => {
 		[form.button]
 	)
 
-	const doSubmit = (data: Object) => {
-		console.log(data)
-	}
-
 	return (
 		<FormProvider {...methods}>
-			<form onSubmit={handleSubmit(doSubmit)} noValidate className="space-y-6">
+			<form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
 				<div className="flex flex-col space-y-6">
 					{form.fields.map((field) => (
 						<div key={field.id}>
