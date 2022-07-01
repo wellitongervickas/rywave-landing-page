@@ -1,11 +1,13 @@
 /**
  * @docs https://docs.gravityforms.com/rest-api-v2
- * @docs https://docs.gravityforms.com/rest-api-v2-authentication
+ * @docs https://docs.gravityforms.com/rest-api-v2-authenticationv
+ * @docs https://docs.gravityforms.com/rest-api-v2/#post-forms-form-id-submissions
  */
 
 import WordpressAdapter from '@modules/services/adapters/wordpress'
 
 interface Form {
+	id: string
 	title: string
 	description: string
 	button: {
@@ -44,9 +46,10 @@ class FormsAdapter {
 			return null
 		}
 
-		const { title, description, fields, button } = result as Form
+		const { id: formId, title, description, fields, button } = result as Form
 
 		return {
+			id: formId,
 			title,
 			description,
 			button: {

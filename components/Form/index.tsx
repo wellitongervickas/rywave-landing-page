@@ -8,13 +8,15 @@ import classnames from '@modules/handlers/classnames'
 import ArrowIcon from '@components/Icons/Arrow'
 
 import { useForm, FormProvider } from 'react-hook-form'
+import Loading from '@components/Loading'
 
 interface Form {
 	form: Form.Content
+	submiting?: boolean
 	onSubmit(value: any): void
 }
 
-const Form: FC<Form> = ({ form, onSubmit }) => {
+const Form: FC<Form> = ({ form, onSubmit, submiting }) => {
 	const methods = useForm({
 		mode: 'onChange',
 	})
@@ -49,20 +51,26 @@ const Form: FC<Form> = ({ form, onSubmit }) => {
 				<div>
 					<button
 						type="submit"
-						disabled={!isValid}
+						disabled={submiting || !isValid}
 						className={classnames.merge([
-							'font-manrope disabled:opacity-40',
+							'font-manrope disabled:bg-offwhite disabled:text-gray-stroke disabled:opacity-40',
 							'group flex space-x-2  bg-white py-5 px-9 transition-all duration-150',
 							'font-bold text-black shadow ring-1 ring-white hover:shadow-inner',
 							'w-full hover:ring-opacity-80 md:w-auto',
 						])}
 					>
-						<span>{button.text}</span>
-						<ArrowIcon
-							width={22}
-							height={28}
-							className="transition-transform duration-150 group-hover:translate-x-1"
-						/>
+						{submiting ? (
+							<Loading className="text-offwhite" />
+						) : (
+							<>
+								<span>{button.text}</span>
+								<ArrowIcon
+									width={22}
+									height={28}
+									className="transition-transform duration-150 group-hover:translate-x-1"
+								/>
+							</>
+						)}
 					</button>
 				</div>
 			</form>
