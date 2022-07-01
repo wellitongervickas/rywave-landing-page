@@ -1,5 +1,6 @@
 declare namespace Form {
 	interface Content {
+		id: string
 		title: string
 		description: string
 		button: Form.Button

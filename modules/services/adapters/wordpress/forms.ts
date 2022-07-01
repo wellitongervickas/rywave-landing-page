@@ -1,11 +1,13 @@
 /**
  * @docs https://docs.gravityforms.com/rest-api-v2
- * @docs https://docs.gravityforms.com/rest-api-v2-authentication
+ * @docs https://docs.gravityforms.com/rest-api-v2-authenticationv
+ * @docs https://docs.gravityforms.com/rest-api-v2/#post-forms-form-id-submissions
  */
 
 import WordpressAdapter from '@modules/services/adapters/wordpress'
 
 interface Form {
+	id: string
 	title: string
 	description: string
 	button: {
@@ -26,6 +28,38 @@ interface Form {
 }
 
 class FormsAdapter {
+	async submit(id: string, data: any) {
+		const body = Object.keys(data).reduce((values, key) => {
+			values = {
+				...values,
+				[`input_${key}`]: data[key],
+			}
+			return values
+		}, {})
+
+		try {
+			const result = await fetch(
+				[
+					WordpressAdapter.API_BASE_URL,
+					WordpressAdapter.ENDPOINTS.FORMS,
+					`/${id}`,
+					'/submissions',
+				].join(''),
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					method: 'POST',
+					body: JSON.stringify(body),
+				}
+			).then((res) => res.json())
+
+			return result?.is_valid || false
+		} catch (error) {
+			return false
+		}
+	}
+
 	async byId(id: string): Promise<null | Form.Content> {
 		const result = await fetch(
 			[
@@ -44,9 +78,10 @@ class FormsAdapter {
 			return null
 		}
 
-		const { title, description, fields, button } = result as Form
+		const { id: formId, title, description, fields, button } = result as Form
 
 		return {
+			id: formId,
 			title,
 			description,
 			button: {

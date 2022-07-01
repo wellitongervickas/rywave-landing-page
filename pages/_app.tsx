@@ -30,13 +30,17 @@ const App = ({ Component, pageProps }: App) => (
 					@apply h-screen;
 				}
 				body {
-					@apply font-montserrat bg-gray-darkness overflow-x-hidden text-white;
+					@apply overflow-x-hidden bg-gray-darkness font-montserrat text-white;
 				}
 
 				@font-face {
 					font-family: 'AstroSpace';
 					src: url('/assets/fonts/astro-space.otf');
 					font-style: normal;
+				}
+
+				:global(.grecaptcha-badge) {
+					@apply invisible;
 				}
 			`}
 		</style>
