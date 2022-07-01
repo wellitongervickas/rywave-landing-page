@@ -37,7 +37,7 @@ const ContactForm: FC<ContactForm> = ({ className, form }) => {
 		})
 
 		if (!result) {
-			setError('Submission failed, check adapter instance.')
+			setError('Submission failed, try again later.')
 		} else {
 			setIsSuccess(result)
 		}

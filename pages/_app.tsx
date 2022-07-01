@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import Script from 'next/script'
 
 import Head from 'next/head'
 
@@ -48,9 +47,6 @@ const App = ({ Component, pageProps }: App) => (
 		<Layout>
 			<Component {...pageProps} />
 		</Layout>
-		<Script
-			src={`https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`}
-		/>
 	</>
 )
 
