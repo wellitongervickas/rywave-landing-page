@@ -20,9 +20,9 @@ const TeamContainer: FC<TeamContainer> = ({ team }) => (
 			/>
 		</div>
 		<section className="space-y-12 py-12 container lg:py-28">
-			<h2 className="mb-12 font-astrospace text-3xl font-black md:text-5xl">
+			<h1 className="mb-12 font-astrospace text-3xl font-black md:text-5xl">
 				Meet the team
-			</h2>
+			</h1>
 			<div className="grid grid-cols-12 gap-5">
 				{team.map((member, key) => (
 					<TeamMember
