@@ -31,9 +31,9 @@ declare namespace Page {
 		title: string
 		subHeading: string
 		announcing: string
-		prizes: Prize[]
-		secondPrizes: Prize[]
-		lastPrizes: Prize[]
+		prizes: Prize
+		secondPrizes: Prize
+		lastPrizes: Prize
 		terms: {
 			title: string
 			text: string

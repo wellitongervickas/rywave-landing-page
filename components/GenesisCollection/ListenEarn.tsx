@@ -116,10 +116,10 @@ const ListenToEarn: FC<ListenToEarn> = () => (
 					<CardWrapper
 						className={classnames.merge([
 							'lg:absolute lg:left-[71rem] lg:top-[12rem] lg:inline',
-							'p-4 text-center',
+							'min-w-[120px] p-4 text-center',
 						])}
 					>
-						<p>Premium Content</p>
+						<p>Free Content</p>
 					</CardWrapper>
 					<div className="flex justify-center lg:hidden">
 						<ArrowIcon className="rotate-90 transform text-gray-stroke" />
